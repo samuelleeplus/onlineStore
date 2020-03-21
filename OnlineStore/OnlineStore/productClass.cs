@@ -35,6 +35,8 @@ namespace OnlineStore
             this.appliedDiscount = appliedDiscount; 
         }
 
+
+
         //getters and setters 
 
         public float getAppliedDiscount()
