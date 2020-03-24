@@ -6,7 +6,7 @@ namespace OnlineStore.Data.Models.Entities
 {
     public class Order
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public int CustomerId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }

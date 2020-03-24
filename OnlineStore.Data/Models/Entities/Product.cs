@@ -6,7 +6,7 @@ namespace OnlineStore.Data.Models.Entities
 {
     public class Product
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int ModelNumber { get; set; }
         public string Description { get; set; }

@@ -6,11 +6,11 @@ namespace OnlineStore.Data.Models.Entities
 {
     public class Admin
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public string lastName { get; set; }
-        public string email_address { get; set; }
-        public string password { get; set; }
+        public string LastName { get; set; }
+        public string EmailAddress { get; set; }
+        public string Password { get; set; }
 
     }
 }
