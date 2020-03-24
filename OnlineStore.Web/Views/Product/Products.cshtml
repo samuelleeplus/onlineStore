@@ -1,0 +1,20 @@
+﻿@model OnlineStore.Data.Models.Entities.Product
+@{
+    ViewData["Title"] = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Displaying the product made in ProductController Products()</h1>
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <img src="https://www.chipex.eu/wp-content/uploads/2019/04/test-prd.jpg" alt="@Model.Name" style="width:100%">
+            <div class="container">
+                <h2>@Model.Name</h2>
+                <p class="title">$@Model.Price</p> <p> Discount: @Model.AppliedDiscount</p>
+                <p>@Model.Description</p>
+                <p>@Model.Quantity in stock</p>
+            </div>
+        </div>
+    </div>
+</div>
