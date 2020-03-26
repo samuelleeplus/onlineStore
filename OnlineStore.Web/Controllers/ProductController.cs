@@ -10,6 +10,7 @@ namespace OnlineStore.Web.Controllers
 {
     public class ProductController : Controller
     {
+        /*
         public IActionResult Products()
         {
             var product = new Product()
@@ -22,6 +23,8 @@ namespace OnlineStore.Web.Controllers
             };
 
             return View(product);
+            
         }
+        */
     }
 }
