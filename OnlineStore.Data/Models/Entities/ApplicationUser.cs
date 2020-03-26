@@ -7,8 +7,7 @@ namespace OnlineStore.Data.Models.Entities
 {
     public class ApplicationUser : IdentityUser
     {
-        public bool IsDeleted { get; set; } = false;
-        public DateTime? DateCreated { get; set; } = DateTime.Now;
-        public DateTime? DateUpdated { get; set; }
+        public int TaxID { get; set; }
+        public string Address { get; set; }
     }
 }

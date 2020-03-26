@@ -7,9 +7,9 @@ using System.Text;
 
 namespace OnlineStore.Data.Context
 {
-    public class OnlineStoreDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public OnlineStoreDbContext(DbContextOptions<OnlineStoreDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
