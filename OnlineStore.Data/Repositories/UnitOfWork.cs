@@ -8,6 +8,7 @@ namespace OnlineStore.Data.Repositories
     public interface IUnitOfWork : IDisposable
     {
         IRepository<T> GetRepository<T>() where T : class;
+        void Commit();
     }
 
     public class UnitOfWork : IUnitOfWork, IDisposable
@@ -36,6 +37,11 @@ namespace OnlineStore.Data.Repositories
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
+
+        public void Commit()
+        {
+            Context.SaveChanges();
         }
     }
 }
