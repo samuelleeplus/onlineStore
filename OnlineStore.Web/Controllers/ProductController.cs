@@ -10,21 +10,6 @@ namespace OnlineStore.Web.Controllers
 {
     public class ProductController : Controller
     {
-        /*
-        public IActionResult Products()
-        {
-            var product = new Product()
-            {
-                Id = 1,
-                AppliedDiscount = 0,
-                Description = "test description",
-                Name = "The first product",
-                Price = 12.34f
-            };
-
-            return View(product);
-            
-        }
-        */
+        // whatever ...
     }
 }

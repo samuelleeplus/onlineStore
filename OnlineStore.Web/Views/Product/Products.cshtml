@@ -1,19 +1,136 @@
-﻿@model OnlineStore.Data.Models.Entities.Product
+﻿@model OnlineStore.Web.Models.DTOs.ProductDTO
 @{
     ViewData["Title"] = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Displaying the product made in ProductController Products()</h1>
-<div class="row">
-    <div class="column">
-        <div class="card">
-            <img src="https://www.chipex.eu/wp-content/uploads/2019/04/test-prd.jpg" alt="@Model.Name" style="width:100%">
+<div class="home">
+    <div class="home_container">
+        <div class="home_background" style=@($"background-image:url({Model.Header.BackgroundImageUrl})")></div>
+        <div class="home_content_container">
             <div class="container">
-                <h2>@Model.Name</h2>
-                <p class="title">$@Model.Price</p> <p> Discount: 20 %</p>
-                <p>@Model.Description</p>
-                <p>@Model.Quantity in stock</p>
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="home_title">@(Model.Header.Title)<span>.</span></div>
+                            <div class="home_text"><p>@(Model.Header.Text)</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Details -->
+
+<div class="product_details">
+    <div class="container">
+        <div class="row details_row">
+
+            <!-- Product Image -->
+            <div class="col-lg-6">
+                <div class="details_image">
+                    @{
+                        var imageUrls = Model.ImageUrls.ToList();
+                     }
+                    <div class="details_image_large"><img src="@(imageUrls[0])" alt=""><div class="product_extra product_new"><a href="categories.html">New</a></div></div>
+                    <div class="details_image_thumbnails d-flex flex-row align-items-start justify-content-between">
+                        <div class="details_image_thumbnail active" data-image="@(imageUrls[0])"><img src="@(imageUrls[0])" alt=""></div>
+                        @for (int i = 1; i < Model.ImageUrls.Count(); i++)
+                        {
+                            <div class="details_image_thumbnail" data-image="@(imageUrls[i])"><img src="@(imageUrls[i])" alt=""></div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Content -->
+            <div class="col-lg-6">
+                <div class="details_content">
+                    <div class="details_name">@(Model.Name)</div>
+                    <div class="details_discount">$@(Model.OriginalPrice)</div>
+                    <div class="details_price">$@(Model.DiscountedPrice)</div>
+
+                    <!-- In Stock -->
+                    <div class="in_stock_container">
+                        <div class="availability">Availability:</div>
+                        <span>@(Model.Availability)</span>
+                    </div>
+                    <div class="details_text">
+                        <p>@(Model.Description)</p>
+                    </div>
+
+                    <!-- Product Quantity -->
+                    <div class="product_quantity_container">
+                        <div class="product_quantity clearfix">
+                            <span>Qty</span>
+                            <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
+                            <div class="quantity_buttons">
+                                <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+                                <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="button cart_button"><a href="#">Add to cart</a></div>
+                    </div>
+
+                    <!-- Share -->
+                    <div class="details_share">
+                        <span>Share:</span>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row description_row">
+            <div class="col">
+                <div class="description_title_container">
+                    <div class="description_title">Description</div>
+                    <div class="reviews_title"><a href="#">Reviews <span>(1)</span></a></div>
+                </div>
+                <div class="description_text">
+                    <p>@(Model.DescriptionExtra)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Products -->
+
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="products_title">Related Products</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <div class="product_grid">
+
+                    @foreach (var entry in Model.RelatedProducts)
+                    {
+                    <div class="product">
+                        <div class="product_image"><img src="@(entry.ImageUrl)" alt=""></div>
+                        @if (!string.IsNullOrEmpty(entry.StatusClass))
+                        {
+                            <div class="product_extra product_new"><a href="categories.html">@(entry.StatusClass)</a></div>
+                        }
+                        <div class="product_content">
+                            <div class="product_title"><a href="product.html">@(entry.Name)</a></div>
+                            <div class="product_price">@(entry.Price)</div>
+                        </div>
+                    </div>
+                    }
+                </div>
             </div>
         </div>
     </div>
