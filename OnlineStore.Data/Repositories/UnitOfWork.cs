@@ -7,7 +7,7 @@ namespace OnlineStore.Data.Repositories
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<T> GetRepository<T>() where T : class;
+        IRepository<T> GetGenericRepository<T>() where T : class;
         void Commit();
     }
 
@@ -20,7 +20,7 @@ namespace OnlineStore.Data.Repositories
         {
             Context = context;
         }
-        public IRepository<T> GetRepository<T>() where T : class
+        public IRepository<T> GetGenericRepository<T>() where T : class
         {
             return new Repository<T>(Context);
         }

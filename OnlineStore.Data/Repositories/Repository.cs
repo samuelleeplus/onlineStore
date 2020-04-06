@@ -16,9 +16,9 @@ namespace OnlineStore.Data.Repositories
 
         }
 
-        public bool Add(T entity)
+        public void Add(T entity)
         {
-            throw new NotImplementedException();
+            _entities.Add(entity);
         }
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
@@ -36,9 +36,9 @@ namespace OnlineStore.Data.Repositories
             return _entities.Find(id);
         }
 
-        public bool Remove(T entity)
+        public void Remove(T entity)
         {
-            throw new NotImplementedException();
+            _entities.Remove(entity);
         }
     }
 }

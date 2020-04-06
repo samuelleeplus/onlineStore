@@ -10,8 +10,8 @@ namespace OnlineStore.Data.Repositories
         T GetById(int id);
         IEnumerable<T> GetAll();
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
-        bool Add(T entity);
-        bool Remove(T entity);
+        void Add(T entity);
+        void Remove(T entity);
 
     }
 }
