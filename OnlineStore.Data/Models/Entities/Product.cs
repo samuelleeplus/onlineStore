@@ -9,6 +9,7 @@ namespace OnlineStore.Data.Models.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public int ModelNumber { get; set; }
+        public string Category { get; set; }
         public string DescriptionMain { get; set; }
         public string DescriptionExtra { get; set; }
         public double Price { get; set; }

@@ -26,7 +26,18 @@ namespace OnlineStore.Web.Controllers
         [HttpGet]
         public IActionResult Index(int id)
         {
-            var product = _uow.GetGenericRepository<Product>().GetById(29);
+            var repo = _uow.GetGenericRepository<Product>();
+            var product = repo.GetById(1);
+
+
+            var _relatedProducts = repo.Find(x => x.Category == product.Category && x.Id != product.Id).Take(5).ToList();
+            var temp = product.ImageUris;
+            var select = temp == null ? null : temp.Select(x => x.Uri);
+            var imageUrls = select == null ? null : select.ToList();
+
+
+
+            /*
             var ImageUris = _context.ImageUris;
             var queryBackgroundImageUrl = from uri in ImageUris
                                           where uri.ProductId == id
@@ -46,13 +57,24 @@ namespace OnlineStore.Web.Controllers
                 };
                 relatedProductList.Append(relatedProduct);
             }
-            
+            */
             var header = new Header
             {
                 BackgroundImageUrl = "https://openimagedenoise.github.io/images/moana_16spp_oidn.jpg",
                 Title = product.Name,
                 Text = product.DescriptionMain
             };
+
+            var relatedProducts = _relatedProducts.Select(x =>
+                new RelatedProduct
+                {
+                    ImageUrl = "https://openimagedenoise.github.io/images/moana_16spp_oidn.jpg", // x.ImageUris.Take(1).Select(y => y.Uri).FirstOrDefault(),
+                    Url = "https://localhost:44396/",
+                    Price = x.DiscountedPrice,
+                    StatusClass = "New"
+                }).ToList();
+
+
             var model = new ProductDTO
             {
                 Header = header,
@@ -62,12 +84,13 @@ namespace OnlineStore.Web.Controllers
                 ImageUrls = imageUrls,
                 OriginalPrice = product.Price,
                 DiscountedPrice = product.DiscountedPrice,
-                RelatedProducts = relatedProductList.AsEnumerable()
+                RelatedProducts = relatedProducts
             };
             if (product.Quantity <= 0)
             {
                 model.Availability = "Out of Stock";
             }
+
             return View(model);
         }
     }
