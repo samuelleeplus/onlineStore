@@ -23,6 +23,7 @@ namespace OnlineStore.Data.Models.Entities
     {
         public int Id { get; set; }
         public string Uri { get; set; }
+        public int ProductId { get; set; }
     }
 
     public class Distributor
