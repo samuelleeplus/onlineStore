@@ -14,8 +14,8 @@ namespace OnlineStore.Web.Controllers
 {
     public class ProductController : Controller
     {
-        public ApplicationDbContext _context { get; set; }
-        public UnitOfWork _uow { get; set; }
+        private ApplicationDbContext _context { get; set; }
+        private UnitOfWork _uow { get; set; }
 
         public ProductController(ApplicationDbContext context)
         {
