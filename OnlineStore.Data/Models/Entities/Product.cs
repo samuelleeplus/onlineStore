@@ -16,8 +16,7 @@ namespace OnlineStore.Data.Models.Entities
         public double DiscountedPrice { get; set; }
         public int Quantity { get; set; }
         public string WarrantyStatus { get; set; }
-        public Distributor Distributor { get; set; }
-        public IEnumerable<ImageUri> ImageUris { get; set; }
+        public int DistributorId { get; set; }
     }
 
     public class ImageUri

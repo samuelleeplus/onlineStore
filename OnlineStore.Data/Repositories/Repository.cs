@@ -25,6 +25,10 @@ namespace OnlineStore.Data.Repositories
         {
             return _entities.Where(predicate);
         }
+        public T FirstOrDefault(Expression<Func<T, bool>> predicate)
+        {
+            return _entities.FirstOrDefault(predicate);
+        }
 
         public IEnumerable<T> GetAll()
         {

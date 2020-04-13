@@ -55,7 +55,7 @@ namespace OnlineStore.Web.Controllers
             return View();
         }
 
-
+        [HttpPost]
         public IActionResult Buy(int id)
         {
             var product = _uow.GetGenericRepository<Product>().GetById(id);
@@ -63,6 +63,7 @@ namespace OnlineStore.Web.Controllers
             {
                 List<CartITem> cart = new List<CartITem>();
                 cart.Add(new CartITem {
+                    Id = id,
                     ItemName = product.Name,
                     ItemQuantity = 1,
                     ItemImageUrl = "google.com",  // product.ImageUris.ToList()[0].Uri,
@@ -84,14 +85,14 @@ namespace OnlineStore.Web.Controllers
                     cart.Add(new CartITem {
                         ItemName = product.Name,
                         ItemQuantity = 1,
-                        ItemImageUrl = product.ImageUris.ToList()[0].Uri,
+                        ItemImageUrl = null, //product.ImageUris.ToList()[0].Uri,
                         ItemPrice = product.DiscountedPrice,
                         ItemTotalPrice = product.DiscountedPrice
                     });
                 }
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
             }
-            return RedirectToAction("Index");
+            return new EmptyResult();
         }
         /*
         [Route("remove/{id}")]

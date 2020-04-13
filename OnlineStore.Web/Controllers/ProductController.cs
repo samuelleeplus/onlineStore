@@ -9,13 +9,14 @@ using OnlineStore.Data.Context;
 using OnlineStore.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using OnlineStore.Web.Models.DTOs;
+using OnlineStore.Web.Helpers;
 
 namespace OnlineStore.Web.Controllers
 {
     public class ProductController : Controller
     {
         private ApplicationDbContext _context { get; set; }
-        private UnitOfWork _uow { get; set; }
+        private UnitOfWork _uow { get; }
 
         public ProductController(ApplicationDbContext context)
         {
@@ -26,9 +27,16 @@ namespace OnlineStore.Web.Controllers
         [HttpGet]
         public IActionResult Index(int id)
         {
+            /*
+            var repo2 = new ProductRepository(_uow);
+            var producto = repo2.GetProductById(1);
+
+
+
             var repo = _uow.GetGenericRepository<Product>();
             var product = repo.GetById(1);
 
+            var imageUrl = _uow.GetGenericRepository<ImageUri>().Find(x => x.ProductId == product.Id).ToList()[0];
 
             var _relatedProducts = repo.Find(x => x.Category == product.Category && x.Id != product.Id).Take(5).ToList();
             var temp = product.ImageUris;
@@ -58,6 +66,7 @@ namespace OnlineStore.Web.Controllers
                 relatedProductList.Append(relatedProduct);
             }
             */
+            /*
             var header = new Header
             {
                 BackgroundImageUrl = "https://openimagedenoise.github.io/images/moana_16spp_oidn.jpg",
@@ -77,6 +86,7 @@ namespace OnlineStore.Web.Controllers
 
             var model = new ProductDTO
             {
+                ProductId = product.Id,
                 Header = header,
                 Name = product.Name,
                 Description = product.DescriptionMain,
@@ -90,6 +100,14 @@ namespace OnlineStore.Web.Controllers
             {
                 model.Availability = "Out of Stock";
             }
+
+            */
+
+            var prodCtor = new DtoConstructor(_uow);
+
+            var model = prodCtor.GetProductDtoByProductId(1);
+
+            var x = model;
 
             return View(model);
         }
