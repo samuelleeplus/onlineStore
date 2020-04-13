@@ -27,7 +27,7 @@ namespace OnlineStore.Web.Controllers
         public IActionResult Index(int id)
         {
             var repo = _uow.GetGenericRepository<Product>();
-            var product = repo.GetById(1);
+            var product = repo.GetById(2);
 
 
             var _relatedProducts = repo.Find(x => x.Category == product.Category && x.Id != product.Id).Take(5).ToList();
