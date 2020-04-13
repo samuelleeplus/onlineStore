@@ -34,7 +34,7 @@ namespace OnlineStore.Web.Controllers
 
 
             var repo = _uow.GetGenericRepository<Product>();
-            var product = repo.GetById(1);
+            var product = repo.GetById(2);
 
             var imageUrl = _uow.GetGenericRepository<ImageUri>().Find(x => x.ProductId == product.Id).ToList()[0];
 
