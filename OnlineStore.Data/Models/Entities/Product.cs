@@ -6,8 +6,6 @@ namespace OnlineStore.Data.Models.Entities
 {
     public class Product
     {
-
-
         public int Id { get; set; }
         public string Name { get; set; }
         public int ModelNumber { get; set; }
@@ -19,9 +17,6 @@ namespace OnlineStore.Data.Models.Entities
         public int Quantity { get; set; }
         public string WarrantyStatus { get; set; }
         public int DistributorId { get; set; }
-
-        //public Distributor Distributor { get; set; }
-        public IEnumerable<ImageUri> ImageUris { get; set; }
     }
 
     public class ImageUri

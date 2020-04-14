@@ -7,6 +7,7 @@ namespace OnlineStore.Web.Models.DTOs
 {
     public class ProductDTO
     {
+        public int ProductId { get; set; }
         public Header Header { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
