@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OnlineStore.Web.Models.DTOs
 {
-    public class CartItemsDTO
+    public class CartItemsDto
     {
         public IEnumerable<CartITem> Items { get; set; }
     }

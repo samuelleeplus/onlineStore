@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OnlineStore.Web.Models.DTOs
 {
-    public class CategoryDTO
+    public class CategoryDto
     {
         public string Title { get; set; }
         public string Text { get; set; }

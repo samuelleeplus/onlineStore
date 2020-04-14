@@ -10,7 +10,7 @@ using OnlineStore.Data.Context;
 namespace OnlineStore.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200327065518_InitialCreate")]
+    [Migration("20200414211636_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -172,12 +172,15 @@ namespace OnlineStore.Data.Migrations
                     b.Property<string>("StreetAddress")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ZipCode")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("OnlineStore.Data.Models.Entities.ApplicationUser", b =>
@@ -225,7 +228,7 @@ namespace OnlineStore.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TaxID")
+                    b.Property<int>("TaxId")
                         .HasColumnType("int");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -248,6 +251,39 @@ namespace OnlineStore.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("OnlineStore.Data.Models.Entities.Distributor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Info")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Distributors");
+                });
+
+            modelBuilder.Entity("OnlineStore.Data.Models.Entities.ImageUri", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Uri")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ImageUris");
+                });
+
             modelBuilder.Entity("OnlineStore.Data.Models.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -264,18 +300,33 @@ namespace OnlineStore.Data.Migrations
                     b.Property<bool>("IsDelivered")
                         .HasColumnType("bit");
 
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("OnlineStore.Data.Models.Entities.OrderedProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Orders");
+                    b.ToTable("OrderedProducts");
                 });
 
             modelBuilder.Entity("OnlineStore.Data.Models.Entities.Product", b =>
@@ -285,11 +336,20 @@ namespace OnlineStore.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DistributorInfo")
+                    b.Property<string>("DescriptionExtra")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescriptionMain")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("DiscountedPrice")
+                        .HasColumnType("float");
+
+                    b.Property<int>("DistributorId")
+                        .HasColumnType("int");
 
                     b.Property<int>("ModelNumber")
                         .HasColumnType("int");

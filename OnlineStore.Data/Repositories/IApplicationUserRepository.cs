@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OnlineStore.Data.Repositories
 {
-    public interface IApplicationUserRespository : IRepository<ApplicationUser>
+    public interface IApplicationUserRepository : IRepository<ApplicationUser>
     {
 
     }

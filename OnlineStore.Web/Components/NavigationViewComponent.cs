@@ -11,7 +11,7 @@ namespace OnlineStore.Web.Components
     {
         public IViewComponentResult Invoke()
         {
-            var model = new NavigationDTO
+            var model = new NavigationDto
             {
                 Categories = new List<Category>
                 {

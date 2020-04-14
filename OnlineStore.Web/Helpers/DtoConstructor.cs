@@ -17,7 +17,7 @@ namespace OnlineStore.Web.Helpers
             _uow = uow;
         }
 
-        public ProductDTO GetProductDtoByProductId(int id)
+        public ProductDto GetProductDtoByProductId(int id)
         {
             var repo = _uow.GetGenericRepository<Product>();
             var product = repo.GetById(id);
@@ -33,12 +33,12 @@ namespace OnlineStore.Web.Helpers
 
             var header = new Header
             {
-                BackgroundImageUrl = "https://openimagedenoise.github.io/images/moana_16spp_oidn.jpg",
+                BackgroundImageUrl = "images/categories.jpg",
                 Title = product.Name,
                 Text = product.DescriptionMain
             };
 
-            IEnumerable<RelatedProduct> relatedProducts = null; /* _relatedProducts == null ? null : _relatedProducts.Select(x =>
+            IEnumerable<RelatedProduct> relatedProducts = _relatedProducts == null ? null : _relatedProducts.Select(x =>
                 new RelatedProduct
                 {
                     ImageUrl = "https://openimagedenoise.github.io/images/moana_16spp_oidn.jpg", // x.ImageUris.Take(1).Select(y => y.Uri).FirstOrDefault(),
@@ -46,22 +46,22 @@ namespace OnlineStore.Web.Helpers
                     Price = x.DiscountedPrice,
                     StatusClass = "New"
                 }).ToList();
-            */
+            
 
-            var productDTO = new ProductDTO
+            var productDto = new ProductDto
             {
                 ProductId = product.Id,
                 Header = header,
                 Name = product.Name,
                 Description = product.DescriptionMain,
                 DescriptionExtra = product.DescriptionExtra,
-                ImageUrls = imageUris == null ? null : imageUris.Select(x => x.Uri),
+                ImageUrls = imageUris?.Select(x => x.Uri),
                 OriginalPrice = product.Price,
                 DiscountedPrice = product.DiscountedPrice,
                 RelatedProducts = relatedProducts
             };
 
-            return productDTO;
+            return productDto;
 
         }
 

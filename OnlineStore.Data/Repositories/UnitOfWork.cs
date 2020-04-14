@@ -13,7 +13,7 @@ namespace OnlineStore.Data.Repositories
 
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private bool IsDisposed = false;
+        private bool _isDisposed = false;
         public ApplicationDbContext Context { get; }
 
         public UnitOfWork(ApplicationDbContext context)
@@ -27,11 +27,11 @@ namespace OnlineStore.Data.Repositories
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!IsDisposed && disposing && Context != null)
+            if (!_isDisposed && disposing)
             {
-                Context.Dispose();
+                Context?.Dispose();
             }
-            IsDisposed = true;
+            _isDisposed = true;
         }
         public void Dispose()
         {

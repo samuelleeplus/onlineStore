@@ -170,12 +170,15 @@ namespace OnlineStore.Data.Migrations
                     b.Property<string>("StreetAddress")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ZipCode")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("OnlineStore.Data.Models.Entities.ApplicationUser", b =>
@@ -223,7 +226,7 @@ namespace OnlineStore.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TaxID")
+                    b.Property<int>("TaxId")
                         .HasColumnType("int");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -295,8 +298,8 @@ namespace OnlineStore.Data.Migrations
                     b.Property<bool>("IsDelivered")
                         .HasColumnType("bit");
 
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -305,20 +308,21 @@ namespace OnlineStore.Data.Migrations
 
             modelBuilder.Entity("OnlineStore.Data.Models.Entities.OrderedProduct", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("OrderId")
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductId");
-
-                    b.HasIndex("OrderId");
+                    b.HasKey("Id");
 
                     b.ToTable("OrderedProducts");
                 });
@@ -414,13 +418,6 @@ namespace OnlineStore.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("OnlineStore.Data.Models.Entities.OrderedProduct", b =>
-                {
-                    b.HasOne("OnlineStore.Data.Models.Entities.Order", null)
-                        .WithMany("OrderedProducts")
-                        .HasForeignKey("OrderId");
                 });
 #pragma warning restore 612, 618
         }

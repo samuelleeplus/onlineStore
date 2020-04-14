@@ -8,6 +8,23 @@ namespace OnlineStore.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Addresses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(nullable: false),
+                    StreetAddress = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    State = table.Column<string>(nullable: true),
+                    ZipCode = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Addresses", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -40,7 +57,7 @@ namespace OnlineStore.Data.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    TaxID = table.Column<int>(nullable: false)
+                    TaxId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -48,19 +65,45 @@ namespace OnlineStore.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customers",
+                name: "Distributors",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StreetAddress = table.Column<string>(nullable: true),
-                    City = table.Column<string>(nullable: true),
-                    State = table.Column<string>(nullable: true),
-                    ZipCode = table.Column<string>(nullable: true)
+                    Info = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
+                    table.PrimaryKey("PK_Distributors", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ImageUris",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Uri = table.Column<string>(nullable: true),
+                    ProductId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ImageUris", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderedProducts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderId = table.Column<int>(nullable: false),
+                    ProductId = table.Column<int>(nullable: false),
+                    Quantity = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderedProducts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,9 +113,7 @@ namespace OnlineStore.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerId = table.Column<int>(nullable: false),
-                    ProductId = table.Column<int>(nullable: false),
-                    Quantity = table.Column<int>(nullable: false),
-                    TotalPrice = table.Column<int>(nullable: false),
+                    TotalPrice = table.Column<double>(nullable: false),
                     Address = table.Column<string>(nullable: true),
                     IsDelivered = table.Column<bool>(nullable: false)
                 },
@@ -89,11 +130,14 @@ namespace OnlineStore.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
                     ModelNumber = table.Column<int>(nullable: false),
-                    Description = table.Column<string>(nullable: true),
+                    Category = table.Column<string>(nullable: true),
+                    DescriptionMain = table.Column<string>(nullable: true),
+                    DescriptionExtra = table.Column<string>(nullable: true),
                     Price = table.Column<double>(nullable: false),
+                    DiscountedPrice = table.Column<double>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
                     WarrantyStatus = table.Column<string>(nullable: true),
-                    DistributorInfo = table.Column<string>(nullable: true)
+                    DistributorId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -249,6 +293,9 @@ namespace OnlineStore.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Addresses");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -264,7 +311,13 @@ namespace OnlineStore.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Distributors");
+
+            migrationBuilder.DropTable(
+                name: "ImageUris");
+
+            migrationBuilder.DropTable(
+                name: "OrderedProducts");
 
             migrationBuilder.DropTable(
                 name: "Orders");

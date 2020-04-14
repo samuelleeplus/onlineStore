@@ -12,7 +12,7 @@ namespace OnlineStore.Web.Controllers
         public IActionResult Index()
         {
 
-            var model = new NavigationDTO
+            var model = new NavigationDto
             {
                 Categories = new List<Category>
                 {
