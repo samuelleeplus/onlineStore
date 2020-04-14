@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineStore.Data.Context;
 
 namespace OnlineStore.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200413191026_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -276,6 +278,8 @@ namespace OnlineStore.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProductId");
+
                     b.ToTable("ImageUris");
                 });
 
@@ -342,7 +346,7 @@ namespace OnlineStore.Data.Migrations
                     b.Property<double>("DiscountedPrice")
                         .HasColumnType("float");
 
-                    b.Property<int>("DistributorId")
+                    b.Property<int?>("DistributorId")
                         .HasColumnType("int");
 
                     b.Property<int>("ModelNumber")
@@ -361,6 +365,8 @@ namespace OnlineStore.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DistributorId");
 
                     b.ToTable("Products");
                 });
@@ -416,11 +422,27 @@ namespace OnlineStore.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("OnlineStore.Data.Models.Entities.ImageUri", b =>
+                {
+                    b.HasOne("OnlineStore.Data.Models.Entities.Product", null)
+                        .WithMany("ImageUris")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("OnlineStore.Data.Models.Entities.OrderedProduct", b =>
                 {
                     b.HasOne("OnlineStore.Data.Models.Entities.Order", null)
                         .WithMany("OrderedProducts")
                         .HasForeignKey("OrderId");
+                });
+
+            modelBuilder.Entity("OnlineStore.Data.Models.Entities.Product", b =>
+                {
+                    b.HasOne("OnlineStore.Data.Models.Entities.Distributor", "Distributor")
+                        .WithMany()
+                        .HasForeignKey("DistributorId");
                 });
 #pragma warning restore 612, 618
         }
