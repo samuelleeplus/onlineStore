@@ -22,4 +22,7 @@ namespace OnlineStore.Data.Context
         public DbSet<Product> Products { get; set; }
      
     }
+
 }
+
+
