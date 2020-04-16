@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +6,6 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -17,16 +16,23 @@ using OnlineStore.Data.Models.Entities;
 
 namespace OnlineStore.Web.Areas.Identity.Pages.Account
 {
-    [AllowAnonymous]
-    public class RegisterModel : PageModel
+    public class AdminRegistersManagersModel : PageModel
     {
+        
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-        
 
-        public RegisterModel(
+        // below added later, delete?
+        private readonly RoleManager<IdentityRole> _roleManager;
+
+
+        public string[] roles = { "Sales Manager", "Product Manager" };
+
+
+
+        public AdminRegistersManagersModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
@@ -39,6 +45,9 @@ namespace OnlineStore.Web.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+
+
+            _roleManager = roleManager;
 
         }
 
@@ -66,6 +75,9 @@ namespace OnlineStore.Web.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required] public string Role { get; set; }
+
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -82,6 +94,27 @@ namespace OnlineStore.Web.Areas.Identity.Pages.Account
             {
                 var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
+                // update begins
+
+                // claims.Add(new Claim("EmployeeId", "123", ClaimValueTypes.String, Issuer));
+
+                if (result.Succeeded)
+                {
+                    var x = await _roleManager.RoleExistsAsync(Input.Role);
+                    if (!x)
+                    {
+                        IdentityRole role = new IdentityRole { Name = Input.Role };
+                        _ = await _roleManager.CreateAsync(role);
+                    }
+
+
+                    //  var result1 = await _userManager.AddToRoleAsync(user, "Admin");
+                    _ = await _userManager.AddToRoleAsync(user, Input.Role);
+                }
+
+                // update ends
+
 
 
                 if (result.Succeeded)
@@ -117,6 +150,8 @@ namespace OnlineStore.Web.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+            }
         }
-    }
+
 }
+
