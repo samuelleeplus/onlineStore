@@ -30,7 +30,7 @@ namespace OnlineStore.Web.Controllers
 
             var prodCtor = new DtoConstructor(_uow);
 
-            var model = prodCtor.GetProductDtoByProductId(2);
+            var model = prodCtor.GetProductDtoByProductId(id);
 
             var x = model;
 

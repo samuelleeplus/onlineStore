@@ -28,7 +28,7 @@ namespace OnlineStore.Web.Helpers
             var imageUris = _uow.GetGenericRepository<ImageUri>().Find(x => x.ProductId == product.Id);
             var distributor = _uow.GetGenericRepository<Distributor>().FirstOrDefault(x => x.Id == product.DistributorId);
 
-            var _relatedProducts = repo.Find(x => x.Category == product.Category && x.Id != product.Id).Take(5);
+            var _relatedProducts = repo.Find(x => x.Category == product.Category && x.Id != product.Id).Take(4);
 
 
             var header = new Header
@@ -37,15 +37,16 @@ namespace OnlineStore.Web.Helpers
                 Title = product.Name,
                 Text = product.DescriptionMain
             };
-
             IEnumerable<RelatedProduct> relatedProducts = _relatedProducts == null ? null : _relatedProducts.Select(x =>
                 new RelatedProduct
                 {
-                    ImageUrl = "https://openimagedenoise.github.io/images/moana_16spp_oidn.jpg", // x.ImageUris.Take(1).Select(y => y.Uri).FirstOrDefault(),
-                    Url = "https://localhost:44396/",
+                    Name = x.Name,
+                    ImageUrl = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(y => y.ProductId == x.Id).Uri,
+                    Url = "https://localhost:5001/product?id=" + x.Id,
                     Price = x.DiscountedPrice,
-                    StatusClass = "New"
+                    StatusClass = "NEW" // TODO MAKE STATUS CLASS IN PRODUCT
                 }).ToList();
+
             
 
             var productDto = new ProductDto
