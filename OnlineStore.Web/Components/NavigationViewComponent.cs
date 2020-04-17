@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using OnlineStore.Web.Helpers;
 
 namespace OnlineStore.Web.Components
 {
@@ -11,6 +12,8 @@ namespace OnlineStore.Web.Components
     {
         public IViewComponentResult Invoke()
         {
+            var cartItems = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
+
             var model = new NavigationDto
             {
                 Categories = new List<Category>
@@ -21,7 +24,7 @@ namespace OnlineStore.Web.Components
                     new Category{ CategoryName = "Category4", CategoryLink=""  },
                     new Category{ CategoryName = "Category5", CategoryLink=""  }
                 },
-                NumberOfItemsInCart = 0
+                NumberOfItemsInCart = cartItems?.Select(x => x.ItemQuantity).Aggregate((x, y) => x+y) ?? 0
             };
             return View(model);
         }
