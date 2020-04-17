@@ -20,7 +20,8 @@ namespace OnlineStore.Web.Components
                     new Category{ CategoryName = "Category3", CategoryLink=""  },
                     new Category{ CategoryName = "Category4", CategoryLink=""  },
                     new Category{ CategoryName = "Category5", CategoryLink=""  }
-                }
+                },
+                NumberOfItemsInCart = 0
             };
             return View(model);
         }

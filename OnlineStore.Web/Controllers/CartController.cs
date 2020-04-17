@@ -92,8 +92,8 @@ namespace OnlineStore.Web.Controllers
                 }
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
             }
-            return new EmptyResult();
-        }
+            return Ok();
+         }
         /*
         [Route("remove/{id}")]
         public IActionResult Remove(string id)

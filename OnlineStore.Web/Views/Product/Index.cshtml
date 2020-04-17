@@ -87,12 +87,7 @@
                             </div>
                         </div>
 
-                        <div class="button cart_button">
-                            <form asp-controller="Cart" asp-action="Buy"
-                                  asp-route-id="@(Model.ProductId)" method="post">
-                                <input type="submit" value="Add to cart" />
-                            </form>
-                        </div>
+                        <div class="button cart_button"><a  id="add_to_cart_btn" href="#">Add to cart</a></div>
                         <!--
                         <div class="button cart_button">
                             <a asp-controller="Cart" asp-action="Buy"
@@ -163,6 +158,37 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    function updateCart() {
+        const element = document.getElementById("cart");
+        const qtyInput = document.getElementById("quantity_input");
+
+        let count = parseInt(element.innerHTML.split("(")[1].split(")")[0]) + parseInt(qtyInput.value);
+        element.innerHTML = "(" + count + ")";
+
+        qtyInput.value = "1";
+    }
+
+    document.getElementById('add_to_cart_btn').addEventListener('click',
+        function() {
+            const request = new XMLHttpRequest();
+            request.open('POST', `../cart/buy?id=${@(Model.ProductId.ToString())}`, true);
+        request.send();
+
+        request.onload = function() {
+            if (request.status === 200) {
+                updateCart();
+            } else {
+                console.log("add to cart request was unsuccessful");
+            }
+        }
+
+    } );
+</script>
+
+
 @section Scripts
 {
     <script src="js/jquery-3.2.1.min.js"></script>
