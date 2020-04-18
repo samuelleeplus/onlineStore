@@ -10,6 +10,6 @@ namespace OnlineStore.Web.Models.DTOs
         public string Title { get; set; }
         public string Text { get; set; }
         public string BackgroundImageUrl { get; set; }
-        public IEnumerable<RelatedProduct> Products { get; set; }
+        public IEnumerable<SimpleProduct> Products { get; set; }
     }
 }

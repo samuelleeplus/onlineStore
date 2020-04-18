@@ -36,11 +36,12 @@ namespace OnlineStore.Web.Controllers
                 BackgroundImageUrl = "https://cdn.webtekno.com/media/cache/content_detail_v2/article/83841/internet-fenomeni-taksim-dayi-hayatinda-ilk-kez-taksim-e-geldi-1579253407.png",
 
                 Products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category).Select(y =>
-                    new RelatedProduct()
+                    new SimpleProduct()
                     {
                      ImageUrl   = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(z => z.ProductId == y.Id)?.Uri ?? null,
                      Name = y.Name,
-                     Price = y.DiscountedPrice,
+                     OriginalPrice = y.Price,
+                     DiscountedPrice = y.DiscountedPrice,
                      StatusClass = "Hot",
                      Url = "../../product?id=" + y.Id
                     })
