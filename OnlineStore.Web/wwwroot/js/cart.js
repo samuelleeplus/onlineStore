@@ -182,32 +182,37 @@ $(document).ready(function()
 	function initQuantity()
 	{
 		// Handle product quantity input
-		if($('.product_quantity').length)
-		{
-			var input = $('#quantity_input');
-			var incButton = $('#quantity_inc_button');
-			var decButton = $('#quantity_dec_button');
+		if($('.product_quantity').length) {
+            const inputs = document.getElementsByClassName("quantity_input"); //$('.quantity_input');
+			const incButtons = document.getElementsByClassName("quantity_inc_button"); //$('.quantity_inc_button');
+			const decButtons = document.getElementsByClassName("quantity_dec_button"); // $('.quantity_dec_button');
 
-			var originalVal;
-			var endVal;
+			console.log("inputs length " + inputs.length);
+			console.log("incButtons length " + incButtons.length);
+			console.log("decButtons length " + decButtons.length);
 
-			incButton.on('click', function()
-			{
-				originalVal = input.val();
-				endVal = parseFloat(originalVal) + 1;
-				input.val(endVal);
-			});
 
-			decButton.on('click', function()
-			{
-				originalVal = input.val();
-				if(originalVal > 0)
-				{
-					endVal = parseFloat(originalVal) - 1;
-					input.val(endVal);
-				}
-			});
-		}
+            function bindClickInc(i) {
+                return function () {
+					let endVal = parseInt(inputs[i].value) + 1;
+                    inputs[i].value = endVal;
+                };
+            }
+
+            function bindClickDec(i) {
+                return function() {
+					if (inputs[i].value > 0) {
+						const endVal = parseInt(inputs[i].value) - 1;
+                        inputs[i].value = endVal;
+                    }
+                };
+            }
+
+            for (let i = 0; i < inputs.length; i++) {
+                incButtons[i].addEventListener('click', bindClickInc(i));
+                decButtons[i].addEventListener('click', bindClickDec(i));
+            }
+        }
 	}
 
 });

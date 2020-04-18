@@ -92,10 +92,10 @@
                                         <div class="product_quantity_container">
                                             <div class="product_quantity clearfix">
                                                 <span>Qty</span>
-                                                <input id="quantity_input" type="text" pattern="[0-9]*" value="@(item.ItemQuantity)">
+                                                <input class="quantity_input" type="text" pattern="[0-9]*" value="@(item.ItemQuantity)">
                                                 <div class="quantity_buttons">
-                                                    <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-                                                    <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                                                    <div id="" class="quantity_inc_button quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+                                                    <div id="" class="quantity_dec_button quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -141,7 +141,8 @@
             </div>
         </div>
     
-<script>
+        <script>
+
     document.getElementById('clear_cart_btn').addEventListener('click',
         function() {
             const request = new XMLHttpRequest();
@@ -156,10 +157,51 @@
                 }
             }
 
-        } );
+        });
 
+    @if (items != null)
+    {
+        <text>
+            let ids = [];
+        </text>
+        @foreach (var item in items)
+        {
+            <text>
+                ids.push(@(item.Id));
+            </text>
+        }
+        <text>
+        let cart_update = document.getElementById("update_cart_btn");
 
-</script>
+        cart_update.addEventListener('click',function () {
+
+            let products = document.getElementsByClassName("cart_item"),
+                counts = [];
+            for (let i = 0; ids.length > i; i++) {
+                let count = parseInt(products[i].children[2].children[0].children[0].children[1].value);
+                counts.push(count);
+            }
+
+            let id_and_counts = ids.toString() + ";" + counts.toString();
+
+            console.log("id_and_counts is: " + id_and_counts);
+
+            const request = new XMLHttpRequest();
+            request.open('POST', '../cart/update?id_and_counts=' + id_and_counts, true);
+            request.send();
+
+            request.onload = function () {
+                if (request.status === 200) {
+                    location.reload();
+                } else {
+                    console.log("clear cart request was unsuccessful");
+                }
+            }
+
+        });
+        </text>
+    }
+        </script>
 
 
 

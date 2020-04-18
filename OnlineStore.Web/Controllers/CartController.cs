@@ -87,6 +87,47 @@ namespace OnlineStore.Web.Controllers
             return Ok();
         }
 
+
+        // update?id_and_counts
+        [HttpPost]
+        public async Task<IActionResult> Update([FromQuery]string id_and_counts)
+        {
+
+            // "1, 2, 3, 4; 12, 1, 2, 3"
+            var tuple = id_and_counts.Split(";");
+            var ids = tuple[0].Split(",").Select(x => Int32.Parse(x)).ToList();
+
+            var counts = tuple[1].Split(",").Select(x => Int32.Parse(x)).ToList();
+
+
+            List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
+
+            for (int i = 0; i < ids.Count; i++)
+            {
+                var entry = cart.Find(x => x.Id == ids[i]);
+                if (entry != null)
+                {
+                    if (counts[i] == 0)
+                    {
+                        cart.Remove(entry);
+                    }
+                    else
+                    {
+                        entry.ItemQuantity = counts[i];
+                    }
+                }
+            }
+
+            SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+            if (cart.Count == 0)
+            {
+                HttpContext.Session.Remove("cart");
+            }
+
+            return Ok();
+
+        }
+
         /*
         [Route("remove/{id}")]
         public IActionResult Remove(string id)
