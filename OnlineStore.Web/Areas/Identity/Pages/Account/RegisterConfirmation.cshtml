@@ -1,10 +1,10 @@
 ﻿@page
-@model RegisterModel
+@model RegisterConfirmationModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Register confirmation";
 }
 
-<h1>@ViewData["Title"]</h1>
+
 
 
 <head>
@@ -40,45 +40,38 @@
     </div>
 </div>
 
+
 <div class="checkout">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <section>
-                    <form id="account" method="post">
-                        <h4>Use a local account to log in.</h4>
-                        <hr />
-                        <div asp-validation-summary="All" class="text-danger"></div>
-                        <div class="form-group">
-                            <label asp-for="Input.Email"></label>
-                            <input asp-for="Input.Email" class="form-control" />
-                            <span asp-validation-for="Input.Email" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Input.Password"></label>
-                            <input asp-for="Input.Password" class="form-control" />
-                            <span asp-validation-for="Input.Password" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Input.ConfirmPassword"></label>
-                            <input asp-for="Input.ConfirmPassword" class="form-control" />
-                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Register</button>
-                        </div>
-                        <div class="form-group">
+
+                    <h1>@ViewData["Title"]</h1>
+                    @{
+                        if (@Model.DisplayConfirmAccountLink)
+                        {
                             <p>
-                                <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Already a user?</a>
+                                This app does not currently have a real email sender registered, see <a href="https://aka.ms/aspaccountconf">these docs</a> for how to configure a real email sender.
+                                Normally this would be emailed: <a id="confirm-link" href="@Model.EmailConfirmationUrl">Click here to confirm your account</a>
                             </p>
-                        </div>
-                    </form>
+                        }
+                        else
+                        {
+                            <p>
+                                Please check your email to confirm your account.
+                            </p>
+                        }
+                    }
+
+
                 </section>
             </div>
-
         </div>
     </div>
 </div>
+
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
