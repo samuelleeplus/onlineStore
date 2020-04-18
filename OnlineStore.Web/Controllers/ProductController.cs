@@ -10,6 +10,7 @@ using OnlineStore.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using OnlineStore.Web.Models.DTOs;
 using OnlineStore.Web.Helpers;
+using System.Diagnostics;
 
 namespace OnlineStore.Web.Controllers
 {
@@ -27,7 +28,6 @@ namespace OnlineStore.Web.Controllers
         [HttpGet]
         public IActionResult Index(int id)
         {
-
             var prodCtor = new DtoConstructor(_uow);
 
             var model = prodCtor.GetProductDtoByProductId(id);
