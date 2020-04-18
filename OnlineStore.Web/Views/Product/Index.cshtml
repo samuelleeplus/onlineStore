@@ -48,12 +48,12 @@
                         
                         var imageUrls = Model.ImageUrls.ToList();
                          
-                        <div class="details_image_large"><img src="@(imageUrls[0])" alt=""><div class="product_extra product_new"><a href="categories/">New</a></div></div>
+                        <div class="details_image_large"><img src="@(imageUrls[0])" alt="" width="555" height="555"><div class="product_extra product_new"><a href="categories/">New</a></div></div>
                         <div class="details_image_thumbnails d-flex flex-row align-items-start justify-content-between">
-                            <div class="details_image_thumbnail active" data-image="@(imageUrls[0])"><img src="@(imageUrls[0])" alt=""></div>
+                            <div class="details_image_thumbnail active" data-image="@(imageUrls[0])"><img src="@(imageUrls[0])" alt="" width="126" height="126"></div>
                             @for (int i = 1; i < Model.ImageUrls.Count(); i++)
                             {
-                                <div class="details_image_thumbnail" data-image="@(imageUrls[i])"><img src="@(imageUrls[i])" alt=""></div>
+                                <div class="details_image_thumbnail" data-image="@(imageUrls[i])"><img src="@(imageUrls[i])" alt="" width="126" height="126"></div>
                             }
                         </div>
                     }
@@ -140,7 +140,7 @@
                             @foreach (var entry in Model.RelatedProducts)
                             {
                                 <div class="product">
-                                    <div class="product_image"><img src="@(entry.ImageUrl)" alt=""></div>
+                                    <div class="product_image"><img src="@(entry.ImageUrl)" alt=@(entry.Name) width="263" height="263"></div>
                                     @if (!string.IsNullOrEmpty(entry.StatusClass))
                                     {
                                         <div class="product_extra product_new"><a href="categories.html">@(entry.StatusClass)</a></div>
