@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OnlineStore.Data.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class t : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,11 +13,11 @@ namespace OnlineStore.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(nullable: false),
                     StreetAddress = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
                     State = table.Column<string>(nullable: true),
-                    ZipCode = table.Column<string>(nullable: true)
+                    ZipCode = table.Column<string>(nullable: true),
+                    UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -130,14 +130,14 @@ namespace OnlineStore.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
                     ModelNumber = table.Column<int>(nullable: false),
-                    Category = table.Column<string>(nullable: true),
-                    DescriptionMain = table.Column<string>(nullable: true),
-                    DescriptionExtra = table.Column<string>(nullable: true),
                     Price = table.Column<double>(nullable: false),
-                    DiscountedPrice = table.Column<double>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
                     WarrantyStatus = table.Column<string>(nullable: true),
-                    DistributorId = table.Column<int>(nullable: false)
+                    DescriptionExtra = table.Column<string>(nullable: true),
+                    DescriptionMain = table.Column<string>(nullable: true),
+                    DiscountedPrice = table.Column<double>(nullable: false),
+                    DistributorId = table.Column<int>(nullable: false),
+                    Category = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
