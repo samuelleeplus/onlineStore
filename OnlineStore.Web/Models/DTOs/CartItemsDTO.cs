@@ -7,11 +7,11 @@ namespace OnlineStore.Web.Models.DTOs
 {
     public class CartItemsDto
     {
-        public IEnumerable<CartITem> Items { get; set; }
+        public IEnumerable<CartItem> Items { get; set; }
     }
 
 
-    public class CartITem
+    public class CartItem
     {
         public int Id { get; set; }
         public string ItemImageUrl { get; set; }

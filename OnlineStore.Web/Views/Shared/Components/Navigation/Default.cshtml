@@ -15,11 +15,11 @@
                                 <li class="hassubs active">
                                     <a href="index.html">Home</a>
                                     <ul>
-                                        <li><a href="categories.html">Categories</a></li>
+                                        <li><a href="categories">Categories</a></li>
                                         <li><a href="product/">Product</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Check out</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="cart">Cart</a></li>
+                                        <li><a href="checkout">Check out</a></li>
+                                        <li><a href="contact">Contact</a></li>
                                     </ul>
                                 </li>
                                 <li class="hassubs">
@@ -27,7 +27,7 @@
                                     <ul>
                                         @foreach (var category in Model.Categories)
                                         {
-                                            <li><a asp-page="@category.CategoryLink">@category.CategoryName</a></li>
+                                            <li><a href="@category.CategoryLink">@category.CategoryName</a></li>
                                         }
                                     </ul>
                                 </li>

@@ -174,18 +174,18 @@
     document.getElementById('add_to_cart_btn').addEventListener('click',
         function() {
             const request = new XMLHttpRequest();
-            request.open('POST', `../cart/buy?id=${@(Model.ProductId.ToString())}`, true);
-        request.send();
+            request.open('POST', `../cart/buy?id=${@(Model.ProductId.ToString())}` + "&quantity=" + 
+                parseInt(document.getElementById("quantity_input").value), true);
+            request.send();
 
-        request.onload = function() {
-            if (request.status === 200) {
-                updateCart();
-            } else {
-                console.log("add to cart request was unsuccessful");
+            request.onload = function() {
+                if (request.status === 200) {
+                    updateCart();
+                } else {
+                    console.log("add to cart request was unsuccessful");
+                }
             }
-        }
-
-    } );
+        } );
 </script>
 
 

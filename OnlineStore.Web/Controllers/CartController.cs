@@ -17,16 +17,16 @@ namespace OnlineStore.Web.Controllers
         public IActionResult Index()
         {
 
-            var model = new CartCartITemsDTO()
+            var model = new CartCartItemsDTO()
             {
-                CartITems = new List<CartCartITem>(){
-                    new CartITem()
+                CartItems = new List<CartCartItem>(){
+                    new CartItem()
                     {
-                        CartITemImageUrl = "images/cart_1.jpg",
-                        CartITemPrice = 790.90,
-                        CartITemTotalPrice = 790.90,
-                        CartITemQuantity = 2,
-                        CartITemName = "Deluxe Cool and Great!"
+                        CartItemImageUrl = "images/cart_1.jpg",
+                        CartItemPrice = 790.90,
+                        CartItemTotalPrice = 790.90,
+                        CartItemQuantity = 2,
+                        CartItemName = "Deluxe Cool and Great!"
                     }
                 }
             };
@@ -46,27 +46,35 @@ namespace OnlineStore.Web.Controllers
         }
 
 
-        [Route("index")]
+        
         public IActionResult Index()
         {
-            var cart = SessionHelper.GetObjectFromJson<List<CartITem>>(HttpContext.Session, "cart");
-            ViewBag.cart = cart;
-            ViewBag.total = cart.Sum(CartITem => CartITem.ItemPrice * CartITem.ItemQuantity);
-            return View();
+            var cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
+            var model = new CartItemsDto();
+            
+            if (cart != null)
+            {
+                model = new CartItemsDto()
+                {
+                    Items = cart
+                };
+            }
+
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult Buy(int id)
+        public async Task<IActionResult> Buy(int id, int quantity)
         {
             var product = _uow.GetGenericRepository<Product>().GetById(id);
-            if (SessionHelper.GetObjectFromJson<List<CartITem>>(HttpContext.Session, "cart") == null)
+            if (SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart") == null)
             {
-                List<CartITem> cart = new List<CartITem>();
-                cart.Add(new CartITem {
+                List<CartItem> cart = new List<CartItem>();
+                cart.Add(new CartItem {
                     Id = id,
                     ItemName = product.Name,
-                    ItemQuantity = 1,
-                    ItemImageUrl = "google.com",  // product.ImageUris.ToList()[0].Uri,
+                    ItemQuantity = quantity,
+                    ItemImageUrl = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(x => x.ProductId == product.Id).Uri, //"google.com",  // product.ImageUris.ToList()[0].Uri,
                     ItemPrice = product.DiscountedPrice,
                     ItemTotalPrice = product.DiscountedPrice
                 });
@@ -74,15 +82,15 @@ namespace OnlineStore.Web.Controllers
             }
             else
             {
-                List<CartITem> cart = SessionHelper.GetObjectFromJson<List<CartITem>>(HttpContext.Session, "cart");
+                List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
                 int index = isExist(id);
                 if (index != -1)
                 {
-                    cart[index].ItemQuantity++;
+                    cart[index].ItemQuantity += quantity;
                 }
                 else
                 {
-                    cart.Add(new CartITem {
+                    cart.Add(new CartItem {
                         ItemName = product.Name,
                         ItemQuantity = 1,
                         ItemImageUrl = null, //product.ImageUris.ToList()[0].Uri,
@@ -94,11 +102,19 @@ namespace OnlineStore.Web.Controllers
             }
             return Ok();
          }
+
+        [HttpPost]
+        public async Task<IActionResult> Clear()
+        {
+            HttpContext.Session.Remove("cart");
+            return Ok();
+        }
+
         /*
         [Route("remove/{id}")]
         public IActionResult Remove(string id)
         {
-            List<CartITem> cart = SessionHelper.GetObjectFromJson<List<CartITem>>(HttpContext.Session, "cart");
+            List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
             int index = isExist(id);
             cart.RemoveAt(index);
             SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
@@ -107,7 +123,7 @@ namespace OnlineStore.Web.Controllers
         */
         private int isExist(int id)
         {
-            List<CartITem> cart = SessionHelper.GetObjectFromJson<List<CartITem>>(HttpContext.Session, "cart");
+            List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
             for (int i = 0; i < cart.Count; i++)
             {
                 if (cart[i].Id.Equals(id))
