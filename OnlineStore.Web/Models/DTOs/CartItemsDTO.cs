@@ -18,8 +18,6 @@ namespace OnlineStore.Web.Models.DTOs
         public string ItemName { get; set; }
         public double ItemPrice { get; set; }
         public int ItemQuantity { get; set; }
-        public double ItemTotalPrice { get; set; }
-        
     }
 
 }

@@ -13,28 +13,6 @@ namespace OnlineStore.Web.Controllers
 {
     public class CartController : Controller
     {
-        /*
-        public IActionResult Index()
-        {
-
-            var model = new CartCartItemsDTO()
-            {
-                CartItems = new List<CartCartItem>(){
-                    new CartItem()
-                    {
-                        CartItemImageUrl = "images/cart_1.jpg",
-                        CartItemPrice = 790.90,
-                        CartItemTotalPrice = 790.90,
-                        CartItemQuantity = 2,
-                        CartItemName = "Deluxe Cool and Great!"
-                    }
-                }
-            };
-
-            return View(model);
-        }
-
-        */
 
         private ApplicationDbContext _context { get; set; }
         private UnitOfWork _uow { get; set; }
@@ -74,9 +52,8 @@ namespace OnlineStore.Web.Controllers
                     Id = id,
                     ItemName = product.Name,
                     ItemQuantity = quantity,
-                    ItemImageUrl = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(x => x.ProductId == product.Id).Uri, //"google.com",  // product.ImageUris.ToList()[0].Uri,
+                    ItemImageUrl = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(x => x.ProductId == product.Id)?.Uri,
                     ItemPrice = product.DiscountedPrice,
-                    ItemTotalPrice = product.DiscountedPrice
                 });
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
             }
@@ -91,11 +68,11 @@ namespace OnlineStore.Web.Controllers
                 else
                 {
                     cart.Add(new CartItem {
+                        Id = id,
                         ItemName = product.Name,
-                        ItemQuantity = 1,
-                        ItemImageUrl = null, //product.ImageUris.ToList()[0].Uri,
+                        ItemQuantity = quantity,
+                        ItemImageUrl = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(x => x.ProductId == product.Id)?.Uri,
                         ItemPrice = product.DiscountedPrice,
-                        ItemTotalPrice = product.DiscountedPrice
                     });
                 }
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
