@@ -10,12 +10,13 @@ using OnlineStore.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using OnlineStore.Web.Models.DTOs;
 using OnlineStore.Web.Helpers;
+using System.Diagnostics;
 
 namespace OnlineStore.Web.Controllers
 {
     public class ProductController : Controller
     {
-        private ApplicationDbContext _context { get; set; }
+        private ApplicationDbContext _context { get; }
         private UnitOfWork _uow { get; }
 
         public ProductController(ApplicationDbContext context)
@@ -27,10 +28,9 @@ namespace OnlineStore.Web.Controllers
         [HttpGet]
         public IActionResult Index(int id)
         {
-
             var prodCtor = new DtoConstructor(_uow);
 
-            var model = prodCtor.GetProductDtoByProductId(2);
+            var model = prodCtor.GetProductDtoByProductId(id);
 
             var x = model;
 
