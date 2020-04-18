@@ -82,7 +82,7 @@
                     @foreach (var product in Model.Products)
                     {
                         <div class="product">
-                            <div class="product_image"><img src="@(product.ImageUrl)" alt=""></div>
+                            <div class="product_image"><img src="@(product.ImageUrl)" alt="" width="263" height="263"></div>
                             @if (product.StatusClass != null)
                             {
                                 <div class="product_extra product_new"><a href="categories.html">@(product.StatusClass)</a></div>
