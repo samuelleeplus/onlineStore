@@ -11,6 +11,6 @@ namespace OnlineStore.Data.Models.Entities
         public string City { get; set; }
         public string State { get; set; }
         public string ZipCode { get; set; }
-        //public int UserId { get; set; }
+        public int UserId { get; set; }
     }
 }
