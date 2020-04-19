@@ -65,7 +65,7 @@
                 <div class="details_content">
                     <div class="details_name">@(Model.Name)</div>
                     <div class="details_discount">$@(Model.OriginalPrice)</div>
-                    <div class="details_price">$@(Model.DiscountedPrice)</div>
+                    <div class="details_price">$@(Model.OriginalPrice - Model.DiscountedPrice)</div>
 
                     <!-- In Stock -->
                     <div class="in_stock_container">

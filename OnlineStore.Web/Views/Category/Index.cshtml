@@ -89,7 +89,7 @@
                             }
                         <div class="product_content">
                             <div class="product_title"><a href="@(product.Url)">@(product.Name)</a></div>
-                            <div class="product_price">$@(product.DiscountedPrice)</div>
+                            <div class="product_price">$@(product.OriginalPrice - product.DiscountedPrice)</div>
                             <div class="details_discount"><strike style="color:red">$@(product.OriginalPrice)</strike></div>
                         </div>
                         </div>

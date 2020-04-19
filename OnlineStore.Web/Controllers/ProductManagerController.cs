@@ -49,8 +49,6 @@ namespace OnlineStore.Web.Controllers
             return View(product);
         }
 
-        
-
         // GET: ProductManager/Create
         public ActionResult Create()
         {
