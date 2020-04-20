@@ -117,6 +117,131 @@ namespace OnlineStore.Web.Controllers
                 return View();
             }
         }
-        
+
+        public IActionResult ShowGrid()
+        {
+            return View();
+        }
+
+        public async Task<JsonResult> LoadData()
+        {
+            /*
+            try
+            {
+                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
+
+                // Skip number of Rows count  
+                var start = Request.Form["start"].FirstOrDefault();
+
+                // Paging Length 10,20  
+                var length = Request.Form["length"].FirstOrDefault();
+
+                // Search Value from (Search box)  
+                var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+                //Paging Size (10, 20, 50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+
+                int recordsTotal = 0;
+
+                // getting all Customer data  
+                var customerData = _uow.GetGenericRepository<Product>().GetAll().Select(
+                    x => new
+                    {
+                        x.Name,
+                        x.ModelNumber,
+                        x.Category,
+                        x.DescriptionMain,
+                        x.DescriptionExtra,
+                        x.Price,
+                        x.DiscountedPrice,
+                        x.Quantity,
+                        x.WarrantyStatus
+                    });
+                //Sorting  
+                /*
+                if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+                {
+                    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
+                }
+                */
+            //Search  
+            /*
+            if (!string.IsNullOrEmpty(searchValue))
+            {
+                customerData = customerData.Where(m => m.Name == searchValue);
+            }
+
+            //total number of rows counts   
+            var enumerable = customerData.ToList();
+            recordsTotal = enumerable.Count();
+            //Paging   
+            var data = enumerable.Skip(skip).Take(pageSize).ToList();
+            //Returning Json Data  
+            return new JsonResult(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        */
+
+            try
+            {
+                var draw = HttpContext.Request.Query["draw"].FirstOrDefault();
+                // Skiping number of Rows count  
+                var start = Request.Query["start"].FirstOrDefault();
+                // Paging Length 10,20  
+                var length = Request.Query["length"].FirstOrDefault();
+                // Sort Column Name  
+                var sortColumn = Request.Query["columns[" + Request.Query["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+                // Sort Column Direction ( asc ,desc)  
+                var sortColumnDirection = Request.Query["order[0][dir]"].FirstOrDefault();
+                // Search Value from (Search box)  
+                var searchValue = Request.Query["search[value]"].FirstOrDefault();
+
+                //Paging Size (10,20,50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+                int recordsTotal = 0;
+
+                // get entity data from context
+                var data = (from tempData in _uow.GetGenericRepository<Product>().GetAll()
+                    select tempData);
+
+
+                //total number of rows count   
+                recordsTotal = data.Count();
+
+                //paging   
+                var response = data.Skip(skip).Take(pageSize).ToList().Select(
+                    x => new
+                    {
+                        Id = x.Id,
+                        Name = x.Name,
+                        ModelNumber = x.ModelNumber,
+                        Category = x.Category,
+                        Price = x.Price,
+                        DiscountedPrice = x.DiscountedPrice,
+                        Quantity = x.Quantity,
+                    }).ToList();
+
+
+                //Returning Json Data  
+                return new JsonResult(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = response });
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
+        }
+
+
     }
 }
