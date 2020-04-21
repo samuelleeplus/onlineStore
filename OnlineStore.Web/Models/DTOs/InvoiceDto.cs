@@ -12,5 +12,9 @@ namespace OnlineStore.Web.Models.DTOs
         public Address CustomerAddress { get; set; }
         public int OrderId { get; set; }
         public IEnumerable<InvoiceItemDto> InvoiceItems { get; set; }
+
+        //date of invoice sent 
+        //price for each item 
+        
     }
 }
