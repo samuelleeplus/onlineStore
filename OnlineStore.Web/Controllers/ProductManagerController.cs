@@ -125,70 +125,6 @@ namespace OnlineStore.Web.Controllers
 
         public async Task<JsonResult> LoadData()
         {
-            /*
-            try
-            {
-                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
-
-                // Skip number of Rows count  
-                var start = Request.Form["start"].FirstOrDefault();
-
-                // Paging Length 10,20  
-                var length = Request.Form["length"].FirstOrDefault();
-
-                // Search Value from (Search box)  
-                var searchValue = Request.Form["search[value]"].FirstOrDefault();
-
-                //Paging Size (10, 20, 50,100)  
-                int pageSize = length != null ? Convert.ToInt32(length) : 0;
-
-                int skip = start != null ? Convert.ToInt32(start) : 0;
-
-                int recordsTotal = 0;
-
-                // getting all Customer data  
-                var customerData = _uow.GetGenericRepository<Product>().GetAll().Select(
-                    x => new
-                    {
-                        x.Name,
-                        x.ModelNumber,
-                        x.Category,
-                        x.DescriptionMain,
-                        x.DescriptionExtra,
-                        x.Price,
-                        x.DiscountedPrice,
-                        x.Quantity,
-                        x.WarrantyStatus
-                    });
-                //Sorting  
-                /*
-                if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
-                {
-                    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
-                }
-                */
-            //Search  
-            /*
-            if (!string.IsNullOrEmpty(searchValue))
-            {
-                customerData = customerData.Where(m => m.Name == searchValue);
-            }
-
-            //total number of rows counts   
-            var enumerable = customerData.ToList();
-            recordsTotal = enumerable.Count();
-            //Paging   
-            var data = enumerable.Skip(skip).Take(pageSize).ToList();
-            //Returning Json Data  
-            return new JsonResult(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
-
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-        */
-
             try
             {
                 var draw = HttpContext.Request.Query["draw"].FirstOrDefault();
@@ -212,7 +148,27 @@ namespace OnlineStore.Web.Controllers
                 var data = (from tempData in _uow.GetGenericRepository<Product>().GetAll()
                     select tempData);
 
-
+                // Sorting
+                if (!string.IsNullOrEmpty(sortColumn) && !string.IsNullOrEmpty(sortColumnDirection))
+                {
+                     //.OrderBy(sortColumn + " " + sortColumnDirection).ToList();
+                     var propertyInfo = typeof(Product).GetProperty(sortColumn);
+                     if (sortColumnDirection == "asc")
+                     {
+                         data = data.OrderBy(x => propertyInfo.GetValue(x, null));
+                     }
+                     else if (sortColumnDirection == "desc")
+                     {
+                         data = data.OrderByDescending(x => propertyInfo.GetValue(x, null));
+                     }
+                }
+                // searching
+                //Search  
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    data = data.Where(m => m.Name.Contains(searchValue));
+                }
+                
                 //total number of rows count   
                 recordsTotal = data.Count();
 
@@ -228,7 +184,6 @@ namespace OnlineStore.Web.Controllers
                         DiscountedPrice = x.DiscountedPrice,
                         Quantity = x.Quantity,
                     }).ToList();
-
 
                 //Returning Json Data  
                 return new JsonResult(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = response });
