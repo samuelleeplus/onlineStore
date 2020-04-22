@@ -118,24 +118,68 @@ namespace OnlineStore.Web.Controllers
             }
             return View(new ProductEditCreateDto());
         }
-        /*
+        
         // POST: ProductManager/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, ProductEditCreateDto _product)
         {
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
 
-                return RedirectToAction(nameof(Index));
+                    var imageRepository = _uow.GetGenericRepository<ImageUri>();
+                    imageRepository.RemoveIf(x => x.ProductId == id);
+
+                    foreach (var uri in _product.ImageUris)
+                    {
+                        if (!String.IsNullOrEmpty(uri))
+                        {
+                            imageRepository.Add(new ImageUri()
+                            {
+                                ProductId = id,
+                                Uri = uri
+                            });
+                        }
+                    }
+
+                    var distRepo = _uow.GetGenericRepository<Distributor>();
+                    var distributor = new Distributor();
+                    if (!String.IsNullOrEmpty(_product.DistributorInfo))
+                    {
+                        distributor.Info = _product.DistributorInfo;
+                    }
+                    distRepo.Add(distributor);
+                    _uow.Commit();
+
+                    var productRepository = _uow.GetGenericRepository<Product>();
+                    var product = productRepository.GetById(id);
+                    
+                    product.Name = _product.Name;
+                    product.Category = _product.Category;
+                    product.Price = _product.DiscountedPrice;
+                    product.Quantity = _product.Quantity;
+                    product.DiscountedPrice = _product.DiscountedPrice;
+                    product.WarrantyStatus = _product.WarrantyStatus;
+                    product.ModelNumber = _product.ModelNumber;
+                    product.DescriptionMain = product.DescriptionMain;
+                    product.DescriptionExtra = _product.DescriptionExtra;
+                    product.DistributorId = distributor.Id;
+
+                    productRepository.Update(product);
+                    _uow.Commit();
+                    return RedirectToAction("Edit", new{ id = id });
+                }
+
+                return View(); // error message should be returned.
             }
             catch
             {
                 return View();
             }
         }
-        */
+        
         // GET: ProductManager/Delete/5
         public ActionResult Delete(int id)
         {

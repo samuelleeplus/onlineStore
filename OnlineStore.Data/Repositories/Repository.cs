@@ -44,5 +44,19 @@ namespace OnlineStore.Data.Repositories
         {
             _entities.Remove(entity);
         }
+
+        public void Update(T entity)
+        {
+            _entities.Update(entity);
+        }
+
+        public void RemoveIf(Expression<Func<T, bool>> predicate)
+        {
+            var entities = Find(predicate).ToList();
+            foreach (var entity in entities)
+            {
+                _entities.Remove(entity);
+            }
+        }
     }
 }

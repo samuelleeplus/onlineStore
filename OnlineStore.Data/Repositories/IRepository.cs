@@ -13,6 +13,7 @@ namespace OnlineStore.Data.Repositories
         T FirstOrDefault(Expression<Func<T, bool>> predicate);
         void Add(T entity);
         void Remove(T entity);
-
+        void Update(T entity);
+        void RemoveIf(Expression<Func<T, bool>> predicate);
     }
 }
