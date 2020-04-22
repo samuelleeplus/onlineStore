@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Data.Context;
@@ -27,7 +28,7 @@ namespace OnlineStore.Web.Controllers
         // GET: ProductManager
         public ActionResult Index()
         {
-            return RedirectToAction("ListProducts");
+            return RedirectToAction("ShowGrid");
         }
 
         public IActionResult ListProducts()
@@ -179,29 +180,26 @@ namespace OnlineStore.Web.Controllers
                 return View();
             }
         }
-        
-        // GET: ProductManager/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-        
+
         // POST: ProductManager/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id)
         {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
+                var repo = _uow.GetGenericRepository<Product>();
+                var product = repo.GetById(id);
+                repo.Remove(product);
+                _uow.Commit();
+                return Json(new { success = true, responseText = "Successfully deleted!" });
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                return NotFound();
             }
+
         }
+
 
         public IActionResult ShowGrid()
         {
@@ -251,7 +249,7 @@ namespace OnlineStore.Web.Controllers
                 //Search  
                 if (!string.IsNullOrEmpty(searchValue))
                 {
-                    data = data.Where(m => m.Name.Contains(searchValue));
+                    data = data.Where(m => m.Name.ToUpper().Contains(searchValue.ToUpper()));
                 }
                 
                 //total number of rows count   

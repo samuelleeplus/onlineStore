@@ -79,7 +79,7 @@
             {
                 orderable: false,
                 data: null, render: function (data, type, row) {
-                    return "<span class='btn-floating mb-1 btn-flat waves-effect waves-light red accent-2 white-text' onclick=DeleteData('" + row.id + "');> <i class='material-icons' style='color: blue;'>delete</i></a>";
+                    return "<span class='btn-floating mb-1 btn-flat waves-effect waves-light red accent-2 white-text' onclick=DeleteData('" + row.id + "');> <i class='material-icons' style='color: blue;'><u>delete</u></i></a>";
                 }
             },
             ],
@@ -104,19 +104,26 @@
     }
 
     function Delete(entityId) {
-        var url = "?handler=delete";
         $.ajax({
-            url: url,
+            url: "/ProductManager/Delete/" + entityId,
             method: "POST",
-            data: { entityId: entityId },
             headers: {
                 RequestVerificationToken:
                     $('input:hidden[name="__RequestVerificationToken"]').val()
             },
             success: function (response) {
-                if (response.IsSuccess === true) {
-                    oTable = $('#page-length-option').DataTable();
-                    oTable.draw();
+                console.log("response: ", response);
+                if (response.success === true) {
+
+                    swal({
+                        title: 'Good job!',
+                        text: 'You just deleted a product!',
+                        icon: 'success'
+                    }).then(
+                        setTimeout(function(){// wait for 5 secs(2)
+                            location.reload(); // then reload the page.(3)
+                        }, 3000)
+                    );
                 }
                 else {
                     swal({

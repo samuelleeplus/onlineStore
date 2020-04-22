@@ -19,7 +19,7 @@ namespace OnlineStore.Web.Helpers
         public HomeDto GetHomeDto(int amount, int frontAmount)
         {
             var repo = _uow.GetGenericRepository<Product>();
-            var _discount = repo.GetById(5); // instead of 5 choose a (maybe random) category with has a product with a discount
+            var _discount = repo.GetById(new Random().Next(1000)); // instead of 5 choose a (maybe random) category with has a product with a discount
             var _products = repo.GetAll().Take(amount).ToList();
             var _frontImages = repo.GetAll().Take(frontAmount + 1).ToList(); 
             

@@ -73,15 +73,6 @@ namespace OnlineStore.Web
             RotativaConfiguration.Setup(env, "../Rotativa/");
 
 
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Product}/{action=Products}/{id?}");
-                endpoints.MapRazorPages();
-            });
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
