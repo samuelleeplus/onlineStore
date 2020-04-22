@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace OnlineStore.Web.Models.DTOs
@@ -48,5 +49,28 @@ namespace OnlineStore.Web.Models.DTOs
     {
         public int Quantity { get; set; }
         public bool IsDelivered { get; set; }
+    }
+
+    public class ProductEditCreateDto : ProductBase
+    {
+        [Required]
+        public int ModelNumber { get; set; }
+        [Required]
+        public double Price { get; set; }
+        [Required]
+        public int Quantity { get; set; }
+        [Required]
+        public string WarrantyStatus { get; set; }
+        [Required]
+        public string DescriptionExtra { get; set; }
+        [Required]
+        public string DescriptionMain { get; set; }
+        [Required]
+        public string DistributorInfo { get; set; }
+        [Required]
+        public string Category { get; set; }
+
+        public string[] ImageUris { get; set; } = new string[4]{"", "", "", ""};
+
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
 using OnlineStore.Data.Repositories;
+using OnlineStore.Web.Models.DTOs;
 
 namespace OnlineStore.Web.Controllers
 {
@@ -75,7 +76,47 @@ namespace OnlineStore.Web.Controllers
         // GET: ProductManager/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var product = _uow.GetGenericRepository<Product>().GetById(id);
+
+            var distributor = _uow.GetGenericRepository<Distributor>()
+                .FirstOrDefault(x => x.Id == product.DistributorId);
+
+            var images = _uow.GetGenericRepository<ImageUri>().Find(x => x.ProductId == id).Take(4).ToList();
+            var imageUris = new string[]{"", "", "", ""};
+
+            for (int i = 0; i < images.Count; i++)
+            {
+                imageUris[i] = images[i].Uri;
+            }
+
+            // TODO: delete imageUris fetched to prevent ...
+
+            if (product != null)
+            {
+                var model = new ProductEditCreateDto()
+                {
+                    ProductId = product.Id,
+                    Name = product.Name,
+                    Price = product.Price,
+                    DiscountedPrice = product.DiscountedPrice,
+                    ModelNumber = product.ModelNumber,
+                    Quantity = product.Quantity,
+                    WarrantyStatus = product.WarrantyStatus,
+                    DescriptionMain = product.DescriptionMain,
+                    DescriptionExtra = product.DescriptionExtra,
+                    DistributorInfo = distributor?.Info ?? "",
+                    ImageUris = imageUris, /*new string[]
+                    {
+                        "https://pbs.twimg.com/media/ENL2osHX0AAE1LW?format=jpg&name=900x900",
+                        "https://pbs.twimg.com/media/ENL2osHX0AAE1LW?format=jpg&name=900x900",
+                        "https://pbs.twimg.com/media/ENL2osHX0AAE1LW?format=jpg&name=900x900",
+                        "https://pbs.twimg.com/media/ENL2osHX0AAE1LW?format=jpg&name=900x900"
+                    }, */
+                    Category = product.Category
+                };
+                return View(model);
+            }
+            return View(new ProductEditCreateDto());
         }
         /*
         // POST: ProductManager/Edit/5
