@@ -1,4 +1,124 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using System.Linq
+@model OnlineStore.Web.Models.DTOs.ProductEditCreateDto
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
+    <link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout.css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout_responsive.css">
+</head>
+
+<h4>Product</h4>
+<hr />
+<div class="checkout">
+    <div class="container">
+        <form asp-action="Edit">
+            <div class="row">
+                <div class="col-1">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="hidden" asp-for="ProductId" />
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" readonly/>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ModelNumber" class="control-label"> Model Number </label>
+                        <input asp-for="ModelNumber" class="form-control" readonly/>
+                        <span asp-validation-for="ModelNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">S
+                        <label asp-for="Category" class="control-label"></label>
+                        <input asp-for="Category" class="form-control" readonly/>
+                        <span asp-validation-for="Category" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DiscountedPrice" class="control-label"> Discounted Price </label>
+                        <input asp-for="DiscountedPrice" class="form-control" />
+                        <span asp-validation-for="DiscountedPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Quantity" class="control-label"> Quantity in Stock </label>
+                        <input asp-for="Quantity" class="form-control" readonly/>
+                        <span asp-validation-for="Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="WarrantyStatus" class="control-label"> Warranty Status</label>
+                        <input asp-for="WarrantyStatus" class="form-control" readonly/>
+                        <span asp-validation-for="WarrantyStatus" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="DescriptionMain" class="control-label"> Main Description</label>
+                        <textarea asp-for="DescriptionMain" class="form-control" rows="5" readonly></textarea>
+                        <span asp-validation-for="DescriptionMain" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DescriptionExtra" class="control-label"> Extra Description </label>
+                        <textarea asp-for="DescriptionExtra" class="form-control" rows="5" readonly></textarea>
+                        <span asp-validation-for="DescriptionExtra" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DistributorInfo" class="control-label"> Distributor company name </label>
+                        <input asp-for="DistributorInfo" class="form-control" readonly/>
+                        <span asp-validation-for="DistributorInfo" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <div class="form-group">
+                            <label asp-for="ImageUris[i]" class="control-label"> Image @(i+1) Url</label>
+                            <textarea asp-for="ImageUris[i]" class="form-control" rows="2" readonly></textarea>
+                            <hr />
+                            <img src="@(Model.ImageUris[i])" style="width: 100%; height: 275px;" alt="Smiley face" />
+                            <span asp-validation-for="ImageUris[i]" class="text-danger"></span>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <div>
+
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/styles/bootstrap4/popper.js"></script>
+    <script src="~/styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="~/plugins/greensock/TweenMax.min.js"></script>
+    <script src="~/plugins/greensock/TimelineMax.min.js"></script>
+    <script src="~/plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="~/plugins/greensock/animation.gsap.min.js"></script>
+    <script src="~/plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="~/plugins/easing/easing.js"></script>
+    <script src="~/plugins/parallax-js-master/parallax.min.js"></script>
+}

@@ -26,6 +26,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
     <PackageReference Include="Rotativa.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="SendGrid" Version="9.14.0" />
     <PackageReference Include="Wkhtmltopdf.NetCore" Version="3.0.0" />
   </ItemGroup>
 

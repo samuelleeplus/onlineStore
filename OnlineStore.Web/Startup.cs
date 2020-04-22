@@ -42,6 +42,12 @@ namespace OnlineStore.Web
             services.AddControllersWithViews();
             services.AddSession();
             services.AddRazorPages();
+
+            //to access sendgrip api and dependency injection
+            //services.AddMvc();
+            //services.AddSingleton<IConfiguration>(Configuration);
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -75,6 +75,8 @@ namespace OnlineStore.Web.Controllers
         }
         */
         // GET: ProductManager/Edit/5
+
+
         public ActionResult Edit(int id)
         {
             var product = _uow.GetGenericRepository<Product>().GetById(id);
@@ -159,7 +161,7 @@ namespace OnlineStore.Web.Controllers
                     
                     product.Name = _product.Name;
                     product.Category = _product.Category;
-                    product.Price = _product.DiscountedPrice;
+                    product.Price = _product.Price;
                     product.Quantity = _product.Quantity;
                     product.DiscountedPrice = _product.DiscountedPrice;
                     product.WarrantyStatus = _product.WarrantyStatus;
