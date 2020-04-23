@@ -29,11 +29,11 @@ namespace OnlineStore.Web.Controllers
             var model = new CategoryDto()
             {
                 Title = category,
-                Text = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. " +
-                       "Consectetur quia perferendis vitae corporis voluptatem sint dolorum rem. Distinctio " +
-                       "laboriosam aspernatur ipsum atque blanditiis quo tenetur excepturi dolores unde. Repellat, dolorem.",
+                Text = "The Ultimate Driving Machine, amet consectetur adipisicing elit. " +
+                       "Everything We Do is Driven By You corporis voluptatem sint Better Ideas Driven By You" +
+                       "Unlike Any Other Engineered to Move the Human Spirit tenetur excepturi dolores unde. Repellat, dolorem.",
 
-                BackgroundImageUrl = "https://cdn.webtekno.com/media/cache/content_detail_v2/article/83841/internet-fenomeni-taksim-dayi-hayatinda-ilk-kez-taksim-e-geldi-1579253407.png",
+                BackgroundImageUrl = "https://car-images.bauersecure.com/pagefiles/68199/zmaser-001.jpg",
 
                 Products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category).Select(y =>
                     new SimpleProduct()
