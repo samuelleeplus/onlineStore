@@ -177,5 +177,92 @@ namespace OnlineStore.Web.Controllers
             product.DiscountedPrice = price - ((price * discount) / 100);
             return RedirectToAction("Index");
         }
+
+
+        //testing 
+        public IActionResult ShowGrid()
+        {
+            return View();
+        }
+
+        public async Task<JsonResult> LoadData()
+        {
+            try
+            {
+                var draw = HttpContext.Request.Query["draw"].FirstOrDefault();
+                // Skiping number of Rows count  
+                var start = Request.Query["start"].FirstOrDefault();
+                // Paging Length 10,20  
+                var length = Request.Query["length"].FirstOrDefault();
+                // Sort Column Name  
+                var sortColumn = Request.Query["columns[" + Request.Query["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+                // Sort Column Direction ( asc ,desc)  
+                var sortColumnDirection = Request.Query["order[0][dir]"].FirstOrDefault();
+                // Search Value from (Search box)  
+                var searchValue = Request.Query["search[value]"].FirstOrDefault();
+
+                //Paging Size (10,20,50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+                int recordsTotal = 0;
+
+                // get entity data from context
+                var data = (from tempData in _uow.GetGenericRepository<Product>().GetAll()
+                            select tempData);
+
+                // Sorting
+                if (!string.IsNullOrEmpty(sortColumn) && !string.IsNullOrEmpty(sortColumnDirection))
+                {
+                    //.OrderBy(sortColumn + " " + sortColumnDirection).ToList();
+                    var propertyInfo = typeof(Product).GetProperty(sortColumn);
+                    if (sortColumnDirection == "asc")
+                    {
+                        data = data.OrderBy(x => propertyInfo.GetValue(x, null));
+                    }
+                    else if (sortColumnDirection == "desc")
+                    {
+                        data = data.OrderByDescending(x => propertyInfo.GetValue(x, null));
+                    }
+                }
+                // searching
+                //Search  
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    data = data.Where(m => m.Name.ToUpper().Contains(searchValue.ToUpper()));
+                }
+
+                //total number of rows count   
+                recordsTotal = data.Count();
+
+                //paging   
+                var response = data.Skip(skip).Take(pageSize).ToList().Select(
+                    x => new
+                    {
+                        Id = x.Id,
+                        Name = x.Name,
+                        ModelNumber = x.ModelNumber,
+                        Category = x.Category,
+                        Price = x.Price,
+                        DiscountedPrice = x.DiscountedPrice,
+                        Quantity = x.Quantity,
+                    }).ToList();
+
+                //Returning Json Data  
+                return new JsonResult(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = response });
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
+        }
+
+
+
+
+
+
     }
 }
