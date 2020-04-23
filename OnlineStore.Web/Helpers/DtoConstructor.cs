@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using OnlineStore.Data.Models.Entities; 
 
 namespace OnlineStore.Web.Helpers
 {
@@ -64,6 +65,41 @@ namespace OnlineStore.Web.Helpers
             return homeDto;
 
         }
+
+        public InvoiceDto InvoiceDtoByCustomerID(int id) { 
+
+            var orderedProducts = _uow.GetGenericRepository<OrderedProduct>().Find(x => x.OrderId == id);
+
+            var repo = _uow.GetGenericRepository<Product>();
+
+
+            IEnumerable<CartItem> items = orderedProducts == null ? null : orderedProducts.Select(x =>
+               new CartItem
+               {
+                   Id = x.ProductId,
+                   ItemQuantity = x.Quantity,
+                   ItemName = repo.GetById(x.ProductId).Name,
+                   //should be price -discounted price
+                   ItemPrice = repo.GetById(x.ProductId).Price  
+               }).ToList();
+
+
+            InvoiceDto invoiceDto = new InvoiceDto
+            {
+                //Customer name or User name should be included in database !!!!!!!!
+
+                Items = items,
+                OrderId = id,
+                totalPrice = _uow.GetGenericRepository<Order>().FirstOrDefault(x => x.CustomerId == id).TotalPrice,
+                CustomerAddress = null ,
+                CustomerName = "Customer Name"
+            };
+
+            return invoiceDto; 
+
+
+        }
+
         public ProductDto GetProductDtoByProductId(int id)
         {
             var repo = _uow.GetGenericRepository<Product>();

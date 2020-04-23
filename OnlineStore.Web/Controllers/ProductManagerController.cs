@@ -9,6 +9,9 @@ using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Web.Models.DTOs;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using Microsoft.Extensions.Configuration;
 
 namespace OnlineStore.Web.Controllers
 {
@@ -17,6 +20,8 @@ namespace OnlineStore.Web.Controllers
 
         private ApplicationDbContext _context { get; set; }
         private UnitOfWork _uow { get; set; }
+
+       
 
         public ProductManagerController(ApplicationDbContext context)
         {
@@ -172,6 +177,7 @@ namespace OnlineStore.Web.Controllers
 
                     productRepository.Update(product);
                     _uow.Commit();
+
                     return RedirectToAction("Edit", new{ id = id });
                 }
 

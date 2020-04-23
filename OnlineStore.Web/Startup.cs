@@ -44,8 +44,8 @@ namespace OnlineStore.Web
             services.AddRazorPages();
 
             //to access sendgrip api and dependency injection
-            //services.AddMvc();
-            //services.AddSingleton<IConfiguration>(Configuration);
+            services.AddMvc();
+            services.AddSingleton<IConfiguration>(Configuration);
 
 
         }

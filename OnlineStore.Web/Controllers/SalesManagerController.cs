@@ -8,7 +8,9 @@ using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Web.Models.DTOs;
-
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using Microsoft.Extensions.Configuration;
 
 namespace OnlineStore.Web.Controllers
 {
@@ -17,10 +19,14 @@ namespace OnlineStore.Web.Controllers
         private ApplicationDbContext _context { get; set; }
         private UnitOfWork _uow { get; set; }
 
-        public SalesManagerController(ApplicationDbContext context)
+        //
+        private readonly IConfiguration _configuration;
+
+        public SalesManagerController(ApplicationDbContext context,IConfiguration configuration)
         {
             _context = context;
             _uow = new UnitOfWork(_context);
+            _configuration = configuration; 
         }
 
         public ActionResult Index()
@@ -119,6 +125,38 @@ namespace OnlineStore.Web.Controllers
 
                     productRepository.Update(product);
                     _uow.Commit();
+
+
+                    var repo = _uow.GetGenericRepository<ApplicationUser>();
+
+
+                    var users = repo.GetAll() ;
+
+
+                    //send email notification
+                    var apiKey = _configuration.GetSection("SENDGRID_API_KEY").Value;
+                    var client = new SendGridClient(apiKey);
+                    var from = new EmailAddress("salesManager@example.com", "Sales Manager");
+
+
+                  //  user DTO to get list of all users
+
+                    List<EmailAddress> tos = new List<EmailAddress>();
+                    foreach (var user in users)
+                    {
+                        tos.Add(new EmailAddress(user.Email)) ;
+
+                    }
+
+                   
+
+                    var subject = "The Product" + product.Id.ToString() + "'s price has been updated to : " + product.Price.ToString();
+                    var htmlContent = "<strong>Please check out our website with updated prices on products!</strong>";
+                    var displayRecipients = false; // set this to true if you want recipients to see each others mail id 
+                    var msg = MailHelper.CreateSingleEmailToMultipleRecipients(from, tos, subject, "", htmlContent, displayRecipients);
+                    var response = client.SendEmailAsync(msg);
+                  //var response = await client.SendEmailAsync(msg);
+
                     return RedirectToAction("Edit", new { id = id });
                 }
 
