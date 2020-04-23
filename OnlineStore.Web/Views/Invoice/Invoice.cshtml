@@ -112,7 +112,7 @@
                             </td>
 
                             <td>
-                                Invoice #: @Model.OrderId<br>
+                                Invoice/Order #: @Model.OrderId<br>
                                 Created: January 1, 2020<br>
                             </td>
                         </tr>
@@ -141,7 +141,7 @@
 
             <tr class="heading">
                 <td>
-                    Item
+                    Items
                 </td>
 
                 <td>
@@ -149,7 +149,7 @@
                 </td>
             </tr>
             @{
-                var items = Model.InvoiceItems;
+                var items = Model.Items;
             }
             @if (items != null)
             {
@@ -157,10 +157,10 @@
                 {
                     <tr class="item">
                         <td>
-                            @(item.Name) x @(item.Quantity)
+                            @(item.ItemName) x @(item.ItemQuantity)
                         </td>
                         <td>
-                            @(item.DiscountedPrice * item.Quantity)
+                            @(item.ItemPrice * item.ItemQuantity)
                         </td>
                     </tr>
            
@@ -170,7 +170,7 @@
 
             <tr class="total">
                 <td>
-                    Total:
+                    Total: $@Model.totalPrice 
                 </td>
             </tr>
         </table>

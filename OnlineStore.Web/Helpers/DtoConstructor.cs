@@ -83,6 +83,8 @@ namespace OnlineStore.Web.Helpers
                    ItemPrice = repo.GetById(x.ProductId).Price  
                }).ToList();
 
+            var priceRepo = _uow.GetGenericRepository<Order>();
+
 
             InvoiceDto invoiceDto = new InvoiceDto
             {
@@ -90,8 +92,8 @@ namespace OnlineStore.Web.Helpers
 
                 Items = items,
                 OrderId = id,
-                totalPrice = _uow.GetGenericRepository<Order>().FirstOrDefault(x => x.CustomerId == id).TotalPrice,
-                CustomerAddress = null ,
+                totalPrice = priceRepo.FirstOrDefault(x => x.CustomerId == id).TotalPrice,
+                CustomerAddress = null , 
                 CustomerName = "Customer Name"
             };
 
