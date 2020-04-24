@@ -53,7 +53,7 @@ namespace OnlineStore.Web.Controllers
                     ItemName = product.Name,
                     ItemQuantity = quantity,
                     ItemImageUrl = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(x => x.ProductId == product.Id)?.Uri,
-                    ItemPrice = (product.Price - product.DiscountedPrice),
+                    ItemPrice = product.DiscountedPrice,
                 });
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
             }

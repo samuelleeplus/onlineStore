@@ -31,7 +31,7 @@ namespace OnlineStore.Web.Controllers
 
         public ActionResult Index()
         {
-            return RedirectToAction("ListProducts");
+            return RedirectToAction("ShowGrid");
         }
         public IActionResult ListProducts()
         {

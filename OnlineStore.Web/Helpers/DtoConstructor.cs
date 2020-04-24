@@ -33,7 +33,7 @@ namespace OnlineStore.Web.Helpers
                 CategoryName = _discount.Category,
                 DiscountAmount = (int)Math.Floor((_discount.DiscountedPrice * 100) / _discount.Price), // calculate percentage
                 ImageUrl = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(y => y.ProductId == _discount.Id).Uri,
-                Url = "https://localhost:5001/category?=" + _discount.Category
+                Url = "https://localhost:5001/category/" + _discount.Category
             };
             IEnumerable<SimpleProduct> simpleProducts = _products == null ? null : _products.Select(x =>
                 new SimpleProduct
