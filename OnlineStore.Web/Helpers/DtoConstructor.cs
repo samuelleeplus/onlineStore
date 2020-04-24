@@ -118,7 +118,7 @@ namespace OnlineStore.Web.Helpers
 
             var header = new Header
             {
-                BackgroundImageUrl = "images/categories.jpg",
+                BackgroundImageUrl = "images/car.jpg",
                 Title = product.Name,
                 Text = product.DescriptionMain
             };
