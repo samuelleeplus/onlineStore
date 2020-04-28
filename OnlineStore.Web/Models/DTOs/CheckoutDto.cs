@@ -27,5 +27,7 @@ namespace OnlineStore.Web.Models.DTOs
         // [Range(typeof(bool), "true", "true", ErrorMessage = "You must agree to terms and conditions.")]
         public bool IsAgreeTermsAndConditions { get; set; }
         public bool IsRememberAddress { get; set; }
+        public double SubTotal { get; set; }
+        public double Shipping { get; set; }
     }
 }

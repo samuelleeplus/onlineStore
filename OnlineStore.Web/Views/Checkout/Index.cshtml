@@ -50,63 +50,59 @@
                             <div class="row">
                                 <div class="col-xl-6">
                                     <!-- Name -->
-                                    <label for="checkout_name">First Name*</label>
-                                    <input type="text" id="checkout_name" class="checkout_input" required="required">
+                                    <label asp-for="FirstName" for="checkout_name">First Name*</label>
+                                    <input asp-for="FirstName" type="text" id="checkout_name" class="checkout_input">
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
                                 </div>
                                 <div class="col-xl-6 last_name_col">
                                     <!-- Last Name -->
-                                    <label for="checkout_last_name">Last Name*</label>
-                                    <input type="text" id="checkout_last_name" class="checkout_input" required="required">
+                                    <label asp-for="LastName" for="checkout_last_name">Last Name*</label>
+                                    <input asp-for="LastName" type="text" id="checkout_last_name" class="checkout_input">
+                                    <span asp-validation-for="LastName"></span>
                                 </div>
                             </div>
                             <div>
                                 <!-- Address -->
-                                <label for="checkout_address">Address*</label>
-                                <input type="text" id="checkout_address" class="checkout_input" required="required">
-                                <input type="text" id="checkout_address_2" class="checkout_input checkout_address_2" required="required">
+                                <label asp-for="AddressDetail" for="checkout_address">Address*</label>
+                                <textarea asp-for="AddressDetail" rows="2" id="checkout_address" class="checkout_input"></textarea>
+                                <span asp-validation-for="AddressDetail" class="text-danger"></span>
                             </div>
                             <div>
                                 <!-- Zipcode -->
-                                <label for="checkout_zipcode">Zipcode*</label>
-                                <input type="text" id="checkout_zipcode" class="checkout_input" required="required">
+                                <label asp-for="ZipCode" for="checkout_zipcode">Zipcode*</label>
+                                <input asp-for="ZipCode" type="text" id="checkout_zipcode" class="checkout_input">
+                                <span asp-validation-for="ZipCode" class="text-danger"></span>
                             </div>
                             <div>
                                 <!-- City / Town -->
-                                <label for="checkout_city">City/Town*</label>
-                                <select name="checkout_city" id="checkout_city" class="dropdown_item_select checkout_input" require="required">
-                                    <option></option>
-                                    <option>City</option>
-                                    <option>City</option>
-                                    <option>City</option>
-                                    <option>City</option>
-                                </select>
+                                <label asp-for="City" for="checkout_city">City/Town*</label>
+                                <input asp-for="City" name="checkout_city" id="checkout_city" class="checkout_input">
+                                <span asp-validation-for="City" class="text-danger"></span>
                             </div>
                             <div>
                                 <!-- Province -->
-                                <label for="checkout_province">Province*</label>
-                                <select name="checkout_province" id="checkout_province" class="dropdown_item_select checkout_input" require="required">
-                                    <option></option>
-                                    <option>Province</option>
-                                    <option>Province</option>
-                                    <option>Province</option>
-                                    <option>Province</option>
-                                </select>
+                                <label asp-for="Province" for="checkout_province">Province*</label>
+                                <input asp-for="Province" name="checkout_province" id="checkout_province" class="checkout_input"/>
+                                <span asp-validation-for="Province" class="text-danger"></span>
                             </div>
                             <div>
                                 <!-- Phone no -->
-                                <label for="checkout_phone">Phone no*</label>
-                                <input type="phone" id="checkout_phone" class="checkout_input" required="required">
+                                <label asp-for="Phone" for="checkout_phone">Phone no*</label>
+                                <input asp-for="Phone" type="tel" id="checkout_phone" class="checkout_input">
+                                <span asp-validation-for="Phone" class="text-danger"></span>
                             </div>
                             <div>
                                 <!-- Email -->
-                                <label for="checkout_email">Email Address*</label>
-                                <input type="phone" id="checkout_email" class="checkout_input" required="required">
+                                <label asp-for="Email" for="checkout_email">Email Address*</label>
+                                <input asp-for="Email" type="email" id="checkout_email" class="checkout_input">
+                                <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                             <div class="checkout_extra">
                                 <div>
-                                    <input type="checkbox" id="checkbox_terms" name="regular_checkbox" class="regular_checkbox" checked="checked">
-                                    <label for="checkbox_terms"><img src="images/check.png" alt=""></label>
+                                    <input asp-for="IsAgreeTermsAndConditions" type="checkbox" id="checkbox_terms" name="regular_checkbox" class="regular_checkbox">
+                                    <label asp-for="IsAgreeTermsAndConditions" for="checkbox_terms"><img src="images/check.png" alt=""></label>
                                     <span class="checkbox_title">Terms and conditions</span>
+                                    <span asp-validation-for="IsAgreeTermsAndConditions" class="text-danger"></span>
                                 </div>
                                 <div>
                                     <input asp-for="IsRememberAddress" type="checkbox" id="checkbox_newsletter" name="regular_checkbox" class="regular_checkbox">
@@ -181,4 +177,4 @@
     <script src="~/plugins/easing/easing.js"></script>
     <script src="~/plugins/parallax-js-master/parallax.min.js"></script>
     <script src="~/js/checkout.js"></script>
-}
+}</textarea>

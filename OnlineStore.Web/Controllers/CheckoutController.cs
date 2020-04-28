@@ -22,9 +22,20 @@ namespace OnlineStore.Web.Controllers
         {
             LoadItems();
 
-            var model = new CheckoutDto(){ IsRememberAddress = true};
-
-            return View();
+            var model = new CheckoutDto()
+            {
+                FirstName = "Hehe",
+                LastName = "Huhu",
+                City = "Istanbul",
+                AddressDetail = "Sabanci university",
+                ZipCode = "34956",
+                Province = "Tuzla",
+                Phone = "+905555555555",
+                Email = "tuzla@commi.org",
+                IsRememberAddress = true,
+                IsAgreeTermsAndConditions = false
+            };
+            return View(model);
         }
     }
 }
