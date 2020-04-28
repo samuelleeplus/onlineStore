@@ -20,11 +20,12 @@ namespace OnlineStore.Web.Models.DTOs
         public string City { get; set; }
         [Required]
         public string Province { get; set; }
-        [Required]
+        [Required, Phone]
         public string Phone { get; set; }
         [Required, EmailAddress]
         public string Email { get; set; }
-        [Required] public bool AgreeTermsAndConditions { get; set; }
-
+        // [Range(typeof(bool), "true", "true", ErrorMessage = "You must agree to terms and conditions.")]
+        public bool IsAgreeTermsAndConditions { get; set; }
+        public bool IsRememberAddress { get; set; }
     }
 }

@@ -1,6 +1,9 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
+@model OnlineStore.Web.Models.DTOs.CheckoutDto
+
 <head>
     <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
     <link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -106,9 +109,10 @@
                                     <span class="checkbox_title">Terms and conditions</span>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="checkbox_newsletter" name="regular_checkbox" class="regular_checkbox" checked="checked">
-                                    <label for="checkbox_newsletter"><img src="images/check.png" alt=""></label>
+                                    <input asp-for="IsRememberAddress" type="checkbox" id="checkbox_newsletter" name="regular_checkbox" class="regular_checkbox">
+                                    <label asp-for="IsRememberAddress" for="checkbox_newsletter"><img src="images/check.png" alt=""></label>
                                     <span class="checkbox_title">Remember my address</span>
+                                    <span asp-validation-for="IsRememberAddress" class="text-danger"></span>
                                 </div>
                             </div>
                         </form>
