@@ -8,22 +8,16 @@ namespace OnlineStore.Web.Models.DTOs
 {
     public class CheckoutDto
     {
-        [Required]
-        public string FirstName { get; set; }
-        [Required]
-        public string LastName { get; set; }
-        [Required]
-        public string AddressDetail { get; set; }
-        [Required]
-        public string ZipCode { get; set; }
-        [Required]
-        public string City { get; set; }
-        [Required]
-        public string Province { get; set; }
-        [Required, Phone]
-        public string Phone { get; set; }
-        [Required, EmailAddress]
-        public string Email { get; set; }
+        [Required] public string FirstName { get; set; }
+        [Required] public string LastName { get; set; }
+        [Required] public string AddressDetail { get; set; }
+        [Required] public string ZipCode { get; set; }
+        [Required] public string City { get; set; }
+        [Required] public string Province { get; set; }
+        [Required, Phone] public string Phone { get; set; }
+
+        [Required, EmailAddress] public string Email { get; set; }
+
         // [Range(typeof(bool), "true", "true", ErrorMessage = "You must agree to terms and conditions.")]
         public bool IsAgreeTermsAndConditions { get; set; }
         public bool IsRememberAddress { get; set; }
@@ -31,3 +25,4 @@ namespace OnlineStore.Web.Models.DTOs
         public double Shipping { get; set; }
     }
 }
+

@@ -46,7 +46,7 @@
                     <div class="section_title">Billing Address</div>
                     <div class="section_subtitle">Enter your address info</div>
                     <div class="checkout_form_container">
-                        <form action="#" id="checkout_form" class="checkout_form">
+                        <form method="post" id="checkout_form" class="checkout_form">
                             <div class="row">
                                 <div class="col-xl-6">
                                     <!-- Name -->
@@ -76,13 +76,13 @@
                             <div>
                                 <!-- City / Town -->
                                 <label asp-for="City" for="checkout_city">City/Town*</label>
-                                <input asp-for="City" name="checkout_city" id="checkout_city" class="checkout_input">
+                                <input asp-for="City" type="text" id="checkout_city" class="checkout_input">
                                 <span asp-validation-for="City" class="text-danger"></span>
                             </div>
                             <div>
                                 <!-- Province -->
                                 <label asp-for="Province" for="checkout_province">Province*</label>
-                                <input asp-for="Province" name="checkout_province" id="checkout_province" class="checkout_input"/>
+                                <input asp-for="Province" type="text" id="checkout_province" class="checkout_input"/>
                                 <span asp-validation-for="Province" class="text-danger"></span>
                             </div>
                             <div>
@@ -99,13 +99,13 @@
                             </div>
                             <div class="checkout_extra">
                                 <div>
-                                    <input asp-for="IsAgreeTermsAndConditions" type="checkbox" id="checkbox_terms" name="regular_checkbox" class="regular_checkbox">
+                                    <input asp-for="IsAgreeTermsAndConditions" type="checkbox" id="checkbox_terms" class="regular_checkbox">
                                     <label asp-for="IsAgreeTermsAndConditions" for="checkbox_terms"><img src="images/check.png" alt=""></label>
                                     <span class="checkbox_title">Terms and conditions</span>
                                     <span asp-validation-for="IsAgreeTermsAndConditions" class="text-danger"></span>
                                 </div>
                                 <div>
-                                    <input asp-for="IsRememberAddress" type="checkbox" id="checkbox_newsletter" name="regular_checkbox" class="regular_checkbox">
+                                    <input asp-for="IsRememberAddress" type="checkbox" id="checkbox_newsletter" class="regular_checkbox">
                                     <label asp-for="IsRememberAddress" for="checkbox_newsletter"><img src="images/check.png" alt=""></label>
                                     <span class="checkbox_title">Remember my address</span>
                                     <span asp-validation-for="IsRememberAddress" class="text-danger"></span>
@@ -128,38 +128,22 @@
                         <ul class="order_list">
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Subtotal</div>
-                                <div class="order_list_value ml-auto">$59.90</div>
+                                <div class="order_list_value ml-auto">$@(Model.SubTotal)</div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Shipping</div>
-                                <div class="order_list_value ml-auto">Free</div>
+                                <div class="order_list_value ml-auto">@(((int)Model.Shipping) == 0 ? "Free" : $"${Model.Shipping}")</div>
                             </li>
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div class="order_list_title">Total</div>
-                                <div class="order_list_value ml-auto">$59.90</div>
+                                <div class="order_list_value ml-auto">$@(Model.SubTotal + Model.Shipping)</div>
                             </li>
                         </ul>
                     </div>
-
-                    <!-- Payment Options -->
-                    <div class="payment">
-                        <div class="payment_options">
-                            <label class="payment_option clearfix">
-                                Cach on delivery
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="payment_option clearfix">
-                                Credit card
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-
                     <!-- Order Text -->
                     <div class="order_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra temp or so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus.</div>
-                    <div class="button order_button"><a href="#">Place Order</a></div>
+                    <div class="button order_button"><a href="#" 
+                                                        onclick="document.getElementById('checkout_form').submit();">Place Order</a></div>
                 </div>
             </div>
         </div>

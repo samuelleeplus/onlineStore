@@ -34,8 +34,15 @@ namespace OnlineStore.Web.Controllers
                 Email = "tuzla@commi.org",
                 IsRememberAddress = true,
                 IsAgreeTermsAndConditions = false
+
             };
             return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Index(CheckoutDto model)
+        {
+            return View("ErrorProduction");
         }
     }
 }
