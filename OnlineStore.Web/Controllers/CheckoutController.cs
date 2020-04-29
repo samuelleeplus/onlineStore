@@ -24,7 +24,7 @@ namespace OnlineStore.Web.Controllers
 
             var model = new CheckoutDto()
             {
-                FirstName = "Hehe",
+                FirstName = "Taksim abi ne yapyon?",
                 LastName = "Huhu",
                 City = "Istanbul",
                 AddressDetail = "Sabanci university",
@@ -32,9 +32,13 @@ namespace OnlineStore.Web.Controllers
                 Province = "Tuzla",
                 Phone = "+905555555555",
                 Email = "tuzla@commi.org",
-                IsRememberAddress = true,
-                IsAgreeTermsAndConditions = false
-
+                IsRememberAddress = false,
+                IsAgreeTermsAndConditions = false,
+                CheckoutItems = _checkoutItems?.Select(x => new CheckoutItem()
+                {
+                    Price = x.ItemPrice * x.ItemQuantity,
+                    ProductName = x.ItemName
+                })
             };
             return View(model);
         }
@@ -42,7 +46,7 @@ namespace OnlineStore.Web.Controllers
         [HttpPost]
         public IActionResult Index(CheckoutDto model)
         {
-            return View("ErrorProduction");
+            return View("Hehe", new CheckoutDto());
         }
     }
 }

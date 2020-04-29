@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /******************************
@@ -1102,7 +1102,7 @@ section
 }
 .order_text
 {
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 400;
 	font-style: italic;
 	color: #6c6a74;
