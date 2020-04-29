@@ -19,9 +19,18 @@ namespace OnlineStore.Web
         public static void Main(string[] args)
         {
           
+            
 
 
-            CreateHostBuilder(args).Build().Run();
+            
+            CreateHostBuilder(args).ConfigureLogging(
+                cfg =>
+                {
+                    cfg.AddConsole();
+                    cfg.AddDebug();
+                }
+            ).Build().Run();
+            
         }
 
 
