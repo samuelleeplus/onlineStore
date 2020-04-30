@@ -44,9 +44,15 @@ namespace OnlineStore.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Index(CheckoutDto model)
         {
-            return View("Hehe", new CheckoutDto());
+            if (ModelState.IsValid)
+            {
+                return View("Card");
+            }
+
+            return View();
         }
     }
 }
