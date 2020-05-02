@@ -1,5 +1,5 @@
 ﻿@model OnlineStore.Data.Models.Entities.Product
-@{    
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h4>Product</h4>
@@ -141,5 +141,6 @@
 </div>
 
 @section Scripts {
+    <script src="~/js/jquery-3.2.1.min.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

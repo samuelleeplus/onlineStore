@@ -32,7 +32,8 @@
 <div class="checkout">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-lg-6">
+                <!-- col-md-4 -->
                 <form asp-action="Index">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
@@ -60,10 +61,51 @@
                     </div>
                 </form>
             </div>
+            <div class="col-lg-6">
+                <div class="order checkout_section">
+                    <div class="section_title">Your order</div>
+                    <div class="section_subtitle">Order details</div>
+
+                    <!-- Order details -->
+                    <div class="order_list_container">
+                        <div class="order_list_bar d-flex flex-row align-items-center justify-content-start">
+                            <div class="order_list_title">Product</div>
+                            <div class="order_list_value ml-auto">Total</div>
+                        </div>
+                        <ul class="order_list">
+                            @foreach (var product in Model.CheckoutItems)
+                            {
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="order_list_title" style="text-decoration: underline; color: brown"><i>@(product.ProductName)</i></div>
+                                    <div class="order_list_value ml-auto" style="color: brown"><i>$@(product.Price)</i></div>
+                                </li>
+                            }
+                            @{
+                                var subtotal = Model.CheckoutItems.Select(x => x.Price).Aggregate((x, y) => x + y);
+                            }
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="order_list_title">Subtotal</div>
+                                <div class="order_list_value ml-auto">$@(subtotal)</div>
+                            </li>
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="order_list_title">Shipping</div>
+                                <div class="order_list_value ml-auto">@(((int)Model.Shipping) == 0 ? "Free" : $"${Model.Shipping}")</div>
+                            </li>
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="order_list_title">Total</div>
+                                <div class="order_list_value ml-auto">$@(Model.Shipping + subtotal)</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Order Text -->
+                    <div class="order_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra temp or so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus.</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 @section Scripts {
+    <script src="~/js/jquery-3.2.1.min.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

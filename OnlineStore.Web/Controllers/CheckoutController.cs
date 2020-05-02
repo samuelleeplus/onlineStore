@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Web.Helpers;
@@ -9,6 +10,7 @@ using OnlineStore.Web.Models.DTOs;
 
 namespace OnlineStore.Web.Controllers
 {
+    [Authorize]
     public class CheckoutController : Controller
     {
         private List<CartItem> _checkoutItems;
@@ -20,6 +22,12 @@ namespace OnlineStore.Web.Controllers
 
         public IActionResult Index()
         {
+            LoadItems();
+            if (_checkoutItems == null)
+            {
+                return RedirectToRoute(new {controller = "Cart"});
+            }
+
             LoadItems();
 
             var model = new CheckoutDto()
@@ -49,7 +57,7 @@ namespace OnlineStore.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View("Card");
+                return RedirectToRoute(new { controller="CreditCard" });
             }
 
             return View();

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using OnlineStore.Data.Models.Entities;
 
 namespace OnlineStore.Web.Models.DTOs

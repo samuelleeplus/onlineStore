@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using OnlineStore.Web.Models.DTOs;
 using OnlineStore.Web.Helpers;
 using System.Diagnostics;
+using System.Net;
 
 namespace OnlineStore.Web.Controllers
 {
@@ -35,6 +36,12 @@ namespace OnlineStore.Web.Controllers
             var x = model;
 
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddReview([FromForm]int star, [FromForm]string review)
+        {
+            return Ok();
         }
     }
 }

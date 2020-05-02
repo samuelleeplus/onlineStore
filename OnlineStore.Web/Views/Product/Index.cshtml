@@ -5,15 +5,25 @@
 }
 
 
-<head>
-    <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
-    <link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
-    <link rel="stylesheet" type="text/css" href="~/styles/product.css">
-    <link rel="stylesheet" type="text/css" href="~/styles/product_responsive.css">
-</head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
+        <link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+        <link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
+        <link rel="stylesheet" type="text/css" href="~/styles/product.css">
+        <link rel="stylesheet" type="text/css" href="~/styles/product_responsive.css">
+
+
+
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="~/styles/review.css" rel="stylesheet">
+
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+        <script src="~/js/review.js"></script>
+
+    </head>
 
 
 <div class="home">
@@ -113,6 +123,24 @@
                     <div class="description_title_container">
                         <div class="description_title">Description</div>
                         <div class="reviews_title"><a href="#">Reviews <span>(1)</span></a></div>
+                        <div class="reviews_title">
+                            <a id="open-review-box" a href="#" onclick="return false;">Leave a Review</a>
+                        </div>
+                        <div class="row" id="post-review-box" style="display:none;">
+                            <div class="col-md-12">
+                                <form accept-charset="UTF-8" action="" method="post">
+                                    <input id="ratings-hidden" name="rating" type="hidden"> 
+                                    <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea>
+                
+                                    <div class="text-right">
+                                        <div class="stars starrr" data-rating="0"></div>
+                                        <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                                            <span class="glyphicon glyphicon-remove"></span>Cancel</a>
+                                        <button id="post_review" class="btn btn-success btn-md" type="submit">Post</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <div class="description_text">
                         <p>@(Model.DescriptionExtra)</p>
@@ -189,10 +217,42 @@
         } );
 </script>
 
+<script>
+        
+    document.getElementById("post_review").addEventListener('click', function (e) {
+
+        e.preventDefault();
+        let star = 0;
+        let arr = document.getElementsByClassName("starrr")[0].children;
+        for(let i=0; i < arr.length; i++){
+            if(arr[i].className.endsWith("star")) { star++;}
+        }
+        let reviewText = document.getElementById("new-review").value;
+
+        let request = new XMLHttpRequest();
+        request.open('POST', 'https://localhost:5001/product/AddReview', true);
+
+        let data = new FormData();
+        data.append('star', star.toString());
+        data.append('review', reviewText);
+
+        console.log("sending stuff");
+
+        request.send(data);
+
+        request.onload = function () {
+            if (request.status === 200) {
+                location.reload();
+            } else {
+                console.log("review post was not successful");
+            }
+        }
+
+        });
+</script>
 
 @section Scripts
 {
-    <script src="~/js/jquery-3.2.1.min.js"></script>
     <script src="~/styles/bootstrap4/popper.js"></script>
     <script src="~/styles/bootstrap4/bootstrap.min.js"></script>
     <script src="~/plugins/greensock/TweenMax.min.js"></script>

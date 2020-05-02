@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Web.Models.DTOs;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Web.Helpers;
+using OnlineStore.Web.Models;
 
 namespace OnlineStore.Web.Components
 {
