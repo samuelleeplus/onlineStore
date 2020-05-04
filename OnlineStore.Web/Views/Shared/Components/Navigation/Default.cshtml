@@ -14,7 +14,7 @@
                             <ul>
                                 <li>
                                     <a href="/">Home</a>
-                                  
+
                                 </li>
                                 <li class="hassubs">
                                     <a href="#">Categories</a>
@@ -27,7 +27,15 @@
                                 </li>
                                 <li><a href="#">Accessories</a></li>
                                 <li><a href="contact">Contact</a></li>
-                                <li><a href="/Identity/Account/login">Login</a></li>
+                                @if (!string.IsNullOrEmpty(Model.Username))
+                                {
+                                    <li><a href="/User">@Model.Username</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Identity/Account/login">Login</a></li>
+                                }
+
                             </ul>
                         </nav>
                         <div class="header_extra ml-auto">

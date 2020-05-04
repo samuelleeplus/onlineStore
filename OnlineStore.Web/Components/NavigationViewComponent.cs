@@ -7,6 +7,7 @@ using OnlineStore.Data.Models.Entities;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Web.Helpers;
 using OnlineStore.Web.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace OnlineStore.Web.Components
 {
@@ -15,16 +16,21 @@ namespace OnlineStore.Web.Components
         private ApplicationDbContext _context { get; }
         private UnitOfWork _uow { get; }
 
-        public NavigationViewComponent(ApplicationDbContext context)
+        private UserManager<ApplicationUser> _userManager;
+
+        public NavigationViewComponent(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _uow = new UnitOfWork(_context);
+            _userManager = userManager; 
         }
 
 
-        public IViewComponentResult Invoke()
+        public async System.Threading.Tasks.Task<IViewComponentResult> InvokeAsync()
         {
             var cartItems = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
+
+            var user = await _userManager.GetUserAsync(HttpContext.User);
 
             var model = new NavigationDto
             {
@@ -33,7 +39,8 @@ namespace OnlineStore.Web.Components
                         new Category{ CategoryName = x, CategoryLink = "/category/" + x}
                     ).ToList(),
 
-                NumberOfItemsInCart = cartItems?.Select(x => x.ItemQuantity).Aggregate((x, y) => x+y) ?? 0
+                NumberOfItemsInCart = cartItems?.Select(x => x.ItemQuantity).Aggregate((x, y) => x+y) ?? 0,
+                 Username = user?.FirstName
             };
             return View(model);
         }

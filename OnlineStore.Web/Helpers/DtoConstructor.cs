@@ -66,6 +66,43 @@ namespace OnlineStore.Web.Helpers
 
         }
 
+
+        public UserDto UserDtoByCustomerID(string id)
+        {
+            var userRepo =  _uow.GetGenericRepository<ApplicationUser>().Find(x => x.Id == id).FirstOrDefault();
+
+
+            var ordersById = _uow.GetGenericRepository<Order>().Find(x => x.CustomerId == userRepo.customerID);
+
+            IEnumerable<Order> orders = ordersById == null ? null : ordersById.Select(x =>
+            new Order
+            {
+                //address of order
+                Address = x.Address,
+                CustomerId = x.CustomerId,
+                Id = x.Id,
+                IsDelivered = x.IsDelivered,
+                TotalPrice = x.TotalPrice
+
+            }).ToList();
+            //username , userid , customer address, order
+
+            UserDto userDto = new UserDto {
+                Orders = orders,
+                UserId = id,
+                Username = userRepo.UserName,
+                 firstName = userRepo.FirstName,
+                  lastName =userRepo.LastName,
+                   Email = userRepo.Email,
+                    PhoneNumber = userRepo.PhoneNumber 
+
+            };
+
+
+            return userDto; 
+        }
+
+
         public InvoiceDto InvoiceDtoByCustomerID(int id) { 
 
             var orderedProducts = _uow.GetGenericRepository<OrderedProduct>().Find(x => x.OrderId == id);

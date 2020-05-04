@@ -6,5 +6,7 @@ namespace OnlineStore.Web.Models.DTOs
     {
         public IEnumerable<Category> Categories { get; set; }
         public int NumberOfItemsInCart { get; set; }
+
+        public string Username { get; set; }
     }
 }
