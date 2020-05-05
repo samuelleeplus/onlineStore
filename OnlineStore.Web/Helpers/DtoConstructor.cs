@@ -91,8 +91,8 @@ namespace OnlineStore.Web.Helpers
                 Orders = orders,
                 UserId = id,
                 Username = userRepo.UserName,
-                 firstName = userRepo.FirstName,
-                  lastName =userRepo.LastName,
+                 FirstName = userRepo.FirstName,
+                  LastName =userRepo.LastName,
                    Email = userRepo.Email,
                     PhoneNumber = userRepo.PhoneNumber 
 

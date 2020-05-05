@@ -4,6 +4,7 @@ using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Web.Helpers;
+using OnlineStore.Web.Models.DTOs;
 using System.Linq;
 
 namespace OnlineStore.Web.Controllers
@@ -34,9 +35,46 @@ namespace OnlineStore.Web.Controllers
 
             var model = prodCtor.UserDtoByCustomerID(userId);
 
+
+
             return View(model);
 
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(string id, UserDto user)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                    var userRepo = _uow.GetGenericRepository<ApplicationUser>();
+
+                    var temp = userRepo.Find(x => x.Id == user.UserId).FirstOrDefault();
+
+                    temp.FirstName = user.FirstName;
+                    temp.LastName = user.LastName;
+                    temp.PhoneNumber = user.PhoneNumber;
+                    temp.Email = user.Email; 
+
+
+                    userRepo.Update(temp);
+                    _uow.Commit();
+
+                    return RedirectToAction("Index");
+                }
+
+                return View(); // error message should be returned.
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
 
 
 
