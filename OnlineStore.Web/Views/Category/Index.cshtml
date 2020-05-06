@@ -87,20 +87,29 @@
                             {
                                 <div class="product_extra product_new"><a href="categories.html">@(product.StatusClass)</a></div>
                             }
-                        <div class="product_content">
-                            <div class="product_title"><a href="@(product.Url)">@(product.Name)</a></div>
-                            <div class="product_price">$@(product.OriginalPrice - product.DiscountedPrice)</div>
-                            <div class="details_discount"><strike style="color:red">$@(product.OriginalPrice)</strike></div>
-                        </div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="@(product.Url)">@(product.Name)</a></div>
+                                <div class="product_price">$@(product.OriginalPrice - product.DiscountedPrice)</div>
+                                <div class="details_discount"><strike style="color:red">$@(product.OriginalPrice)</strike></div>
+                            </div>
                         </div>
                     }
 
                 </div>
+                <p id="lenOfPages" style="display:none;"></p>
                 <div class="product_pagination">
-                    <ul>
-                        <li class="active"><a href="#">01.</a></li>
-                        <li><a href="#">02.</a></li>
-                        <li><a href="#">03.</a></li>
+                    <ul class="pages">
+                        @for(int i=0; i < Model.Pages.Count(); i++)
+                        {
+                            if (i == 0)
+                            {
+                                <li class="active"><a href="?pageNumber=@(Model.Pages.ElementAt(i))">@(Model.Pages.ElementAt(i)).</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="?pageNumber=@(Model.Pages.ElementAt(i))">@(Model.Pages.ElementAt(i)).</a></li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -110,6 +119,7 @@
 
 @section Scripts
 {
+
     <script src="~/js/jquery-3.2.1.min.js"></script>
     <script src="~/styles/bootstrap4/popper.js"></script>
     <script src="~/styles/bootstrap4/bootstrap.min.js"></script>
