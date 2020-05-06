@@ -33,7 +33,7 @@ namespace OnlineStore.Web.Controllers
 
             var prodCtor = new DtoConstructor(_uow);
 
-            var model = prodCtor.UserDtoByCustomerID(userId);
+            var model = prodCtor.UserDtoByCustomerId(userId);
 
 
 

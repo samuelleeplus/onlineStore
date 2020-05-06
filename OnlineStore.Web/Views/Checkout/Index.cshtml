@@ -81,14 +81,14 @@
                                 <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                             <div class="form-group form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" asp-for="IsAgreeTermsAndConditions" /> @Html.DisplayNameFor(model => model.IsAgreeTermsAndConditions)
-                                </label>
+                                @Html.CheckBoxFor(x => x.IsAgreeTermsAndConditions, new { @class = "form-check-input" })
+                                @Html.LabelFor(x => x.IsAgreeTermsAndConditions, new { @class = "form-check-label" })
+                                <span asp-validation-for="IsAgreeTermsAndConditions" class="text-danger"></span>
                             </div>
-                            <div class="form-group form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" asp-for="IsRememberAddress" /> @Html.DisplayNameFor(model => model.IsRememberAddress)
-                                </label>
+                              <div class="form-group form-check">
+                                @Html.CheckBoxFor(x => x.IsRememberAddress, new { @class = "form-check-input" })
+                                @Html.LabelFor(x => x.IsRememberAddress, new { @class = "form-check-label" })
+                                <span asp-validation-for="IsRememberAddress" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Proceed" class="btn btn-primary" />
@@ -146,4 +146,19 @@
     <script src="~/js/jquery-3.2.1.min.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script src="~/js/checkout.js"></script>
+    
+    <script>
+        // extend range validator method to treat checkboxes differently
+        var defaultRangeValidator = $.validator.methods.range;
+        $.validator.methods.range = function(value, element, param) {
+            if(element.type === 'checkbox') {
+                // if it's a checkbox return true if it is checked
+                return element.checked;
+            } else {
+                // otherwise run the default validation function
+                return defaultRangeValidator.call(this, value, element, param);
+            }
+        }
+    </script>
+
 }

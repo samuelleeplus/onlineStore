@@ -28,11 +28,11 @@ namespace OnlineStore.Web.Controllers
             pageNumber = pageNumber < 1 ? 1 : pageNumber;
             const int pageSize = 12;
 
-            var len = _uow.GetGenericRepository<Product>().GetAll().Count();
+            var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category)?.ToList();
 
             var pages = new List<int>();
             int j = 0;
-            for (int i = pageNumber; i*pageSize < len; i++)
+            for (int i = pageNumber; i*pageSize < products?.Count; i++)
             {
                 j++;
                 pages.Add(i);
@@ -52,8 +52,7 @@ namespace OnlineStore.Web.Controllers
                 BackgroundImageUrl = "https://car-images.bauersecure.com/pagefiles/68199/zmaser-001.jpg",
 
 
-                Products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category).
-                    Skip(12*(pageNumber-1)).Take(pageSize).Select(y =>
+                Products = products?.Skip(12*(pageNumber-1)).Take(pageSize).Select(y =>
                     new SimpleProduct()
                     {
                      ImageUrl   = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(z => z.ProductId == y.Id)?.Uri ?? null,

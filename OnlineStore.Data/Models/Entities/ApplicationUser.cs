@@ -11,6 +11,6 @@ namespace OnlineStore.Data.Models.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public int customerID { get; set; }
+        public int CustomerId { get; set; }
     }
 }

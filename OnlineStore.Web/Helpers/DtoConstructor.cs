@@ -67,24 +67,24 @@ namespace OnlineStore.Web.Helpers
         }
 
 
-        public UserDto UserDtoByCustomerID(string id)
+        public UserDto UserDtoByCustomerId(string id)
         {
             var userRepo =  _uow.GetGenericRepository<ApplicationUser>().Find(x => x.Id == id).FirstOrDefault();
 
 
-            var ordersById = _uow.GetGenericRepository<Order>().Find(x => x.CustomerId == userRepo.customerID);
+            var ordersById = _uow.GetGenericRepository<Order>().Find(x => x.CustomerId == userRepo.CustomerId);
 
-            IEnumerable<Order> orders = ordersById == null ? null : ordersById.Select(x =>
-            new Order
-            {
-                //address of order
-                Address = x.Address,
-                CustomerId = x.CustomerId,
-                Id = x.Id,
-                IsDelivered = x.IsDelivered,
-                TotalPrice = x.TotalPrice
+            IEnumerable<Order> orders = ordersById?.Select(x =>
+                new Order
+                {
+                    //address of order
+                    Address = x.Address,
+                    CustomerId = x.CustomerId,
+                    Id = x.Id,
+                    IsDelivered = x.IsDelivered,
+                    TotalPrice = x.TotalPrice
 
-            }).ToList();
+                }).ToList();
             //username , userid , customer address, order
 
             UserDto userDto = new UserDto {

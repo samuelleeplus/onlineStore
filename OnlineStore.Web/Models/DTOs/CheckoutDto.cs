@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace OnlineStore.Web.Models.DTOs
@@ -14,9 +15,12 @@ namespace OnlineStore.Web.Models.DTOs
         [Required, Phone] public string Phone { get; set; }
 
         [Required, EmailAddress] public string Email { get; set; }
-
-        // [Range(typeof(bool), "true", "true", ErrorMessage = "You must agree to terms and conditions.")]
+        
+        [Display(Name = "I agree to the terms and conditions")]
+        [Range(typeof(bool), "true", "true",
+            ErrorMessage = "You must agree to the terms and conditions.")]
         public bool IsAgreeTermsAndConditions { get; set; }
+        [Display(Name = "Remember my address")]
         public bool IsRememberAddress { get; set; }
         public double Shipping { get; set; }
         public IEnumerable<CheckoutItem> CheckoutItems { get; set; }

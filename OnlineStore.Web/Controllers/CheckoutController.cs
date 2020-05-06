@@ -17,7 +17,8 @@ namespace OnlineStore.Web.Controllers
 
         public void LoadItems()
         {
-            _checkoutItems = HttpContext?.Session.GetObjectFromJson<List<CartItem>>("cart") ?? null;
+            if (HttpContext?.Session != null)
+                _checkoutItems = HttpContext?.Session.GetObjectFromJson<List<CartItem>>("cart");
         }
 
         public IActionResult Index()
@@ -27,8 +28,6 @@ namespace OnlineStore.Web.Controllers
             {
                 return RedirectToRoute(new {controller = "Cart"});
             }
-
-            LoadItems();
 
             var model = new CheckoutDto()
             {
@@ -53,14 +52,14 @@ namespace OnlineStore.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Index(CheckoutDto model)
+        public IActionResult Index(CheckoutDto _)
         {
             if (ModelState.IsValid)
             {
                 return RedirectToRoute(new { controller="CreditCard" });
             }
 
-            return View();
+            return Index();
         }
     }
 }
