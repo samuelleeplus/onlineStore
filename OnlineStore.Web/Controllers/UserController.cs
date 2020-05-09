@@ -28,14 +28,11 @@ namespace OnlineStore.Web.Controllers
 
             var user = await _userManager.GetUserAsync(HttpContext.User);
 
-
             var userId = user.Id;
 
             var prodCtor = new DtoConstructor(_uow);
 
             var model = prodCtor.UserDtoByCustomerId(userId);
-
-
 
             return View(model);
 
@@ -74,8 +71,65 @@ namespace OnlineStore.Web.Controllers
             }
         }
 
+        //addresses 
+        [HttpGet]
+        public async System.Threading.Tasks.Task<IActionResult> AddressAsync()
+        {
+
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+
+            var userId = user.Id;
+
+            var prodCtor = new DtoConstructor(_uow);
+
+            var model = prodCtor.AddressDtoByCustomerId(userId);
+
+            return View(model);
+
+        }
+
+        [HttpGet]
+        public async System.Threading.Tasks.Task<IActionResult> AddressDetail(int addressId)
+        {
+            var addressRepo = _uow.GetGenericRepository<Address>();
+
+            var temp = addressRepo.Find(x => x.Id == addressId).FirstOrDefault();
+
+            return View(temp); // error message should be returned.
+
+        }
 
 
+        public ActionResult AddressEdit(Address address)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                    var addressRepo = _uow.GetGenericRepository<Address>();
+
+                    var temp = addressRepo.Find(x => x.Id == address.Id).FirstOrDefault();
+
+                    temp.AddressDetail = address.AddressDetail;
+                    temp.City = address.City;
+                    temp.Country = address.Country;
+                    temp.Province = address.Province;
+                    temp.ZipCode = address.ZipCode;
+
+                    addressRepo.Update(temp);
+                    _uow.Commit();
+
+                    return RedirectToAction("Address");
+                }
+
+                return View("AddressDetail"); // error message should be returned.
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
 
     }

@@ -74,6 +74,8 @@ namespace OnlineStore.Web.Helpers
 
             var ordersById = _uow.GetGenericRepository<Order>().Find(x => x.CustomerId == userRepo.CustomerId);
 
+       
+
             IEnumerable<Order> orders = ordersById?.Select(x =>
                 new Order
                 {
@@ -87,6 +89,7 @@ namespace OnlineStore.Web.Helpers
                 }).ToList();
             //username , userid , customer address, order
 
+
             UserDto userDto = new UserDto {
                 Orders = orders,
                 UserId = id,
@@ -94,12 +97,46 @@ namespace OnlineStore.Web.Helpers
                  FirstName = userRepo.FirstName,
                   LastName =userRepo.LastName,
                    Email = userRepo.Email,
-                    PhoneNumber = userRepo.PhoneNumber 
-
+                    PhoneNumber = userRepo.PhoneNumber
+                     
             };
 
 
             return userDto; 
+        }
+
+        public UserDto AddressDtoByCustomerId(string id)
+        {
+            var userRepo = _uow.GetGenericRepository<ApplicationUser>().Find(x => x.Id == id).FirstOrDefault();
+
+            //get all addresses by the customerId
+            var addressesById = _uow.GetGenericRepository<Address>().Find(x => x.UserId == userRepo.CustomerId);
+
+            IEnumerable<Address> addresses = addressesById?.Select(x =>
+               new Address
+               {
+                   //addresses
+                   UserId = x.UserId,
+                   City = x.City,
+                   AddressDetail = x.AddressDetail,
+                   Country = x.Country,
+                   Province = x.Province,
+                   ZipCode = x.ZipCode,
+                   Id = x.Id
+
+               }).ToList();
+
+            UserDto userDto = new UserDto
+            {
+                UserId = id,
+                Username = userRepo.UserName,
+                FirstName = userRepo.FirstName,
+                LastName = userRepo.LastName,
+                Addresses = addresses
+            };
+
+
+            return userDto;
         }
 
 

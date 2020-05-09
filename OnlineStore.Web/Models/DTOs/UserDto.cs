@@ -20,5 +20,7 @@ namespace OnlineStore.Web.Models.DTOs
 
         public IEnumerable<Order> Orders { get; set; }
 
+        public IEnumerable<Address> Addresses { get; set; }
+
     }
 }
