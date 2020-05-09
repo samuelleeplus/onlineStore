@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Web.Helpers;
 using OnlineStore.Web.Models.DTOs;
 using System.Linq;
+using System.Text;
 
 namespace OnlineStore.Web.Controllers
 {
@@ -51,12 +54,13 @@ namespace OnlineStore.Web.Controllers
 
                     var temp = userRepo.Find(x => x.Id == user.UserId).FirstOrDefault();
 
+                    var user1 = _userManager.FindByIdAsync(id);
+
+
                     temp.FirstName = user.FirstName;
                     temp.LastName = user.LastName;
                     temp.PhoneNumber = user.PhoneNumber;
-                    temp.Email = user.Email; 
-
-
+                    temp.Email = user.Email;
                     userRepo.Update(temp);
                     _uow.Commit();
 
@@ -130,6 +134,84 @@ namespace OnlineStore.Web.Controllers
                 return View();
             }
         }
+
+
+
+        [HttpGet]
+        public async System.Threading.Tasks.Task<IActionResult> CreditCardAsync()
+        {
+
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+
+            var userId = user.Id;
+
+            var prodCtor = new DtoConstructor(_uow);
+
+            var model = prodCtor.CreditCardDtoByCustomerId(userId);
+
+            return View(model);
+
+        }
+
+        [HttpGet]
+        public async System.Threading.Tasks.Task<IActionResult> CreditCardDetail(int cardId )
+        {
+            var cardRepo = _uow.GetGenericRepository<CreditCard>();
+
+            var temp = cardRepo.Find(x => x.Id == cardId).FirstOrDefault();
+
+            var dto = new CreditCardDto()
+            {
+                CardNumber = temp.CardNumber,
+                Cvc = temp.Cvc,
+                FullName = temp.FullName,
+                ExpiryDate = temp.ExpiryDate
+
+
+            };
+
+            return View(dto); // error message should be returned.
+
+        }
+
+        public async System.Threading.Tasks.Task<ActionResult> CreditCardEditAsync(CreditCardDto card)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                    var cardRepo = _uow.GetGenericRepository<CreditCard>();
+
+                    var user = await _userManager.GetUserAsync(HttpContext.User);
+
+
+
+                    //???
+                    //should we be finding by cardID? e.g. single customer may have many cards
+                    var temp = cardRepo.Find(x => x.CustomerId == user.CustomerId).FirstOrDefault();
+
+                    temp.CardNumber = card.CardNumber;
+                    temp.Cvc = card.Cvc;
+                    temp.ExpiryDate = card.ExpiryDate;
+                    temp.FullName = card.FullName;
+
+                    cardRepo.Update(temp);
+                    _uow.Commit();
+
+                    return RedirectToAction("CreditCard");
+                }
+
+                return View("CreditCardDetail"); // error message should be returned.
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+
 
 
     }

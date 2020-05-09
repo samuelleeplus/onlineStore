@@ -196,6 +196,9 @@ namespace OnlineStore.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
@@ -245,9 +248,6 @@ namespace OnlineStore.Data.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
-                    b.Property<int>("customerID")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -259,6 +259,33 @@ namespace OnlineStore.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("OnlineStore.Data.Models.Entities.CreditCard", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CardNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Cvc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExpiryDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CreditCard");
                 });
 
             modelBuilder.Entity("OnlineStore.Data.Models.Entities.Distributor", b =>

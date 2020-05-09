@@ -44,24 +44,24 @@
                             <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="UserId" class="control-label">User ID</label>
-                            <input asp-for="UserId" class="form-control" readonly />
-                            <span asp-validation-for="UserId" class="text-danger"></span>
+                            <p>
+                                <a id="forgot-password" asp-page="/Identity/Account/ResetPassword">Forgot your password?</a>
+                            </p>
                         </div>
                         @foreach (var order in Model.Orders)
                         {
-                         <dl>
-                        <dt>Order ID</dt>
-                        <dd>- @order.Id</dd>
-                        <dt>Total Price</dt>
-                        <dd>- @order.TotalPrice</dd>
-                        <dt>Address</dt>
-                        <dd>- @order.Address</dd>
-                        <dt>Has it been delivered?</dt>
-                             <dd>- @order.IsDelivered</dd>
-                            
-                        </dl>
-                        <div class="button continue_shopping_button"><a href="https://localhost:5001/invoice/invoicepdf/@order.CustomerId">Print Invoice</a></div>
+                            <dl>
+                                <dt>Order ID</dt>
+                                <dd>- @order.Id</dd>
+                                <dt>Total Price</dt>
+                                <dd>- @order.TotalPrice</dd>
+                                <dt>Address</dt>
+                                <dd>- @order.Address</dd>
+                                <dt>Has it been delivered?</dt>
+                                <dd>- @order.IsDelivered</dd>
+
+                            </dl>
+                            <div class="button continue_shopping_button"><a href="https://localhost:5001/invoice/invoicepdf/@order.CustomerId">Print Invoice</a></div>
                         }
 
                     </div>
