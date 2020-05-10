@@ -74,6 +74,8 @@ namespace OnlineStore.Web.Helpers
 
             var ordersById = _uow.GetGenericRepository<Order>().Find(x => x.CustomerId == userRepo.CustomerId);
 
+            var cardsId = _uow.GetGenericRepository<CreditCard>().Find(x => x.CustomerId == userRepo.CustomerId);
+
             IEnumerable<Order> orders = ordersById?.Select(x =>
                 new Order
                 {
@@ -87,6 +89,17 @@ namespace OnlineStore.Web.Helpers
                 }).ToList();
             //username , userid , customer address, order
 
+
+            IEnumerable<CreditCard> cards = cardsId?.Select(x =>
+                new CreditCard
+                {
+                    CardNumber = x.CardNumber,
+                     Cvc = x.Cvc , 
+                      ExpiryDate = x.ExpiryDate,
+                       FullName = x.FullName,
+                }).ToList();
+
+
             UserDto userDto = new UserDto {
                 Orders = orders,
                 UserId = id,
@@ -94,13 +107,80 @@ namespace OnlineStore.Web.Helpers
                  FirstName = userRepo.FirstName,
                   LastName =userRepo.LastName,
                    Email = userRepo.Email,
-                    PhoneNumber = userRepo.PhoneNumber 
-
+                    PhoneNumber = userRepo.PhoneNumber,
+                     CreditCards = cards
             };
-
 
             return userDto; 
         }
+
+        public UserDto AddressDtoByCustomerId(string id)
+        {
+            var userRepo = _uow.GetGenericRepository<ApplicationUser>().Find(x => x.Id == id).FirstOrDefault();
+
+            //get all addresses by the customerId
+            var addressesById = _uow.GetGenericRepository<Address>().Find(x => x.UserId == userRepo.CustomerId);
+
+            IEnumerable<Address> addresses = addressesById?.Select(x =>
+               new Address
+               {
+                   //addresses
+                   UserId = x.UserId,
+                   City = x.City,
+                   AddressDetail = x.AddressDetail,
+                   Country = x.Country,
+                   Province = x.Province,
+                   ZipCode = x.ZipCode,
+                   Id = x.Id
+
+               }).ToList();
+
+            UserDto userDto = new UserDto
+            {
+                UserId = id,
+                Username = userRepo.UserName,
+                FirstName = userRepo.FirstName,
+                LastName = userRepo.LastName,
+                Addresses = addresses
+            };
+
+
+            return userDto;
+        }
+
+        public UserDto CreditCardDtoByCustomerId(string id)
+        {
+            var userRepo = _uow.GetGenericRepository<ApplicationUser>().Find(x => x.Id == id).FirstOrDefault();
+
+            var cardById = _uow.GetGenericRepository<CreditCard>().Find(x => x.CustomerId == userRepo.CustomerId);
+
+            IEnumerable<CreditCard> cards = cardById?.Select(x =>
+               new CreditCard
+               {
+                   CardNumber = x.CardNumber ,
+                    Cvc = x.Cvc ,
+                     ExpiryDate = x.ExpiryDate,
+                      FullName= x.FullName,
+                       Id = x.Id ,
+                       CustomerId = x.CustomerId
+
+                
+
+               }).ToList();
+
+            UserDto userDto = new UserDto
+            {
+                UserId = id,
+                Username = userRepo.UserName,
+                FirstName = userRepo.FirstName,
+                LastName = userRepo.LastName,
+                CreditCards = cards
+            };
+
+
+            return userDto;
+        }
+
 
 
         public InvoiceDto InvoiceDtoByCustomerID(int id) { 
