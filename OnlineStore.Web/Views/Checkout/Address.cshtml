@@ -1,0 +1,108 @@
+﻿@model OnlineStore.Web.Models.DTOs.AddressDtoChooseOrCreate
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
+    <link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout.css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout_responsive.css">
+</head>
+
+<div class="home">
+    <div class="home_container">
+        <div class="home_background" style="background-image:url(images/cart.jpg)"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="cart.html">Shopping Cart</a></li>
+                                    <li>Checkout</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="checkout">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="billing checkout_section">
+                    <div class="section_title">Create Address</div>
+                    <div class="section_subtitle">Enter your address info</div>
+                    <div class="checkout_form_container">
+                        <form asp-action="CreateAddress">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="AddressDtoCreate.AddressDetail" class="control-label"></label>
+                                <textarea asp-for="AddressDtoCreate.AddressDetail" rows="2" class="form-control"></textarea>
+                                <span asp-validation-for="AddressDtoCreate.AddressDetail" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AddressDtoCreate.ZipCode" class="control-label"></label>
+                                <input asp-for="AddressDtoCreate.ZipCode" class="form-control" />
+                                <span asp-validation-for="AddressDtoCreate.ZipCode" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AddressDtoCreate.City" class="control-label"></label>
+                                <input asp-for="AddressDtoCreate.City" class="form-control" />
+                                <span asp-validation-for="AddressDtoCreate.City" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AddressDtoCreate.Province" class="control-label"></label>
+                                <input asp-for="AddressDtoCreate.Province" class="form-control" />
+                                <span asp-validation-for="AddressDtoCreate.Province" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Add/Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="billing checkout_section">
+                    <div class="section_title">Choose Address</div>
+                    <div class="section_subtitle">Choose one of the Addresses below</div>
+                    
+                    <div class="list-group">
+                        @if (Model?.AddressDtoChoose != null)
+                        {
+                            int i = 0; 
+                            foreach (var entry in Model.AddressDtoChoose)
+                            {
+                                <a asp-action="ProceedToCheckout" asp-route-id="@(i)" 
+                                   class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">@($"{entry.City}/{entry.Province}, {entry.ZipCode}")</h5>
+                                        <small>Address @(++i)</small>
+                                    </div>
+                                    <p class="mb-1">@(entry.AddressDetail)</p>
+                                    <!-- <small>Donec id elit non mi porta.</small> -->
+                                </a>
+                            }
+                        }
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/checkout.js"></script>
+
+}

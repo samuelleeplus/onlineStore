@@ -42,54 +42,46 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="FirstName" class="control-label"></label>
-                                <input asp-for="FirstName" class="form-control" />
+                                <input asp-for="FirstName" class="form-control" readonly />
                                 <span asp-validation-for="FirstName" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="LastName" class="control-label"></label>
-                                <input asp-for="LastName" class="form-control" />
+                                <input asp-for="LastName" class="form-control" readonly/>
                                 <span asp-validation-for="LastName" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="AddressDetail" class="control-label"></label>
-                                <textarea asp-for="AddressDetail" rows="2" class="form-control"></textarea>
-                                <span asp-validation-for="AddressDetail" class="text-danger"></span>
+                                <label asp-for="AddressInfo.AddressDetail" class="control-label"></label>
+                                <textarea asp-for="AddressInfo.AddressDetail" rows="2" class="form-control" readonly></textarea>
+                            
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="AddressInfo.ZipCode" class="control-label"></label>
+                                <input asp-for="AddressInfo.ZipCode" class="form-control" readonly/>
                             </div>
                             <div class="form-group">
-                                <label asp-for="ZipCode" class="control-label"></label>
-                                <input asp-for="ZipCode" class="form-control" />
-                                <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                <label asp-for="AddressInfo.City" class="control-label"></label>
+                                <input asp-for="AddressInfo.City" class="form-control" readonly/>
                             </div>
                             <div class="form-group">
-                                <label asp-for="City" class="control-label"></label>
-                                <input asp-for="City" class="form-control" />
-                                <span asp-validation-for="City" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="Province" class="control-label"></label>
-                                <input asp-for="Province" class="form-control" />
-                                <span asp-validation-for="Province" class="text-danger"></span>
+                                <label asp-for="AddressInfo.Province" class="control-label"></label>
+                                <input asp-for="AddressInfo.Province" class="form-control" readonly/>
                             </div>
                             <div class="form-group">
                                 <label asp-for="Phone" class="control-label"></label>
-                                <input asp-for="Phone" class="form-control" />
-                                <span asp-validation-for="Phone" class="text-danger"></span>
+                                <input asp-for="Phone" class="form-control" readonly/>
                             </div>
                             <div class="form-group">
                                 <label asp-for="Email" class="control-label"></label>
-                                <input asp-for="Email" class="form-control" />
-                                <span asp-validation-for="Email" class="text-danger"></span>
+                                <input asp-for="Email" class="form-control" readonly/>
                             </div>
                             <div class="form-group form-check">
                                 @Html.CheckBoxFor(x => x.IsAgreeTermsAndConditions, new { @class = "form-check-input" })
                                 @Html.LabelFor(x => x.IsAgreeTermsAndConditions, new { @class = "form-check-label" })
                                 <span asp-validation-for="IsAgreeTermsAndConditions" class="text-danger"></span>
                             </div>
-                              <div class="form-group form-check">
-                                @Html.CheckBoxFor(x => x.IsRememberAddress, new { @class = "form-check-input" })
-                                @Html.LabelFor(x => x.IsRememberAddress, new { @class = "form-check-label" })
-                                <span asp-validation-for="IsRememberAddress" class="text-danger"></span>
-                            </div>
+                              
                             <div class="form-group">
                                 <input type="submit" value="Proceed" class="btn btn-primary" />
                             </div>
