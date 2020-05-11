@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="~/styles/categories.css">
     <link rel="stylesheet" type="text/css" href="~/styles/categories_responsive.css">
-    
+
     <style>
         home_background {
             background-image: url('@(Model.BackgroundImageUrl)');
@@ -55,7 +55,7 @@
 
                 <!-- Product Sorting -->
                 <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start">
-                    <div class="results">Showing <span>12</span> results</div>
+                    <div class="results">Showing <span>the</span> results</div>
                     <div class="sorting_container ml-md-auto">
                         <div class="sorting">
                             <ul class="item_sorting">
@@ -74,17 +74,23 @@
                 </div>
             </div>
         </div>
+
+
         <div class="row">
-            <form asp-action="Index" asp-controller="Category">
-                <label for="minprice">Enter a min. price:</label>
-                <input type="number" id="minprice" name="minPrice" min="0">
-                <label for="maxprice">Enter a max. price:</label>
-                <input type="number" id="maxprice" name="maxPrice" min="0">
-                <label for="productname">Product name:</label>
-                <input type="text" id="quantity" name="searchedProduct" onkeypress="return /[a-z]/i.test(event.key)">
-                <input type="submit" value="Filter"/>
+            <form action="Index" method="post">
+                <p>
+                    <label for="minPrice">Enter a min. price:</label>
+                    <input type="number" id="minPrice" name="minPrice" min="0">
+                    <label for="maxPrice">Enter a max. price:</label>
+                    <input type="number" id="maxPrice" name="maxPrice" min="0">
+                    <label for="searchedProduct">Product name:</label>
+                    <input type="text" id="searchedProduct" name="searchedProduct" onkeypress="return /[a-z]/i.test(event.key)">
+                    <input type="submit" value="Filter" class="btn btn-primary" />
+                <p>
             </form>
         </div>
+
+
         <div class="row">
             <div class="col">
 
@@ -110,7 +116,7 @@
                 <p id="lenOfPages" style="display:none;"></p>
                 <div class="product_pagination">
                     <ul class="pages">
-                        @for(int i=0; i < Model.Pages.Count(); i++)
+                        @for (int i = 0; i < Model.Pages.Count(); i++)
                         {
                             if (i == 0)
                             {
