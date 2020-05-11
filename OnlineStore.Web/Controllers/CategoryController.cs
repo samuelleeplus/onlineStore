@@ -23,12 +23,12 @@ namespace OnlineStore.Web.Controllers
         }
         // [Route("/articles/{page}")]
         [Route("[controller]/{category}")]
-        public IActionResult Index(string category, int pageNumber = 1)
+        public IActionResult Index(string category, int pageNumber = 1, int minPrice = 0, int maxPrice = 0, string searchedProduct = "")
         {
             pageNumber = pageNumber < 1 ? 1 : pageNumber;
             const int pageSize = 12;
 
-            var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category)?.ToList();
+            var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category || (minPrice < x.Price && x.Price < maxPrice && x.Name == searchedProduct))?.ToList();
 
             var pages = new List<int>();
             int j = 0;
