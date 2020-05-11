@@ -128,7 +128,6 @@ namespace OnlineStore.Web.Helpers
                    UserId = x.UserId,
                    City = x.City,
                    AddressDetail = x.AddressDetail,
-                   Country = x.Country,
                    Province = x.Province,
                    ZipCode = x.ZipCode,
                    Id = x.Id

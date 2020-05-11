@@ -117,7 +117,6 @@ namespace OnlineStore.Web.Controllers
 
                     temp.AddressDetail = address.AddressDetail;
                     temp.City = address.City;
-                    temp.Country = address.Country;
                     temp.Province = address.Province;
                     temp.ZipCode = address.ZipCode;
 
