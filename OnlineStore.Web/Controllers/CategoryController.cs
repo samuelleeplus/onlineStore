@@ -21,15 +21,27 @@ namespace OnlineStore.Web.Controllers
             _context = context;
             _uow = new UnitOfWork(_context);
         }
+
         // [Route("/articles/{page}")]
         [Route("[controller]/{category}")]
-        public IActionResult Index(string category, string searchedProduct, int pageNumber = 1, int minPrice = 0 , int maxPrice = 100000000)
+        public IActionResult Index(string category, string searchedProduct, int pageNumber = 1, double minPrice = 0, double maxPrice = 1000000000)
         {
           
             pageNumber = pageNumber < 1 ? 1 : pageNumber;
             const int pageSize = 12;
 
-            var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category || (x.Price >= minPrice && x.Price <= maxPrice && x.Name == searchedProduct))?.ToList();
+            /*
+            var products = from m in _context.Products
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchedProduct))
+            {
+                products = products.Where(s => s.Name.Contains(searchedProduct) && s.Price >= minPrice && s.Price <= maxPrice);
+            }
+            */
+
+            var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category || (x.Price >= minPrice && x.Price <= maxPrice && x.Name.Contains(searchedProduct)))?.ToList();
+
 
             var pages = new List<int>();
             int j = 0;

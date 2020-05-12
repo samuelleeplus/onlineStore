@@ -84,9 +84,9 @@
                     <label for="maxPrice">Enter a max. price:</label>
                     <input type="number" id="maxPrice" name="maxPrice" min="0">
                     <label for="searchedProduct">Product name:</label>
-                    <input type="text" id="searchedProduct" name="searchedProduct" onkeypress="return /[a-z]/i.test(event.key)">
+                    <input type="text" id="searchedProduct" name="searchedProduct" onkeypress="return /^[A-Za-z0-9, ]/i.test(event.key)">
                     <input type="submit" value="Filter" class="btn btn-primary" />
-                <p>
+                </p>
             </form>
         </div>
 
