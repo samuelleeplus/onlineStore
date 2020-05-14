@@ -29,7 +29,15 @@
                                 <li><a href="contact">Contact</a></li>
                                 @if (!string.IsNullOrEmpty(Model.Username))
                                 {
-                                    <li><a href="/User">@Model.Username</a></li>
+                                    <li class="hassubs">
+                                        <a href="/User">@Model.Username</a>
+                                        <ul>
+                                            <li><a href=/User/Address>Addresses</a></li>
+                                            <li><a href=/User/CreditCard>Credit Cards</a></li>
+                                            <li><a href=/User/Orders>Orders</a></li>
+                                        </ul>
+                                    </li>
+
                                 }
                                 else
                                 {

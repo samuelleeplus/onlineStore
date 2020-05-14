@@ -9,6 +9,9 @@ using OnlineStore.Web.Helpers;
 using OnlineStore.Web.Models.DTOs;
 using System.Linq;
 using System.Text;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace OnlineStore.Web.Controllers
 {
@@ -207,6 +210,96 @@ namespace OnlineStore.Web.Controllers
             {
                 return View();
             }
+        }
+
+        public IActionResult Orders()
+        {
+            return View();
+        }
+        public async Task<JsonResult> LoadData()
+        {
+            try
+            {
+                var draw = HttpContext.Request.Query["draw"].FirstOrDefault();
+                // Skiping number of Rows count  
+                var start = Request.Query["start"].FirstOrDefault();
+                // Paging Length 10,20  
+                var length = Request.Query["length"].FirstOrDefault();
+                // Sort Column Name  
+                var sortColumn = Request.Query["columns[" + Request.Query["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+                // Sort Column Direction ( asc ,desc)  
+                var sortColumnDirection = Request.Query["order[0][dir]"].FirstOrDefault();
+                // Search Value from (Search box)  
+                var searchValue = Request.Query["search[value]"].FirstOrDefault();
+
+                //Paging Size (10,20,50,100)  
+                int pageSize = length != null ? Convert.ToInt32(length) : 0;
+                int skip = start != null ? Convert.ToInt32(start) : 0;
+                int recordsTotal = 0;
+
+                //get user id
+                //var user = await _userManager.GetUserAsync(HttpContext.User);
+                //var userId = user.Id;
+
+                //var userRepo = _uow.GetGenericRepository<ApplicationUser>().Find(x => x.Id == userId).FirstOrDefault();
+                // get entity data from context
+                var data = (from tempData in _uow.GetGenericRepository<Order>().GetAll() select tempData);
+
+
+
+                // Sorting
+                if (!string.IsNullOrEmpty(sortColumn) && !string.IsNullOrEmpty(sortColumnDirection))
+                {
+                    //.OrderBy(sortColumn + " " + sortColumnDirection).ToList();
+                    var orderInfo = typeof(Order).GetProperty(sortColumn);
+                    if (sortColumnDirection == "asc")
+                    {
+                        data = data.OrderBy(x => orderInfo.GetValue(x, null));
+                    }
+                    else if (sortColumnDirection == "desc")
+                    {
+                        data = data.OrderByDescending(x => orderInfo.GetValue(x, null));
+                    }
+                }
+               // searching
+               //Search
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    data = data.Where(m => m.Address.ToUpper().Contains(searchValue.ToUpper()));
+                }
+
+                //total number of rows count   
+                recordsTotal = data.Count();
+
+                //paging   
+                var response = data.Skip(skip).Take(pageSize).ToList().Select(
+                    x => new
+                    {
+                        /*
+                         * public int Id { get; set; }
+        public int CustomerId { get; set; }      
+        public double TotalPrice { get; set; }
+        public string Address { get; set; }
+        public bool IsDelivered { get; set; }
+                         * 
+                         * 
+                         */
+                        Id = x.Id,
+                        TotalPrice = x.TotalPrice,
+                        Address = x.Address,
+                        IsDelivered = x.IsDelivered
+
+                    }).ToList();
+
+                //Returning Json Data  
+                return new JsonResult(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = response });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
         }
 
 
