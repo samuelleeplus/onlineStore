@@ -238,12 +238,14 @@ namespace OnlineStore.Web.Controllers
                 int recordsTotal = 0;
 
                 //get user id
-                //var user = await _userManager.GetUserAsync(HttpContext.User);
-                //var userId = user.Id;
+                var user = await _userManager.GetUserAsync(HttpContext.User);
+                var userId = user.Id;
 
-                //var userRepo = _uow.GetGenericRepository<ApplicationUser>().Find(x => x.Id == userId).FirstOrDefault();
+                var userRepo = _uow.GetGenericRepository<ApplicationUser>().Find(x => x.Id == userId).FirstOrDefault();
+
+                var data = _uow.GetGenericRepository<Order>().Find(x => x.CustomerId == userRepo.CustomerId);
                 // get entity data from context
-                var data = (from tempData in _uow.GetGenericRepository<Order>().GetAll() select tempData);
+                //var data = (from tempData in _uow.GetGenericRepository<Order>().GetAll() select tempData);
 
 
 
@@ -275,19 +277,11 @@ namespace OnlineStore.Web.Controllers
                 var response = data.Skip(skip).Take(pageSize).ToList().Select(
                     x => new
                     {
-                        /*
-                         * public int Id { get; set; }
-        public int CustomerId { get; set; }      
-        public double TotalPrice { get; set; }
-        public string Address { get; set; }
-        public bool IsDelivered { get; set; }
-                         * 
-                         * 
-                         */
-                        Id = x.Id,
-                        TotalPrice = x.TotalPrice,
-                        Address = x.Address,
-                        IsDelivered = x.IsDelivered
+                        id = x.Id,
+                        user = x.CustomerId,
+                        totalprice = x.TotalPrice,
+                        address = x.Address,
+                        isdelivered = x.IsDelivered
 
                     }).ToList();
 

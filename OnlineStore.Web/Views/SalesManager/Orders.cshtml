@@ -50,7 +50,7 @@
             "displayLength": 10,
 
             "ajax": {
-                "url": "/User/LoadData",
+                "url": "/SalesManager/LoadOrdersData",
                 "datatype": "JSON"
             },
             "columnDefs": [
@@ -69,7 +69,7 @@
 
             {
             orderable: false,
-            "render": function (data, type, full, meta) { return "<a class='btn-floating mb-1 waves-effect waves-light' href='/invoice/invoicepdf/" + full.user + "'><i class='material-icons'>view</i></a>"; }
+            "render": function (data, type, full, meta) { return "<a class='btn-floating mb-1 waves-effect waves-light' href='/invoice/invoicepdf/" + full.userid + "'><i class='material-icons'>view</i></a>"; }
             },
             ],
         });
