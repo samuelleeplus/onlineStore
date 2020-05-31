@@ -122,7 +122,7 @@
                 <div class="col">
                     <div class="description_title_container">
                         <div class="description_title">Description</div>
-                        <div class="reviews_title"><a href="#">Reviews <span>(1)</span></a></div>
+                        <div class="reviews_title"><a href="/product/SeeReviews?productId=@(Model.ProductId)">Reviews</a></div>
                         <div class="reviews_title">
                             <a id="open-review-box" a href="#" onclick="return false;">Leave a Review</a>
                         </div>
@@ -229,17 +229,17 @@
         }
         let reviewText = document.getElementById("new-review").value;
 
-        let request = new XMLHttpRequest();
-        request.open('POST', 'https://localhost:5001/product/AddReview', true);
+        // let request = new XMLHttpRequest();
+        // request.open('POST', `../product/AddReview?id=${@(Model.ProductId.ToString())}`, true);
 
         let data = new FormData();
         data.append('star', star.toString());
         data.append('review', reviewText);
 
         console.log("sending stuff");
-
+        /*
         request.send(data);
-
+        
         request.onload = function () {
             if (request.status === 200) {
                 location.reload();
@@ -247,8 +247,17 @@
                 console.log("review post was not successful");
             }
         }
+        */
+        fetch(`../product/AddReview?id=${@(Model.ProductId.ToString())}`, {
+                method: 'post',
+                body: data
+            }).then(() => {
+                console.log("successful");
+                location.reload();
+            })
+            .catch(error => console.log(error));
 
-        });
+    });
 </script>
 
 @section Scripts

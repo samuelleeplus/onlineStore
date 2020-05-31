@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OnlineStore.Data.Migrations
 {
-    public partial class database1 : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,6 @@ namespace OnlineStore.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Country = table.Column<string>(nullable: true),
                     AddressDetail = table.Column<string>(nullable: true),
                     ZipCode = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
@@ -69,7 +68,7 @@ namespace OnlineStore.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CreditCard",
+                name: "CreditCards",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -82,7 +81,7 @@ namespace OnlineStore.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CreditCard", x => x.Id);
+                    table.PrimaryKey("PK_CreditCards", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -163,6 +162,22 @@ namespace OnlineStore.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerId = table.Column<int>(nullable: false),
+                    ProductId = table.Column<int>(nullable: false),
+                    ReviewOfProduct = table.Column<string>(nullable: true),
+                    StarNum = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -332,7 +347,7 @@ namespace OnlineStore.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "CreditCard");
+                name: "CreditCards");
 
             migrationBuilder.DropTable(
                 name: "Distributors");
@@ -348,6 +363,9 @@ namespace OnlineStore.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
