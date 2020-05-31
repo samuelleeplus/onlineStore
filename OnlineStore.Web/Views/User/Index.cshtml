@@ -48,21 +48,7 @@
                                 <a id="forgot-password" asp-page="/Identity/Account/ResetPassword">Forgot your password?</a>
                             </p>
                         </div>
-                        @foreach (var order in Model.Orders)
-                        {
-                            <dl>
-                                <dt>Order ID</dt>
-                                <dd>- @order.Id</dd>
-                                <dt>Total Price</dt>
-                                <dd>- @order.TotalPrice</dd>
-                                <dt>Address</dt>
-                                <dd>- @order.Address</dd>
-                                <dt>Has it been delivered?</dt>
-                                <dd>- @order.IsDelivered</dd>
-
-                            </dl>
-                            <div class="button continue_shopping_button"><a href="https://localhost:5001/invoice/invoicepdf/@order.CustomerId">Print Invoice</a></div>
-                        }
+                       
 
                     </div>
                    

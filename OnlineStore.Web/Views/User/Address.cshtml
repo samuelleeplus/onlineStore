@@ -18,13 +18,15 @@
         <div class="row">
             @foreach (var address in Model.Addresses)
             {
-                <div class="column" style="background-color:#ccc;">
-                    <h2>@address.Id</h2>
-                    <p>@address.AddressDetail</p>
-                    <p>@address.City</p>
-                    <p>@address.Province</p>
-                    <p>@address.ZipCode</p>
-                    <div class="button continue_shopping_button"><a href="/User/AddressDetail?addressId=@address.Id">Edit Address</a></div>
+                <div class="column" style="background-color:#ccc;border-radius:20px;padding:20px">
+                    <center>
+                        <h2>@address.Id</h2>
+                        <p>@address.AddressDetail</p>
+                        <p>@address.City</p>
+                        <p>@address.Province</p>
+                        <p>@address.ZipCode</p>
+                        <div class="button continue_shopping_button"><a href="/User/AddressDetail?addressId=@address.Id">Edit Address</a></div>
+                    </center>
                 </div>
 
             }
