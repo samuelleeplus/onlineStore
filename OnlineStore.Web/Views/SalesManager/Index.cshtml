@@ -1,6 +1,7 @@
 ﻿
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
@@ -11,10 +12,12 @@
     <h4>Profile</h4>
     <hr />
     <div class="checkout">
+        <center>
         <div class="container">
-                <button class="" onclick="window.location.href = '/SalesManager/showgrid';" style="width:50%">Go To Products</button>
-                <button class="" onclick="window.location.href = '/SalesManager/orders';" style="width:50%">Go To Orders</button>
-        </div>
+            <div><span style="font-size:40px"><strong>Sales Manager Menu</strong></span></div>
+                <div class="button" style="width:50%;margin:20px"><a href="/SalesManager/showgrid">Go To Products Page</a></div>
+                <div class="button" style="width:50%;margin:20px" ><a href="/SalesManager/orders">Go To Orders Page</a></div>
+        </div></center>
     </div>
 
     @section Scripts {
