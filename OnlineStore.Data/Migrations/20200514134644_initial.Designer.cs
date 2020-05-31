@@ -10,8 +10,8 @@ using OnlineStore.Data.Context;
 namespace OnlineStore.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200509130415_database1")]
-    partial class database1
+    [Migration("20200514134644_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -169,9 +169,6 @@ namespace OnlineStore.Data.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Province")
                         .HasColumnType("nvarchar(max)");
 
@@ -287,7 +284,7 @@ namespace OnlineStore.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CreditCard");
+                    b.ToTable("CreditCards");
                 });
 
             modelBuilder.Entity("OnlineStore.Data.Models.Entities.Distributor", b =>
@@ -408,6 +405,30 @@ namespace OnlineStore.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("OnlineStore.Data.Models.Entities.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReviewOfProduct")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StarNum")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

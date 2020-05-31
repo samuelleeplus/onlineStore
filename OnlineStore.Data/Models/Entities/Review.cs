@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public int CustomerId { get; set; }
         public int ProductId { get; set; }
-        public string ReviewProduct { get; set; }
+        public string ReviewOfProduct { get; set; }
+        public int StarNum { get; set; }
     }
 }
