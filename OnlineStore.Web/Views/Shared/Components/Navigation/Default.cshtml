@@ -33,8 +33,13 @@
                                         <a href="/User">@Model.Username</a>
                                         <ul>
                                             <li><a href=/User/Address>Addresses</a></li>
-                                            <li><a href=/User/CreditCard>Credit Cards</a></li>
+                                            <li><a href=/User/CreditCard>Credit cards</a></li>
                                             <li><a href=/User/Orders>Orders</a></li>
+                                            <li>
+                                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                                    <button type="submit" class="nav-link btn btn-link text-dark"><strong>Logout</strong></button>
+                                                </form>
+                                            </li>
                                         </ul>
                                     </li>
 

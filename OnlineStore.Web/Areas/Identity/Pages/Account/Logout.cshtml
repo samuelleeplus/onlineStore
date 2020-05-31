@@ -4,7 +4,40 @@
     ViewData["Title"] = "Log out";
 }
 
-<header>
-    <h1>@ViewData["Title"]</h1>
-    <p>You have successfully logged out of the application.</p>
-</header>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
+    <link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout.css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout_responsive.css">
+</head>
+
+<h4>Profile</h4>
+<hr />
+<div class="checkout">
+    <div class="container">
+        <div class="row">
+            <header>
+                <h1>@ViewData["Title"]</h1>
+                <p>You have successfully logged out of the application.</p>
+            </header>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/styles/bootstrap4/popper.js"></script>
+    <script src="~/styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="~/plugins/greensock/TweenMax.min.js"></script>
+    <script src="~/plugins/greensock/TimelineMax.min.js"></script>
+    <script src="~/plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="~/plugins/greensock/animation.gsap.min.js"></script>
+    <script src="~/plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="~/plugins/easing/easing.js"></script>
+    <script src="~/plugins/parallax-js-master/parallax.min.js"></script>
+}
