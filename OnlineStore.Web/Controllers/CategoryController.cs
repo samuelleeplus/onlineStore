@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
@@ -24,9 +25,20 @@ namespace OnlineStore.Web.Controllers
 
         // [Route("/articles/{page}")]
         [Route("[controller]/{category}")]
-        public IActionResult Index(string category, string searchedProduct, int pageNumber = 1, double minPrice = 0, double maxPrice = 1000000000)
+        public IActionResult Index(string category="Index", string searchedProduct="", int pageNumber = 1, double minPrice = 0, double maxPrice = 1000000000)
         {
           
+            // if category is not 'Index' store in session
+            if (!category.Equals("Index"))
+            {
+                HttpContext.Session.SetString("category", category);
+            }
+            else
+            {
+                category = HttpContext.Session?.GetString("category");
+            }
+
+
             pageNumber = pageNumber < 1 ? 1 : pageNumber;
             const int pageSize = 12;
 
@@ -40,7 +52,9 @@ namespace OnlineStore.Web.Controllers
             }
             */
 
-            var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category || (x.Price >= minPrice && x.Price <= maxPrice && x.Name.Contains(searchedProduct)))?.ToList();
+            var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category && x.DiscountedPrice >= minPrice && x.DiscountedPrice <= maxPrice && 
+                                                                          (searchedProduct==null || x.Name.ToUpper().Contains(searchedProduct.ToUpper()))
+                                                                          )?.ToList();
 
 
             var pages = new List<int>();
