@@ -206,22 +206,22 @@ namespace OnlineStore.Web.Helpers
                    ItemQuantity = x.Quantity,
                    ItemName = repo.GetById(x.ProductId).Name,
                    //should be price -discounted price
-                   ItemPrice = repo.GetById(x.ProductId).Price  
+                   ItemPrice = repo.GetById(x.ProductId).DiscountedPrice  
                }).ToList();
 
        
-            var priceRepo = _uow.GetGenericRepository<Order>();
+            var orderRepo = _uow.GetGenericRepository<Order>();
             var addressRepo = _uow.GetGenericRepository<Address>();
             var usersRepo = _uow.GetGenericRepository<ApplicationUser>();
 
-            var userId = priceRepo.FirstOrDefault(x => x.Id == orderId).CustomerId;
+            var userId = orderRepo.FirstOrDefault(x => x.Id == orderId).CustomerId;
             InvoiceDto invoiceDto = new InvoiceDto
             {
                 //Customer name or User name should be included in database !!!!!!!!
 
                 Items = items,
                 OrderId = orderId,
-                totalPrice = priceRepo.FirstOrDefault(x => x.CustomerId == orderId).TotalPrice,
+                totalPrice = orderRepo.FirstOrDefault(x => x.Id == orderId).TotalPrice,
                 CustomerAddress = addressRepo.FirstOrDefault(x => x.UserId == userId),
                 CustomerName =  usersRepo.FirstOrDefault(x => x.CustomerId == userId).FirstName + " " +
                                 usersRepo.FirstOrDefault(x => x.CustomerId == userId).LastName
