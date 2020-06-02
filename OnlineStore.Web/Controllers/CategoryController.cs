@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Web.Models.DTOs;
+
+
+
 
 namespace OnlineStore.Web.Controllers
 {
@@ -40,7 +43,12 @@ namespace OnlineStore.Web.Controllers
             }
             */
 
-            var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category || (x.Price >= minPrice && x.Price <= maxPrice && x.Name.Contains(searchedProduct)))?.ToList();
+            // var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category)?.ToList();
+
+            // var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category && (x.Price >= minPrice && x.Price <= maxPrice && x.Name.Contains(searchedProduct)))?.ToList();
+
+
+            var products = _uow.GetGenericRepository<Product>().Find(x => x.Category == category && x.Price >= minPrice && x.Price <= maxPrice && (string.IsNullOrEmpty(searchedProduct) || x.Name.Contains(searchedProduct)))?.ToList();
 
 
             var pages = new List<int>();
