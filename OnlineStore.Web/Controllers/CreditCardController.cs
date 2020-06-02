@@ -88,25 +88,28 @@ namespace OnlineStore.Web.Controllers
                 };
 
                 _uow.GetGenericRepository<Order>().Add(order);
+                _uow.Commit();
 
                 var orderedProductRepository = _uow.GetGenericRepository<OrderedProduct>();
                 var productRepository = _uow.GetGenericRepository<Product>();
 
                 _checkoutItems.ForEach(x =>
                 {
-                    var orderedProduct = new OrderedProduct()
+                    orderedProductRepository.Add( new OrderedProduct()
                     {
                         OrderId = order.Id,
                         ProductId = x.Id,
                         Quantity = x.ItemQuantity
-                    };
-                    orderedProductRepository.Add(orderedProduct);
+                    });
+                    
                     var product = productRepository.FirstOrDefault(y => y.Id == x.Id);
                     product.Quantity -= x.ItemQuantity;
                     productRepository.Update(product);
+                    
                 });
-
+                
                 _uow.Commit();
+
                 HttpContext.Session.Remove("cart");
                 HttpContext.Session.Remove("addressId");
                 // return RedirectToRoute(new {controller = "Home"});
