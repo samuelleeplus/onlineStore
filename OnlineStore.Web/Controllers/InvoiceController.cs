@@ -39,7 +39,7 @@ namespace OnlineStore.Web.Controllers
         {
             var prodCtor = new DtoConstructor(_uow);
 
-            var model = prodCtor.InvoiceDtoByCustomerID(id);
+            var model = prodCtor.InvoiceDtoByOrderID(id);
 
             return new ViewAsPdf("Invoice", model);
         }

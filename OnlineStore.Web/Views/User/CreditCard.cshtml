@@ -18,19 +18,26 @@
         <div class="row">
             @foreach (var card in Model.CreditCards)
             {
-            <div class="column" style="background-color:#ccc;border-radius:20px;padding:20px">
-                <center>
-                    <h2>@card.FullName</h2>
-                    <p>@card.CardNumber</p>
-                    <p>@card.ExpiryDate</p>
-                    <p>@card.Cvc</p>
-                    <div class="button continue_shopping_button"><a href="/User/CreditCardDetail?cardId=@card.Id">Edit Credit Card</a></div>
-                </center>
+                <div class="column" style="background-color:#ccc;border-radius:20px;padding:20px">
+                    <center>
+                        <h2>@card.FullName</h2>
+                        <p>@card.CardNumber</p>
+                        <p>@card.ExpiryDate</p>
+                        <p>@card.Cvc</p>
+                        <div class="button continue_shopping_button"><a href="/User/CreditCardDetail?cardId=@card.Id">Edit Credit Card</a></div>
+                    </center>
 
-            </div>
+                </div>
 
             }
 
+        </div>
+        <div class="row">
+            <div class="button continue_shopping_button">
+                <p>
+                    <a asp-action="CreateCreditCard">Create New</a>
+                </p>
+            </div>
         </div>
     </div>
 </div>

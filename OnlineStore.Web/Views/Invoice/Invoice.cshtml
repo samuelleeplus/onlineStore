@@ -113,7 +113,6 @@
 
                             <td>
                                 Invoice/Order #: @Model.OrderId<br>
-                                Created: January 1, 2020<br>
                             </td>
                         </tr>
                     </table>
@@ -132,7 +131,10 @@
 
                             <td>
                                 @Model.CustomerName<br>
-                                @Model.CustomerAddress
+                                @Model.CustomerAddress.AddressDetail
+                                @Model.CustomerAddress.City
+                                @Model.CustomerAddress.Province
+                                @Model.CustomerAddress.ZipCode
                             </td>
                         </tr>
                     </table>

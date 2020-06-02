@@ -103,12 +103,34 @@ namespace OnlineStore.Web.Controllers
 
 
 
-
-        public ActionResult CreateCard()
+        [HttpGet]
+        public ActionResult CreateCreditCard()
         {
             return View();
         }
 
+        [HttpPost]
+        public async Task<ActionResult> CreateCreditCardAsync(CreditCardDto credit)
+        {
+            var creditcards = _uow.GetGenericRepository<CreditCard>();
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+
+
+
+            creditcards.Add(new CreditCard
+            {
+                CustomerId = user.CustomerId,
+                CardNumber = credit.CardNumber,
+                Cvc = credit.Cvc,
+                ExpiryDate = credit.ExpiryDate,
+                FullName = credit.FullName
+
+
+            });
+            _uow.Commit();
+
+            return RedirectToAction("CreditCard");
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]

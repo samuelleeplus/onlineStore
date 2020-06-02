@@ -94,13 +94,13 @@ namespace OnlineStore.Web.Controllers
 
                 _checkoutItems.ForEach(x =>
                 {
-                    orderedProductRepository.Add(new OrderedProduct()
+                    var orderedProduct = new OrderedProduct()
                     {
                         OrderId = order.Id,
                         ProductId = x.Id,
                         Quantity = x.ItemQuantity
-                    });
-
+                    };
+                    orderedProductRepository.Add(orderedProduct);
                     var product = productRepository.FirstOrDefault(y => y.Id == x.Id);
                     product.Quantity -= x.ItemQuantity;
                     productRepository.Update(product);

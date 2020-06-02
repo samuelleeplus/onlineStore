@@ -192,9 +192,9 @@ namespace OnlineStore.Web.Helpers
 
 
 
-        public InvoiceDto InvoiceDtoByCustomerID(int id) { 
+        public InvoiceDto InvoiceDtoByOrderID(int orderId) { 
 
-            var orderedProducts = _uow.GetGenericRepository<OrderedProduct>().Find(x => x.OrderId == id);
+            var orderedProducts = _uow.GetGenericRepository<OrderedProduct>().Find(x => x.OrderId == orderId);
 
             var repo = _uow.GetGenericRepository<Product>();
 
@@ -209,18 +209,22 @@ namespace OnlineStore.Web.Helpers
                    ItemPrice = repo.GetById(x.ProductId).Price  
                }).ToList();
 
+       
             var priceRepo = _uow.GetGenericRepository<Order>();
+            var addressRepo = _uow.GetGenericRepository<Address>();
+            var usersRepo = _uow.GetGenericRepository<ApplicationUser>();
 
-
+            var userId = priceRepo.FirstOrDefault(x => x.Id == orderId).CustomerId;
             InvoiceDto invoiceDto = new InvoiceDto
             {
                 //Customer name or User name should be included in database !!!!!!!!
 
                 Items = items,
-                OrderId = id,
-                totalPrice = priceRepo.FirstOrDefault(x => x.CustomerId == id).TotalPrice,
-                CustomerAddress = null , 
-                CustomerName = "Customer Name"
+                OrderId = orderId,
+                totalPrice = priceRepo.FirstOrDefault(x => x.CustomerId == orderId).TotalPrice,
+                CustomerAddress = addressRepo.FirstOrDefault(x => x.UserId == userId),
+                CustomerName =  usersRepo.FirstOrDefault(x => x.CustomerId == userId).FirstName + " " +
+                                usersRepo.FirstOrDefault(x => x.CustomerId == userId).LastName
             };
 
             return invoiceDto; 
