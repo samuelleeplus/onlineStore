@@ -12,9 +12,11 @@ using OnlineStore.Web.Models.DTOs;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace OnlineStore.Web.Controllers
 {
+    [Authorize(Roles = "Product Manager")]
     public class ProductManagerController : Controller
     {
 
@@ -61,24 +63,46 @@ namespace OnlineStore.Web.Controllers
         {
             return View();
         }
-        /*
+        
         // POST: ProductManager/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Product product)
         {
             try
             {
+                if (ModelState.IsValid)
+                {
+           
+                    var products = _uow.GetGenericRepository<Product>();
+
+                    products.Add(new Product
+                    {
+                         Category = product.Category,
+                          DescriptionExtra = product.DescriptionExtra, 
+                           DescriptionMain = product.DescriptionMain,
+                            DiscountedPrice= product.DiscountedPrice,
+                             DistributorId = product.DistributorId,
+                              ModelNumber = product.ModelNumber,
+                               Name = product.Name,
+                                Price = product.Price,
+                                 Quantity = product.Quantity , 
+                                  WarrantyStatus = product.WarrantyStatus
+                    });
+                    _uow.Commit();
+                    return RedirectToAction("Index");
+                }
+
                 // TODO: Add insert logic here
 
-                return RedirectToAction(nameof(Index));
+                return View();
             }
             catch
             {
                 return View();
             }
         }
-        */
+        
         // GET: ProductManager/Edit/5
 
 

@@ -44,6 +44,72 @@ namespace OnlineStore.Web.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult CreateAddress() {
+
+            return View();
+        
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> CreateAddressAsync(AddressDto address)
+        {
+            var addresses = _uow.GetGenericRepository<Address>();
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+
+
+
+            addresses.Add(new Address
+            {
+                UserId = user.CustomerId,
+                AddressDetail = address.AddressDetail,
+                ZipCode = address.ZipCode,
+                City = address.City,
+                Province = address.Province
+            });
+            _uow.Commit();
+
+            return RedirectToAction("Address");
+        }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> CreateAddress()
+        //{
+        //        var addresses = _uow.GetGenericRepository<Address>();
+        //        var user = await _userManager.GetUserAsync(HttpContext.User);
+
+        //        var userRepo = _uow.GetGenericRepository<ApplicationUser>();
+
+        //        var temp = userRepo.Find(x => x.CustomerId == user.CustomerId).FirstOrDefault();
+
+        //        var _address = new AddressDto();
+
+
+        //        addresses.Add(new Address
+        //        {
+        //            UserId = user.CustomerId,
+        //            AddressDetail = _address.AddressDetail,
+        //            ZipCode = _address.ZipCode,
+        //            City = _address.City,
+        //            Province = _address.Province
+        //        });
+        //        _uow.Commit();
+
+        //        return RedirectToAction("CreateAddress");
+
+        //    }
+
+
+
+
+        public ActionResult CreateCard()
+        {
+            return View();
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(string id, UserDto user)

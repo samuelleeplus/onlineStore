@@ -151,23 +151,33 @@ namespace OnlineStore.Web.Helpers
         {
             var userRepo = _uow.GetGenericRepository<ApplicationUser>().Find(x => x.Id == id).FirstOrDefault();
 
+
             var cardById = _uow.GetGenericRepository<CreditCard>().Find(x => x.CustomerId == userRepo.CustomerId);
+
 
             IEnumerable<CreditCard> cards = cardById?.Select(x =>
                new CreditCard
                {
-                   CardNumber = x.CardNumber ,
-                    Cvc = x.Cvc ,
-                     ExpiryDate = x.ExpiryDate,
-                      FullName= x.FullName,
-                       Id = x.Id ,
-                       CustomerId = x.CustomerId
 
-                
+                    CardNumber = x.CardNumber , 
+                    Cvc = x.Cvc ,
+
+
+                   //CardNumber = x.CardNumber ,
+                   // Cvc = x.Cvc ,
+                   ExpiryDate = x.ExpiryDate,
+                   FullName = x.FullName,
+                   Id = x.Id,
+                   CustomerId = x.CustomerId
+
+
 
                }).ToList();
 
-            UserDto userDto = new UserDto
+
+
+
+        UserDto userDto = new UserDto
             {
                 UserId = id,
                 Username = userRepo.UserName,

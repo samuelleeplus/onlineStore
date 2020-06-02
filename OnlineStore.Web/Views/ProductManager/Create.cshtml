@@ -2,145 +2,95 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
+    <link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout.css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout_responsive.css">
+</head>
+
+
 <h4>Product</h4>
-<hr />
-<div class="contact">
+<div class="checkout">
     <div class="container">
         <div class="row">
-
-            <div class="col-lg-8 contact_col">
-                <div class="get_in_touch">
-                    <div class="section_title">Get in Touch</div>
-                    <div class="section_subtitle">Say hello</div>
-                    <div class="contact_form_container">
-                        <form action="#" id="contact_form" class="contact_form">
-                            <div class="row">
-                                <div class="col-xl-6">
-
-                                    <label for="contact_name">First Name*</label>
-                                    <input type="text" id="contact_name" class="contact_input" required="required">
-                                </div>
-                                <div class="col-xl-6 last_name_col">
-
-                                    <label for="contact_last_name">Last Name*</label>
-                                    <input type="text" id="contact_last_name" class="contact_input" required="required">
-                                </div>
-                            </div>
-                            <div>
-
-                                <label for="contact_company">Subject</label>
-                                <input type="text" id="contact_company" class="contact_input">
-                            </div>
-                            <div>
-                                <label for="contact_textarea">Message*</label>
-<textarea id="contact_textarea" class="contact_input contact_textarea" required="required"></textarea>
-                            </div>
-                            <button class="button contact_button"><span>Send Message</span></button>
-                        </form>
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 offset-xl-1 contact_col">
-                <div class="contact_info">
-                    <div class="contact_info_section">
-                        <div class="contact_info_title">Marketing</div>
-                        <ul>
-                            <li>Phone: <span>+53 345 7953 3245</span></li>
-                            <li>Email: <span>yourmail@gmail.com</span></li>
-                        </ul>
+                    <div class="form-group">
+                        <label asp-for="ModelNumber" class="control-label"></label>
+                        <input asp-for="ModelNumber" class="form-control" />
+                        <span asp-validation-for="ModelNumber" class="text-danger"></span>
                     </div>
-                    <div class="contact_info_section">
-                        <div class="contact_info_title">Shippiing &amp; Returns</div>
-                        <ul>
-                            <li>Phone: <span>+53 345 7953 3245</span></li>
-                            <li>Email: <span>yourmail@gmail.com</span></li>
-                        </ul>
+                    <div class="form-group">
+                        <label asp-for="Category" class="control-label"></label>
+                        <input asp-for="Category" class="form-control" />
+                        <span asp-validation-for="Category" class="text-danger"></span>
                     </div>
-                    <div class="contact_info_section">
-                        <div class="contact_info_title">Information</div>
-                        <ul>
-                            <li>Phone: <span>+53 345 7953 3245</span></li>
-                            <li>Email: <span>yourmail@gmail.com</span></li>
-                        </ul>
+                    <div class="form-group">
+                        <label asp-for="DescriptionMain" class="control-label"></label>
+                        <input asp-for="DescriptionMain" class="form-control" />
+                        <span asp-validation-for="DescriptionMain" class="text-danger"></span>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label asp-for="DescriptionExtra" class="control-label"></label>
+                        <input asp-for="DescriptionExtra" class="form-control" />
+                        <span asp-validation-for="DescriptionExtra" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DiscountedPrice" class="control-label"></label>
+                        <input asp-for="DiscountedPrice" class="form-control" />
+                        <span asp-validation-for="DiscountedPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Quantity" class="control-label"></label>
+                        <input asp-for="Quantity" class="form-control" />
+                        <span asp-validation-for="Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="WarrantyStatus" class="control-label"></label>
+                        <input asp-for="WarrantyStatus" class="form-control" />
+                        <span asp-validation-for="WarrantyStatus" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="row map_row">
-            <div class="col">
 
-                <div class="map">
-                    <div id="google_map" class="google_map">
-                        <div class="map_container">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <a asp-action="Index">Back to List</a>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ModelNumber" class="control-label"></label>
-                <input asp-for="ModelNumber" class="form-control" />
-                <span asp-validation-for="ModelNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
-                <input asp-for="Category" class="form-control" />
-                <span asp-validation-for="Category" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DescriptionMain" class="control-label"></label>
-                <input asp-for="DescriptionMain" class="form-control" />
-                <span asp-validation-for="DescriptionMain" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DescriptionExtra" class="control-label"></label>
-                <input asp-for="DescriptionExtra" class="form-control" />
-                <span asp-validation-for="DescriptionExtra" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DiscountedPrice" class="control-label"></label>
-                <input asp-for="DiscountedPrice" class="form-control" />
-                <span asp-validation-for="DiscountedPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quantity" class="control-label"></label>
-                <input asp-for="Quantity" class="form-control" />
-                <span asp-validation-for="Quantity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WarrantyStatus" class="control-label"></label>
-                <input asp-for="WarrantyStatus" class="form-control" />
-                <span asp-validation-for="WarrantyStatus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     <script src="~/js/jquery-3.2.1.min.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="~/styles/bootstrap4/popper.js"></script>
+    <script src="~/styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="~/plugins/greensock/TweenMax.min.js"></script>
+    <script src="~/plugins/greensock/TimelineMax.min.js"></script>
+    <script src="~/plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="~/plugins/greensock/animation.gsap.min.js"></script>
+    <script src="~/plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="~/plugins/easing/easing.js"></script>
+    <script src="~/plugins/parallax-js-master/parallax.min.js"></script>
 }

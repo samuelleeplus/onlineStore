@@ -10,8 +10,8 @@ using OnlineStore.Data.Context;
 namespace OnlineStore.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200514134644_initial")]
-    partial class initial
+    [Migration("20200602200133_migr")]
+    partial class migr
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

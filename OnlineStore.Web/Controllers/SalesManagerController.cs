@@ -11,9 +11,11 @@ using OnlineStore.Web.Models.DTOs;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OnlineStore.Web.Controllers
 {
+    [Authorize(Roles = "Sales Manager")]
     public class SalesManagerController : Controller
     {
         private ApplicationDbContext _context { get; set; }

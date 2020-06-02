@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,7 @@ using OnlineStore.Data.Models.Entities;
 
 namespace OnlineStore.Web.Areas.Identity.Pages.Account
 {
+    [Authorize(Roles = "Admin")]
     public class AdminRegistersManagersModel : PageModel
     {
         

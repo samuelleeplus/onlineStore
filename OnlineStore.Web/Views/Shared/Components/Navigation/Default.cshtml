@@ -1,7 +1,11 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@using Microsoft.AspNetCore.Identity
+@using OnlineStore.Data.Models.Entities
+
 @model OnlineStore.Web.Models.DTOs.NavigationDto
+@inject SignInManager<ApplicationUser> SignInManager
 
 <header class="header">
     <div class="header_container">
@@ -44,6 +48,30 @@
                                     </li>
 
                                 }
+                                else if (SignInManager.IsSignedIn(User))
+                                {
+                                   
+                            <li class="hassubs">
+                                @if(@User.IsInRole("Sales Manager")){
+
+                                <a href="/SalesManager">Sales Manager</a>
+                                }
+                                else{
+                                <a href="/ProductManager">Product Manager</a>
+                                }
+                                <ul>
+
+                                    <li>
+                                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                            <button type="submit" class="nav-link btn btn-link text-dark"><strong>Logout</strong></button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+
+                                }
+
+
                                 else
                                 {
                                     <li><a href="/Identity/Account/login">Login</a></li>
@@ -62,6 +90,12 @@
 													C440.2,423.5,440.2,423.1,440.1,422.7z M244.5,27c37.9,0,68.8,30.4,69.6,68.1H174.9C175.7,57.4,206.6,27,244.5,27z M366.8,462
 													H122.2c-25.4,0-46-16.8-46.4-37.5l26.8-302.3h45.2v41c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h139.3v41
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z" />
+
+
+
+
+
+
 
                                     </g>
 										</svg>
@@ -85,6 +119,18 @@
 												c-25.031-25.029-37.546-55.144-37.546-90.36c0-35.21,12.518-65.334,37.546-90.36c25.026-25.032,55.15-37.546,90.36-37.546
 												c35.212,0,65.331,12.519,90.364,37.546c25.033,25.026,37.548,55.15,37.548,90.36C328.911,236.214,316.392,266.329,291.363,291.358z
 												" />
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
