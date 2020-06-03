@@ -1,0 +1,85 @@
+﻿@model IEnumerable<OnlineStore.Data.Models.Entities.CreditCard>
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
+    <link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout.css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout_responsive.css">
+    
+</head>
+
+<div class="home">
+    <div class="home_container">
+        <div class="home_background" style="background-image:url(images/cart.jpg)"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="cart.html">Shopping Cart</a></li>
+                                    <li>Checkout</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="checkout">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="billing checkout_section">
+                    <div class="section_title">Proceed</div>
+                    <div class="checkout_form_container">
+                        <form asp-action="Index" method="get">
+                            <button button type="submit" class="btn btn-primary">Create and Checkout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="billing checkout_section">
+                    <div class="section_title">Choose Credit Card</div>
+                    <div class="section_subtitle">Choose one of the Credit Cards below</div>
+                    
+                    <div class="list-group">
+                        @if (Model != null)
+                        {
+                            int i = 0; 
+                            foreach (var entry in Model)
+                            {
+                                <a asp-action="Index" asp-route-id="@(i)" 
+                                   class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">@($"{entry.CardNumber}/{entry.ExpiryDate}, {entry.Cvc}")</h5>
+                                        <small>Address @(++i)</small>
+                                    </div>
+                                    <p class="mb-1">@(entry.FullName)</p>
+                                    <!-- <small>Donec id elit non mi porta.</small> -->
+                                </a>
+                            }
+                        }
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/checkout.js"></script>
+
+}

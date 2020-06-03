@@ -48,4 +48,12 @@
     </None>
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Content Update="Views\CreditCard\ChooseCreditCardOrProceed.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

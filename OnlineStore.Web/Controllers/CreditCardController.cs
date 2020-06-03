@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -29,9 +30,18 @@ namespace OnlineStore.Web.Controllers
             _uow = new UnitOfWork(context);
             _userManager = userManager;
         }
-        
 
-        public IActionResult Index()
+        public async Task<IActionResult> ChooseCreditCardOrProceed()
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var model = _uow.GetGenericRepository<CreditCard>().
+                Find(x => x.CustomerId == user.CustomerId).ToList();
+            return View(model);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Index(int id=-1)
         {
             List<CartItem> _checkoutItems = null;
             if (HttpContext?.Session != null)
@@ -39,13 +49,26 @@ namespace OnlineStore.Web.Controllers
 
             if (_checkoutItems != null)
             {
+                CreditCard card = null;
+                if (id != -1)
+                {
+                    HttpContext.Session.SetString("cardChosen", "true");
+                    var user = await _userManager.GetUserAsync(HttpContext.User);
+                    card = _uow.GetGenericRepository<CreditCard>().
+                        Find(x => x.CustomerId == user.CustomerId).ToList()[id];
+                }
+
                 var model = new CreditCardDto()
                 {
                     CheckoutItems = _checkoutItems?.Select(x => new CheckoutItem()
                     {
                         Price = x.ItemPrice * x.ItemQuantity,
                         ProductName = x.ItemName
-                    })
+                    }),
+                    CardNumber = card?.CardNumber,
+                    Cvc = card?.Cvc,
+                    ExpiryDate = card?.ExpiryDate,
+                    FullName = card?.FullName
                 };
                 return View(model);
 
@@ -77,6 +100,21 @@ namespace OnlineStore.Web.Controllers
                 if (_checkoutItems == null)
                 {
                     return View("ErrorProduction");
+                }
+
+                var cardWasChosen = HttpContext.Session.GetString("cardChosen");
+                if (cardWasChosen == null || !cardWasChosen.Equals("true"))
+                {
+                    var repo = _uow.GetGenericRepository<CreditCard>();
+                    repo.Add(new CreditCard()
+                    {
+                        CardNumber = dto.CardNumber,
+                        Cvc = dto.Cvc,
+                        CustomerId = user.CustomerId,
+                        ExpiryDate = dto.ExpiryDate,
+                        FullName = dto.FullName
+                    });
+                    _uow.Commit();
                 }
 
                 Order order = new Order()

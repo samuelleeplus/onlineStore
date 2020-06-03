@@ -29,7 +29,7 @@ namespace OnlineStore.Web.Controllers
         }
 
         [HttpGet]
-        public async System.Threading.Tasks.Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index()
         {
 
             var user = await _userManager.GetUserAsync(HttpContext.User);
@@ -168,7 +168,7 @@ namespace OnlineStore.Web.Controllers
 
         //addresses 
         [HttpGet]
-        public async System.Threading.Tasks.Task<IActionResult> AddressAsync()
+        public async Task<IActionResult> Address()
         {
 
             var user = await _userManager.GetUserAsync(HttpContext.User);
@@ -228,7 +228,7 @@ namespace OnlineStore.Web.Controllers
 
 
         [HttpGet]
-        public async System.Threading.Tasks.Task<IActionResult> CreditCardAsync()
+        public async Task<IActionResult> CreditCardAsync()
         {
 
             var user = await _userManager.GetUserAsync(HttpContext.User);
@@ -264,7 +264,7 @@ namespace OnlineStore.Web.Controllers
 
         }
 
-        public async System.Threading.Tasks.Task<ActionResult> CreditCardEditAsync(CreditCardDto card)
+        public async Task<ActionResult> CreditCardEdit(CreditCardDto card)
         {
             try
             {
@@ -380,13 +380,6 @@ namespace OnlineStore.Web.Controllers
             {
                 throw;
             }
-
-
         }
-
-
-
-
-
     }
 }

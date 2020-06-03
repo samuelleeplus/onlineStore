@@ -31,38 +31,6 @@ namespace OnlineStore.Web.Controllers
             _userManager = userManager;
         }
 
-        /*
-        public IActionResult Index()
-        {
-            LoadItems();
-            if (_checkoutItems == null)
-            {
-                return RedirectToRoute(new {controller = "Cart"});
-            }
-
-            var model = new CheckoutDto()
-            {
-                FirstName = "Taksim abi ne yapyon?",
-                LastName = "Huhu",
-                AddressInfo = new AddressDto {
-                    City = "Istanbul",
-                    AddressDetail = "Sabanci university",
-                    ZipCode = "34956",
-                    Province = "Tuzla"
-                },
-                Phone = "+905555555555",
-                Email = "tuzla@commi.org",
-                IsAgreeTermsAndConditions = false,
-                CheckoutItems = _checkoutItems?.Select(x => new CheckoutItem()
-                {
-                    Price = x.ItemPrice * x.ItemQuantity,
-                    ProductName = x.ItemName
-                })
-            };
-            return View(model);
-        }
-        */
-
         public async Task<IActionResult> ProceedToCheckout(int id)
         {
 
@@ -142,7 +110,7 @@ namespace OnlineStore.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToRoute(new { controller="CreditCard" });
+                return RedirectToRoute(new { Controller="CreditCard", Action="ChooseCreditCardOrProceed" });
             }
 
             return RedirectToAction("AddressCreateOrChoose");
