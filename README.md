@@ -1,7 +1,7 @@
 # online-store
 
-This online project was developed as part of Software Engineering/CS308 course
-at Sabanci University. Members (in alphabetic order):
+This project was developed as part of Software Engineering/CS308 course project
+at Sabanci University. Members (in alphabetical order):
 
 
 <ul>
