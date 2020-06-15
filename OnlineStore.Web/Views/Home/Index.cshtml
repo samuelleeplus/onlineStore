@@ -23,7 +23,7 @@
                                             <div class="home_slider_content" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
                                                 <div class="home_slider_title">@(entry.Title)</div>
                                                 <div class="home_slider_subtitle">@(entry.Text)</div>
-                                                <div class="button button_light home_button"><a href="#">Shop Now</a></div>
+                                                @*<div class="button button_light home_button"><a href="">Shop Now</a></div>*@
                                             </div>
                                         </div>
                                     </div>
@@ -89,8 +89,8 @@
                     <div class="avds_large_content">
                         <div class="avds_title">@(Model.FrontImage.Title)</div>
                         <div class="avds_text">@(Model.FrontImage.Text)</div>
-                        <div class="avds_link avds_link_large"><a href="LINK?">See More</a></div>
-                    </div>
+                        <div class="avds_link avds_link_large">@*<a href="@(Model.FrontImage">See More</a></div>
+                    *@</div>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
                                     <div class="product_extra product_new"><a href="CATEGORYORSTATUS">New</a></div>
                                     <div class="product_content">
                                         <div class="product_title"><a href=@(entry.Url)>@(entry.Name)</a></div>
-                                        <div class="product_price">$@(entry.OriginalPrice - entry.DiscountedPrice)</div>
+                                        <div class="product_price">$@(entry.DiscountedPrice)</div>
                                         <div class="details_discount"><strike style="color:red">$@(entry.OriginalPrice)</strike></div>
                                     </div>
                                 </div>
@@ -135,11 +135,11 @@
             <div class="row">
                 <div class="col">
                     <div class="avds_xl_container clearfix">
-                        <div class="avds_xl_background" style="background-image:url(images/avds_xl.jpg)"></div>
+                        <div class="avds_xl_background" style="background-image:url(https://cdn.motor1.com/images/mgl/6JpJr/s1/vw-suv-coupe-concept-lead-image.jpg)"></div>
                         <div class="avds_xl_content">
                             <div class="avds_title">Amazing Vehicles</div>
                             <div class="avds_text">Everything We Do is Driven By You.</div>
-                            <div class="avds_link avds_xl_link"><a href="categories.html">See More</a></div>
+                            <div class="avds_link avds_xl_link"><a href="category/Luxury">See More</a></div>
                         </div>
                     </div>
                 </div>
@@ -160,4 +160,4 @@
 <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="js/custom.js"></script></div>

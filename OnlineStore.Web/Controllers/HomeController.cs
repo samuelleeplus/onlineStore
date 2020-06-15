@@ -26,13 +26,22 @@ namespace OnlineStore.Web.Controllers
 
         public IActionResult Index(/*int amount=10, int frontAmount = 3*/)
         {
-            var homeCtor = new DtoConstructor(_uow);
+            try
+            {
+                var homeCtor = new DtoConstructor(_uow);
 
-            var model = homeCtor.GetHomeDto(10, 3);
+                var model = homeCtor.GetHomeDto(10, 3);
 
-            var x = model;
+                var x = model;
+                // throw new NullReferenceException("Just testing dude");
+                return View(model);
+            }
+            catch(Exception e)
+            {
+                _logger.LogError(e.ToString());
+                return View("ErrorProduction");
 
-            return View(model);
+            }
         }
     }
 }

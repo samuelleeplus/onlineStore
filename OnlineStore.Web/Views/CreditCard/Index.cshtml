@@ -1,0 +1,111 @@
+﻿@model OnlineStore.Web.Models.DTOs.CreditCardDto
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/styles/bootstrap4/bootstrap.min.css">
+    <link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout.css">
+    <link rel="stylesheet" type="text/css" href="~/styles/checkout_responsive.css">
+</head>
+
+<div class="home">
+    <div class="home_container">
+        <div class="home_background" style="background-image:url(images/cart.jpg)"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="cart.html">Shopping Cart</a></li>
+                                    <li>Checkout</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="checkout">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- col-md-4 -->
+                <form asp-action="Index">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="CardNumber" class="control-label"></label>
+                        <input asp-for="CardNumber" class="form-control" />
+                        <span asp-validation-for="CardNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FullName" class="control-label"></label>
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ExpiryDate" class="control-label"></label>
+                        <input asp-for="ExpiryDate" class="form-control" />
+                        <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Cvc" class="control-label"></label>
+                        <input asp-for="Cvc" class="form-control" />
+                        <span asp-validation-for="Cvc" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <div class="order checkout_section">
+                    <div class="section_title">Your order</div>
+                    <div class="section_subtitle">Order details</div>
+
+                    <!-- Order details -->
+                    <div class="order_list_container">
+                        <div class="order_list_bar d-flex flex-row align-items-center justify-content-start">
+                            <div class="order_list_title">Product</div>
+                            <div class="order_list_value ml-auto">Total</div>
+                        </div>
+                        <ul class="order_list">
+                            @foreach (var product in Model.CheckoutItems)
+                            {
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="order_list_title" style="text-decoration: underline; color: brown"><i>@(product.ProductName)</i></div>
+                                    <div class="order_list_value ml-auto" style="color: brown"><i>$@(product.Price)</i></div>
+                                </li>
+                            }
+                            @{
+                                var subtotal = Model.CheckoutItems.Select(x => x.Price).Aggregate((x, y) => x + y);
+                            }
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="order_list_title">Subtotal</div>
+                                <div class="order_list_value ml-auto">$@(subtotal)</div>
+                            </li>
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="order_list_title">Shipping</div>
+                                <div class="order_list_value ml-auto">@(((int)Model.Shipping) == 0 ? "Free" : $"${Model.Shipping}")</div>
+                            </li>
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="order_list_title">Total</div>
+                                <div class="order_list_value ml-auto">$@(Model.Shipping + subtotal)</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Order Text -->
+                    <div class="order_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra temp or so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

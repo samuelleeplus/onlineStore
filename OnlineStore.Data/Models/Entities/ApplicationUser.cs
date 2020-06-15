@@ -8,5 +8,10 @@ namespace OnlineStore.Data.Models.Entities
     public class ApplicationUser : IdentityUser
     {
         public int TaxId { get; set; }
+        public int CustomerId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+
     }
 }

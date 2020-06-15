@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="~/styles/categories.css">
     <link rel="stylesheet" type="text/css" href="~/styles/categories_responsive.css">
-    
+
     <style>
         home_background {
             background-image: url('@(Model.BackgroundImageUrl)');
@@ -53,27 +53,45 @@
         <div class="row">
             <div class="col">
 
-                <!-- Product Sorting -->
-                <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start">
-                    <div class="results">Showing <span>12</span> results</div>
-                    <div class="sorting_container ml-md-auto">
-                        <div class="sorting">
-                            <ul class="item_sorting">
-                                <li>
-                                    <span class="sorting_text">Sort by</span>
-                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    <ul>
-                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default</span></li>
-                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
-                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "stars" }'><span>Name</span></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <!-- Product Sorting
+    <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start">
+        <div class="results">Showing <span>the</span> results</div>
+        <div class="sorting_container ml-md-auto">
+            <div class="sorting">
+                <ul class="item_sorting">
+                    <li>
+                        <span class="sorting_text">Sort by</span>
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <ul>
+                            <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default</span></li>
+                            <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
+                            <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "stars" }'><span>Name</span></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
+    </div>
+         -->
+            </div>
+        </div>
+
+
+        <div class="row">
+            <form action="Index" method="get">
+                <p>
+                    <label for="minPrice">Enter a min. price:</label>
+                    <input type="number" id="minPrice" name="minPrice" min="0">
+                    <label for="maxPrice">Enter a max. price:</label>
+                    <input type="number" id="maxPrice" name="maxPrice" min="0">
+                    <label for="searchedProduct">Product name:</label>
+                    <input type="text" id="searchedProduct" name="searchedProduct" onkeypress="return /^[A-Za-z0-9, ]/i.test(event.key)">
+                    <input type="submit" value="Filter" class="btn btn-primary" />
+                </p>
+            </form>
+        </div>
+
+
         <div class="row">
             <div class="col">
 
@@ -87,20 +105,29 @@
                             {
                                 <div class="product_extra product_new"><a href="categories.html">@(product.StatusClass)</a></div>
                             }
-                        <div class="product_content">
-                            <div class="product_title"><a href="@(product.Url)">@(product.Name)</a></div>
-                            <div class="product_price">$@(product.OriginalPrice - product.DiscountedPrice)</div>
-                            <div class="details_discount"><strike style="color:red">$@(product.OriginalPrice)</strike></div>
-                        </div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="@(product.Url)">@(product.Name)</a></div>
+                                <div class="product_price">$@(product.DiscountedPrice)</div>
+                                <div class="details_discount"><strike style="color:red">$@(product.OriginalPrice)</strike></div>
+                            </div>
                         </div>
                     }
 
                 </div>
+                <p id="lenOfPages" style="display:none;"></p>
                 <div class="product_pagination">
-                    <ul>
-                        <li class="active"><a href="#">01.</a></li>
-                        <li><a href="#">02.</a></li>
-                        <li><a href="#">03.</a></li>
+                    <ul class="pages">
+                        @for (int i = 0; i < Model.Pages.Count(); i++)
+                        {
+                            if (i == 0)
+                            {
+                                <li class="active"><a href="?pageNumber=@(Model.Pages.ElementAt(i))">@(Model.Pages.ElementAt(i)).</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="?pageNumber=@(Model.Pages.ElementAt(i))">@(Model.Pages.ElementAt(i)).</a></li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -110,6 +137,7 @@
 
 @section Scripts
 {
+
     <script src="~/js/jquery-3.2.1.min.js"></script>
     <script src="~/styles/bootstrap4/popper.js"></script>
     <script src="~/styles/bootstrap4/bootstrap.min.js"></script>

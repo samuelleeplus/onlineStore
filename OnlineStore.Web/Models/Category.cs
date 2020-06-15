@@ -1,4 +1,4 @@
-﻿namespace OnlineStore.Web.Models.DTOs
+﻿namespace OnlineStore.Web.Models
 {
     public class Category
     {

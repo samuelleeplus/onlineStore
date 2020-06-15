@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
 using OnlineStore.Data.Repositories;
@@ -13,12 +14,14 @@ namespace OnlineStore.Web.Controllers
 {
     public class CartController : Controller
     {
+        private readonly ILogger<CartController> _logger;
 
         private ApplicationDbContext _context { get; set; }
         private UnitOfWork _uow { get; set; }
         
-        public CartController(ApplicationDbContext context)
+        public CartController(ApplicationDbContext context, ILogger<CartController> logger)
         {
+            _logger = logger;
             _context = context;
             _uow = new UnitOfWork(context);
         }
@@ -53,14 +56,14 @@ namespace OnlineStore.Web.Controllers
                     ItemName = product.Name,
                     ItemQuantity = quantity,
                     ItemImageUrl = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(x => x.ProductId == product.Id)?.Uri,
-                    ItemPrice = (product.Price - product.DiscountedPrice),
+                    ItemPrice = product.DiscountedPrice,
                 });
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
             }
             else
             {
                 List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
-                int index = isExist(id);
+                int index = IsExist(id);
                 if (index != -1)
                 {
                     cart[index].ItemQuantity += quantity;
@@ -72,7 +75,7 @@ namespace OnlineStore.Web.Controllers
                         ItemName = product.Name,
                         ItemQuantity = quantity,
                         ItemImageUrl = _uow.GetGenericRepository<ImageUri>().FirstOrDefault(x => x.ProductId == product.Id)?.Uri,
-                        ItemPrice = (product.Price - product.DiscountedPrice),
+                        ItemPrice = product.DiscountedPrice,
                     });
                 }
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
@@ -92,40 +95,46 @@ namespace OnlineStore.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Update([FromQuery]string id_and_counts)
         {
-
-            // "1, 2, 3, 4; 12, 1, 2, 3"
-            var tuple = id_and_counts.Split(";");
-            var ids = tuple[0].Split(",").Select(x => Int32.Parse(x)).ToList();
-
-            var counts = tuple[1].Split(",").Select(x => Int32.Parse(x)).ToList();
-
-
-            List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
-
-            for (int i = 0; i < ids.Count; i++)
+            try
             {
-                var entry = cart.Find(x => x.Id == ids[i]);
-                if (entry != null)
+                // "1, 2, 3, 4; 12, 1, 2, 3"
+                var tuple = id_and_counts.Split(";");
+                var ids = tuple[0].Split(",").Select(x => Int32.Parse(x)).ToList();
+
+                var counts = tuple[1].Split(",").Select(x => Int32.Parse(x)).ToList();
+
+
+                List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
+
+                for (int i = 0; i < ids.Count; i++)
                 {
-                    if (counts[i] == 0)
+                    var entry = cart.Find(x => x.Id == ids[i]);
+                    if (entry != null)
                     {
-                        cart.Remove(entry);
-                    }
-                    else
-                    {
-                        entry.ItemQuantity = counts[i];
+                        if (counts[i] == 0)
+                        {
+                            cart.Remove(entry);
+                        }
+                        else
+                        {
+                            entry.ItemQuantity = counts[i];
+                        }
                     }
                 }
-            }
 
-            SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
-            if (cart.Count == 0)
+                SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+                if (cart.Count == 0)
+                {
+                    HttpContext.Session.Remove("cart");
+                }
+
+                return Ok();
+            }
+            catch (Exception e)
             {
-                HttpContext.Session.Remove("cart");
+                _logger.LogError(e.ToString());
+                return View("ErrorProduction");
             }
-
-            return Ok();
-
         }
 
         /*
@@ -139,7 +148,7 @@ namespace OnlineStore.Web.Controllers
             return RedirectToAction("Index");
         }
         */
-        private int isExist(int id)
+        private int IsExist(int id)
         {
             List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
             for (int i = 0; i < cart.Count; i++)
@@ -152,5 +161,15 @@ namespace OnlineStore.Web.Controllers
             return -1;
         }
 
+        [HttpGet]
+        public IActionResult ProceedToCheckout()
+        {
+            List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
+            if (cart == null || cart.Count == 0)
+            {
+                return RedirectToAction("Index");
+            }
+            return RedirectToRoute(new { controller = "Checkout", action="Index" });
+        }
     }
 }

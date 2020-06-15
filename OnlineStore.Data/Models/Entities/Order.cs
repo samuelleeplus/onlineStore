@@ -17,6 +17,7 @@ namespace OnlineStore.Data.Models.Entities
 
     public class OrderedProduct
     {
+        [Key]
         public int Id { get; set; }
         public int OrderId { get; set; }
         public int ProductId { get; set; }

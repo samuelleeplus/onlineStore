@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace OnlineStore.Web.Models.DTOs
 {
@@ -9,5 +6,7 @@ namespace OnlineStore.Web.Models.DTOs
     {
         public IEnumerable<Category> Categories { get; set; }
         public int NumberOfItemsInCart { get; set; }
+
+        public string Username { get; set; }
     }
 }

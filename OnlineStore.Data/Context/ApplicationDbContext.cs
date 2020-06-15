@@ -19,7 +19,9 @@ namespace OnlineStore.Data.Context
         public DbSet<ImageUri> ImageUris { get; set; }
         public DbSet<Distributor> Distributors { get; set; }
         public DbSet<Product> Products { get; set; }
-     
+        public DbSet<CreditCard> CreditCards { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+
     }
 
 }

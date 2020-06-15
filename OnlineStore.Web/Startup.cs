@@ -13,6 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineStore.Data.Context;
 using OnlineStore.Data.Models.Entities;
+using Rotativa.AspNetCore;
+using Wkhtmltopdf.NetCore;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace OnlineStore.Web
 {
@@ -35,14 +38,20 @@ namespace OnlineStore.Web
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            
+
             services.AddControllersWithViews();
             services.AddSession();
             services.AddRazorPages();
+
+            //to access sendgrip api and dependency injection
+            services.AddMvc();
+            services.AddSingleton<IConfiguration>(Configuration);
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -66,13 +75,9 @@ namespace OnlineStore.Web
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Product}/{action=Products}/{id?}");
-                endpoints.MapRazorPages();
-            });
+
+            RotativaConfiguration.Setup(env, "../Rotativa/");
+
 
             app.UseEndpoints(endpoints =>
             {
