@@ -7,31 +7,31 @@ namespace OnlineStore.Data.Repositories
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<T> GetRepository<T>() where T : class;
+        IRepository<T> GetGenericRepository<T>() where T : class;
         void Commit();
     }
 
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private bool IsDisposed = false;
+        private bool _isDisposed = false;
         public ApplicationDbContext Context { get; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
             Context = context;
         }
-        public IRepository<T> GetRepository<T>() where T : class
+        public IRepository<T> GetGenericRepository<T>() where T : class
         {
             return new Repository<T>(Context);
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!IsDisposed && disposing && Context != null)
+            if (!_isDisposed && disposing)
             {
-                Context.Dispose();
+                Context?.Dispose();
             }
-            IsDisposed = true;
+            _isDisposed = true;
         }
         public void Dispose()
         {

@@ -1,0 +1,396 @@
+Id,CustomerId,TotalPrice,Address,IsDelivered
+1,1,327214,57739 Amoth Circle,0
+2,2,619281,2 Carpenter Point,0
+3,3,364434,120 Briar Crest Lane,1
+4,4,275826,209 Fieldstone Road,1
+5,5,323514,73723 Hauk Crossing,1
+6,6,418119,155 Westend Drive,1
+7,7,125642,75 Beilfuss Center,1
+8,8,209111,09 Novick Circle,0
+9,9,193227,04 Duke Alley,0
+10,10,63240,0 Wayridge Crossing,0
+11,11,576329,97 Pine View Court,1
+12,12,569598,9 Pepper Wood Junction,0
+13,13,307670,36518 Katie Hill,0
+14,14,441117,622 Chinook Park,0
+15,15,316496,80024 Morrow Road,1
+16,16,14500,32 Oakridge Parkway,0
+17,17,786620,59 Clemons Point,0
+18,18,849494,499 Clemons Junction,0
+19,19,547192,67 Kropf Drive,0
+20,20,656874,907 Lien Lane,0
+21,21,54802,92718 Lyons Point,0
+22,22,596603,86 Elka Point,0
+23,23,121468,9 Gulseth Road,1
+24,24,463635,27 Rockefeller Hill,1
+25,25,317686,3381 Elka Way,1
+26,26,651860,620 Aberg Alley,0
+27,27,182344,2964 Carpenter Park,0
+28,28,355878,5 Express Center,1
+29,29,517590,16894 Clemons Point,1
+30,30,608298,653 Arrowood Place,0
+31,31,391376,700 Florence Park,1
+32,32,593124,3624 Talisman Park,1
+33,33,114512,19644 Arkansas Pass,0
+34,34,121468,0581 Fairview Junction,0
+35,35,640482,30 Butternut Trail,0
+36,36,571666,1061 Heath Avenue,1
+37,37,161426,4 Johnson Point,1
+38,38,463296,56452 Surrey Plaza,1
+39,39,822585,4 Pearson Place,1
+40,40,587462,15 Magdeline Place,0
+41,41,371750,260 Green Ridge Circle,0
+42,42,236910,32265 Susan Park,0
+43,43,219390,3624 Talisman Park,0
+44,44,531511,791 Hooker Street,1
+45,45,888481,0770 Merry Parkway,1
+46,46,230228,51 Washington Park,0
+47,47,340846,33 Eagle Crest Junction,1
+48,48,972255,4583 Lakewood Gardens Point,0
+49,49,96653,47737 Norway Maple Lane,0
+50,50,89241,0562 Mallard Way,1
+51,51,135207,5 Kim Lane,0
+52,52,466521,4 Loomis Circle,0
+53,53,332302,9 Arrowood Park,1
+54,54,704613,5 Hansons Trail,1
+55,55,280615,4 Waywood Pass,0
+56,56,394190,74 Manitowish Park,1
+57,57,836691,50852 Fairview Trail,0
+58,58,276719,43021 Oriole Center,0
+59,59,877504,7771 Elmside Center,0
+60,60,227952,186 Northport Crossing,0
+61,61,324766,2 Fieldstone Alley,1
+62,62,786243,8 Oriole Parkway,1
+63,63,442572,45506 Clove Crossing,1
+64,64,356277,9596 3rd Crossing,1
+65,65,286719,866 Carpenter Crossing,0
+66,66,733439,87 Clarendon Crossing,1
+67,67,789169,5887 Mcbride Court,1
+68,68,474395,5822 Farmco Parkway,0
+69,69,253601,41 Maryland Trail,1
+70,70,194150,2 Clarendon Court,0
+71,71,1055403,476 Meadow Vale Way,1
+72,72,38786,15 Magdeline Place,1
+73,73,338956,2576 Esch Street,1
+74,74,197538,64 Nancy Way,0
+75,75,347382,698 International Plaza,0
+76,76,515462,17 Pankratz Way,0
+77,77,741916,4 Johnson Point,1
+78,78,103384,9 Buell Circle,1
+79,79,103542,5 Jay Hill,1
+80,80,407821,5089 Chinook Court,0
+81,81,449874,945 Florence Junction,1
+82,82,57085,06093 Moose Hill,0
+83,83,621416,7029 Upham Point,1
+84,84,131175,15 Magdeline Place,0
+85,85,328952,49099 Carioca Road,0
+86,86,380857,462 Pennsylvania Park,1
+87,87,219095,4443 Melby Plaza,1
+88,88,243673,092 Hoepker Street,1
+89,89,595613,616 Katie Center,0
+90,90,919729,78102 Calypso Place,1
+91,91,265918,78102 Calypso Place,1
+92,92,446347,72114 Cascade Junction,1
+93,93,901217,5 Hermina Lane,0
+94,94,86649,0 School Crossing,1
+95,95,198150,3 Hoard Place,1
+96,96,131160,020 Oriole Road,0
+97,97,158120,20446 Schurz Trail,0
+98,98,363346,17 Pankratz Way,1
+99,99,224592,565 Carey Circle,0
+100,100,313332,99 Sunfield Park,1
+101,101,183212,31234 Buhler Trail,0
+102,102,947204,9 Cardinal Terrace,0
+103,103,274303,80 Pankratz Terrace,0
+104,104,225065,2 Di Loreto Street,0
+105,105,370954,2576 Esch Street,1
+106,106,256272,7 Mcbride Place,0
+107,107,192034,04206 Straubel Road,1
+108,108,840369,7 Summer Ridge Way,1
+109,109,265430,6785 Stuart Way,1
+110,110,165082,276 Center Junction,0
+111,111,330710,47701 Kensington Parkway,1
+112,112,321910,59 Melby Way,1
+113,113,439388,59 Moulton Lane,0
+114,114,170207,15 Magdeline Place,1
+115,115,236768,61 Westridge Point,1
+116,116,364926,120 Briar Crest Lane,1
+117,117,570496,5267 School Alley,1
+118,118,677181,4 Hauk Center,0
+119,119,295111,865 Annamark Lane,0
+120,120,718170,7 Lien Alley,1
+121,121,409944,6196 Bowman Lane,0
+122,122,487717,4 Porter Trail,1
+123,123,48895,360 Laurel Point,0
+124,124,534960,77828 Lakewood Gardens Junction,0
+125,125,607673,9596 3rd Crossing,1
+126,126,522896,1 Manitowish Plaza,1
+127,127,58470,70 Mandrake Place,0
+128,128,50457,5298 Charing Cross Point,0
+129,129,1243255,877 Pleasure Crossing,1
+130,130,851129,52 Main Circle,1
+131,131,560170,2 Kinsman Alley,1
+132,132,614596,57739 Amoth Circle,1
+133,133,375674,59 Clemons Point,0
+134,134,270112,6825 Harper Parkway,1
+135,135,600658,9 Westerfield Court,0
+136,136,498255,86 Surrey Terrace,1
+137,137,70414,3 Grim Plaza,1
+138,138,210904,7796 Emmet Alley,1
+139,139,71326,56 Vermont Street,0
+140,140,243363,68 Sauthoff Place,0
+141,141,405889,9368 Jay Circle,0
+142,142,569379,8 Farmco Court,0
+143,143,347456,56 Vermont Street,1
+144,144,73646,7 Bunker Hill Alley,1
+145,145,983018,88788 Stuart Lane,1
+146,146,426651,0 Weeping Birch Drive,1
+147,147,565017,483 Ridgeview Trail,0
+148,148,550570,6 Kipling Center,0
+149,149,102681,5 Del Sol Avenue,0
+150,150,315957,28 Kipling Plaza,0
+151,151,689017,34550 Dapin Point,1
+152,152,96643,404 Eastwood Way,1
+153,153,748278,5 Hermina Lane,0
+154,154,319979,97 Lighthouse Bay Crossing,1
+155,155,192461,6 Stoughton Alley,1
+156,156,161695,139 Carpenter Road,0
+157,157,593968,585 Spenser Point,0
+158,158,115914,698 Homewood Avenue,0
+159,159,1178176,331 Comanche Lane,1
+160,160,767791,727 Rusk Hill,1
+161,161,67782,82 Fremont Junction,1
+162,162,898523,50852 Fairview Trail,1
+163,163,817486,175 Hazelcrest Pass,0
+164,164,297874,6196 Bowman Lane,1
+165,165,204218,40 Ridgeway Way,1
+166,166,114512,824 Bayside Park,1
+167,167,443550,05 Anthes Drive,1
+168,168,225939,59 Merchant Street,0
+169,169,44577,819 Bobwhite Crossing,0
+170,170,183993,43618 Welch Court,0
+171,171,339216,1 Delaware Place,0
+172,172,49984,75 Hayes Hill,1
+173,173,513774,9384 Monterey Plaza,1
+174,174,517226,596 Meadow Vale Drive,1
+175,175,606081,773 Goodland Road,0
+176,176,169636,24607 Corscot Road,1
+177,177,55620,0 Bartillon Plaza,0
+178,178,474307,59 Clemons Point,1
+179,179,627730,617 Warbler Alley,0
+180,180,775501,67 Kropf Drive,1
+181,181,1290574,585 Spenser Point,1
+182,182,168548,407 Mesta Avenue,1
+183,183,524055,5 Kings Plaza,1
+184,184,41580,50370 Quincy Hill,0
+185,185,274841,6 Vermont Point,0
+186,186,112725,565 Duke Court,1
+187,187,283798,57739 Amoth Circle,1
+188,188,64342,32969 Park Meadow Plaza,0
+189,189,408158,59 Merchant Street,1
+190,190,154944,6 Katie Center,1
+191,191,466047,09590 Myrtle Trail,1
+192,192,795687,635 Mariners Cove Center,0
+193,193,21707,0308 Gerald Place,1
+194,194,93100,2926 Transport Way,1
+195,195,430134,86 Arapahoe Court,1
+196,196,19393,138 Westend Junction,1
+197,197,287392,90 Dakota Terrace,1
+198,198,43856,32 Longview Trail,0
+199,199,498501,775 Farragut Lane,0
+200,200,511894,7 Lien Alley,0
+201,201,84224,2055 Bayside Road,0
+202,202,142043,8 Melody Parkway,0
+203,203,483620,44 Everett Parkway,1
+204,204,721655,47 Clove Point,0
+205,205,150504,23 Towne Court,0
+206,206,236263,2 Jana Point,0
+207,207,361933,2 Dahle Crossing,1
+208,208,203274,31234 Buhler Trail,0
+209,209,91819,596 Meadow Vale Drive,0
+210,210,595639,94 Dorton Alley,1
+211,211,443130,942 David Parkway,0
+212,212,201513,736 Fallview Terrace,0
+213,213,622132,565 Carey Circle,0
+214,214,873087,2 Fieldstone Alley,1
+215,215,464781,59 Merchant Street,1
+216,216,422003,910 Vermont Crossing,0
+217,217,347487,53 Orin Center,0
+218,218,677687,5 Starling Way,0
+219,219,261692,486 Claremont Lane,1
+220,220,28176,34 Waubesa Way,0
+221,221,112570,2 Fieldstone Alley,0
+222,222,364050,139 Carpenter Road,1
+223,223,395795,77 Grover Road,0
+224,224,68153,8976 Gale Point,0
+225,225,793969,75 Beilfuss Center,1
+226,226,84224,773 Goodland Road,0
+227,227,853324,10 Jenifer Plaza,1
+228,228,496791,45 Hoepker Pass,0
+229,229,28294,3448 Monument Plaza,0
+230,230,315845,396 Bowman Trail,1
+231,231,675794,57739 Amoth Circle,0
+232,232,395692,97152 Manufacturers Crossing,0
+233,233,689433,85460 Havey Terrace,0
+234,234,557613,1 Knutson Terrace,1
+235,235,464035,3 Bartelt Park,1
+236,236,517021,3914 Spohn Alley,1
+237,237,440592,5 Vermont Park,0
+238,238,877000,48691 Loeprich Terrace,1
+239,239,531865,0 Bashford Hill,1
+240,240,153191,90 Warner Place,0
+241,241,148876,872 Oxford Point,0
+242,242,177274,6971 Mosinee Pass,0
+243,243,956895,45 Pawling Point,0
+244,244,128015,8 Butternut Court,1
+245,245,365722,5 Kings Plaza,1
+246,246,110661,5 Sunbrook Trail,1
+247,247,159468,32265 Susan Park,1
+248,248,379971,6894 Pepper Wood Plaza,0
+249,249,211940,6845 Kim Point,0
+250,250,720167,536 Graedel Road,0
+251,251,16879,469 Amoth Park,1
+252,252,159207,6 Kipling Center,1
+253,253,108813,13672 Towne Lane,0
+254,254,491408,45 Pawling Point,0
+255,255,315365,345 Ramsey Park,0
+256,256,150504,85292 Dawn Avenue,0
+257,257,134376,7522 Coleman Center,1
+258,258,394293,4 Fairview Circle,1
+259,259,553123,845 Mosinee Trail,0
+260,260,340538,01 Elka Trail,1
+261,261,442241,860 Claremont Plaza,0
+262,262,206344,9 Hollow Ridge Trail,1
+263,263,156252,09 Claremont Circle,1
+264,264,126336,285 Drewry Street,1
+265,265,180533,238 Utah Plaza,0
+266,266,61017,47989 Vera Lane,1
+267,267,227068,8 Mcbride Park,0
+268,268,225345,669 Merrick Road,0
+269,269,629237,61 Ludington Drive,0
+270,270,435342,96926 Moland Drive,1
+271,271,268199,58 Heath Junction,0
+272,272,121740,1181 Delaware Road,0
+273,273,141556,385 Bashford Terrace,1
+274,274,664046,8703 Mallard Place,1
+275,275,492246,2926 Transport Way,0
+276,276,353500,862 Green Circle,1
+277,277,44206,26900 Lien Court,0
+278,278,288614,910 Vermont Crossing,0
+279,279,767671,406 West Drive,0
+280,280,258932,6369 Rutledge Hill,1
+281,281,128670,68 Sauthoff Place,0
+282,282,617081,4331 Columbus Hill,0
+283,283,289251,24659 Pierstorff Trail,0
+284,284,566624,40450 Ramsey Pass,0
+285,285,547615,7 Clyde Gallagher Court,0
+286,286,920590,21 Mayfield Way,0
+287,287,294081,483 Ridgeview Trail,0
+288,288,512832,595 Gale Crossing,1
+289,289,619067,9 Arapahoe Street,1
+290,290,91106,18281 Glacier Hill Avenue,1
+291,291,348261,624 Mockingbird Plaza,1
+292,292,617085,67 Kropf Drive,0
+293,293,277347,9837 Scoville Drive,1
+294,294,845594,4 Porter Trail,1
+295,295,77043,19727 New Castle Pass,1
+296,296,230340,2055 Bayside Road,0
+297,297,1023364,4192 Calypso Point,0
+298,298,810898,4 Luster Park,0
+299,299,149124,2 Derek Lane,1
+300,300,381392,10948 Spenser Pass,1
+301,301,493444,6 Eagan Road,0
+302,302,538195,21 Mayfield Way,1
+303,303,445112,6971 Mosinee Pass,0
+304,304,639402,74 American Ash Hill,1
+305,305,591681,9 Union Road,1
+306,306,161298,7 Mesta Alley,1
+307,307,132176,7483 Schurz Court,0
+308,308,290482,43286 Stephen Street,0
+309,309,435410,80 Pankratz Terrace,0
+310,310,118854,92 Emmet Point,1
+311,311,424971,69 Lawn Crossing,1
+312,312,171180,90122 Graedel Parkway,0
+313,313,254587,47989 Vera Lane,1
+314,314,267414,026 Vera Point,0
+315,315,1033112,559 Schiller Terrace,1
+316,316,463320,3 Lyons Drive,1
+317,317,218593,01 Elka Trail,0
+318,318,212936,9 Carey Terrace,1
+319,319,421130,97483 New Castle Center,1
+320,320,252880,70 Towne Way,0
+321,321,30004,63912 Stoughton Circle,0
+322,322,9587,56452 Surrey Plaza,1
+323,323,664194,34159 Dawn Lane,1
+324,324,468168,11 Raven Lane,0
+325,325,85680,4583 Lakewood Gardens Point,0
+326,326,383215,05972 Autumn Leaf Lane,1
+327,327,20931,7 Vidon Drive,1
+328,328,238790,2055 Bayside Road,0
+329,329,199729,0562 Mallard Way,1
+330,330,471552,9908 Maple Wood Place,1
+331,331,514520,524 Glendale Alley,1
+332,332,571379,4 Tennessee Circle,1
+333,333,649676,24659 Pierstorff Trail,0
+334,334,213425,260 Green Ridge Circle,0
+335,335,227442,20 Schiller Place,1
+336,336,317287,64515 Glendale Junction,1
+337,337,648572,3939 Manley Court,1
+338,338,1321100,48 American Ash Plaza,1
+339,339,402886,25 Everett Crossing,0
+340,340,610331,62 Nevada Alley,1
+341,341,15610,2964 Carpenter Park,1
+342,342,185475,7029 Upham Point,0
+343,343,473255,92323 Village Green Way,0
+344,344,359808,273 Paget Trail,0
+345,345,659568,32265 Susan Park,0
+346,346,59730,62378 Everett Junction,0
+347,347,199215,5734 Daystar Road,0
+348,348,494391,469 Amoth Park,0
+349,349,585782,05936 Hallows Way,0
+350,350,478941,965 Del Sol Pass,0
+351,351,326452,218 Ryan Point,1
+352,352,364725,209 Fieldstone Road,0
+353,353,1026243,45 Hoepker Pass,0
+354,354,65336,3830 Birchwood Avenue,0
+355,355,50457,76079 Marquette Trail,0
+356,356,689024,79 Mosinee Center,1
+357,357,77311,759 Boyd Junction,0
+358,358,232355,16720 Village Green Hill,1
+359,359,786307,234 Southridge Way,1
+360,360,272195,6005 Esch Circle,0
+361,361,30567,48094 Homewood Center,1
+362,362,89186,31234 Buhler Trail,1
+363,363,624777,4 Sachtjen Drive,0
+364,364,429848,4 Fairview Circle,1
+365,365,476703,40757 Green Ridge Hill,1
+366,366,525084,8 Gale Avenue,1
+367,367,188936,20 Schiller Place,1
+368,368,103908,291 Rowland Pass,1
+369,369,370732,4 Hoepker Point,1
+370,370,365127,9 Judy Court,1
+371,371,1147539,9638 Weeping Birch Alley,0
+372,372,701806,27437 Tennyson Lane,1
+373,373,31290,77080 Loeprich Alley,1
+374,374,240779,70 Towne Way,0
+375,375,416940,0 Hagan Hill,1
+376,376,669422,80024 Morrow Road,1
+377,377,227579,03 Westridge Plaza,1
+378,378,433515,051 Prairieview Plaza,0
+379,379,116225,413 Eliot Pass,0
+380,380,278746,21 Golden Leaf Junction,0
+381,381,36958,5894 Memorial Parkway,0
+382,382,595786,7 Lillian Junction,1
+383,383,62978,624 Mockingbird Plaza,1
+384,384,17879,19 Schurz Lane,0
+385,385,489430,70 Towne Way,0
+386,386,142310,43 Emmet Place,0
+387,387,115494,5969 Carpenter Center,1
+388,388,224475,736 Fallview Terrace,1
+389,389,225306,393 Troy Pass,0
+390,390,801437,80024 Morrow Road,1
+391,391,711236,09 Novick Circle,0
+392,392,447520,30 Muir Road,0
+393,393,34923,775 Farragut Lane,1
+394,394,580325,1951 Darwin Way,1
+395,395,290304,86 Blue Bill Park Drive,1

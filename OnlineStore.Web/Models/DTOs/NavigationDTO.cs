@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace OnlineStore.Web.Models.DTOs
 {
-    public class NavigationDTO
+    public class NavigationDto
     {
         public IEnumerable<Category> Categories { get; set; }
+        public int NumberOfItemsInCart { get; set; }
     }
 }

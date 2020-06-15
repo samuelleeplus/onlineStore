@@ -12,15 +12,15 @@ namespace OnlineStore.Web.Controllers
         public IActionResult Index()
         {
 
-            var model = new NavigationDTO
+            var model = new NavigationDto
             {
                 Categories = new List<Category>
                 {
-                    new Category{ CategoryName = "Category1", CategoryLink=""  },
-                    new Category{ CategoryName = "Category2", CategoryLink=""  },
-                    new Category{ CategoryName = "Category3", CategoryLink=""  },
-                    new Category{ CategoryName = "Category4", CategoryLink=""  },
-                    new Category{ CategoryName = "Category5", CategoryLink=""  }
+                    new Category{ CategoryName = "Category11", CategoryLink=""  },
+                    new Category{ CategoryName = "Category22", CategoryLink=""  },
+                    new Category{ CategoryName = "Category33", CategoryLink=""  },
+                    new Category{ CategoryName = "Category44", CategoryLink=""  },
+                    new Category{ CategoryName = "Category55", CategoryLink=""  }
                 }
             };
             return PartialView(model);

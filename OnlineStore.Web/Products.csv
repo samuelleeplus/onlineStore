@@ -1,0 +1,1001 @@
+id,Name,ModelNumber,Price,Quantity,WarrantyStatus,DescriptionExtra,DescriptionMain,DiscountedPrice,DistributorId,Category
+1,Savana 2500,2001,18831,40785,10 Year,Profound,Implemented local challenge,1952,4,Luxury
+2,Aerostar,1987,72714,14079,No,moratorium,Switchable zero tolerance strategy,2300,9,SUV
+3,SSR,2005,13908,49187,Yes,Advanced,Persistent user-facing monitoring,183,3,Luxury
+4,Marauder,2003,50862,57088,5 Year,conglomeration,Future-proofed stable adapter,18,1,Luxury
+5,Lancer,2001,75118,19919,Yes,pricing structure,Synergized contextually-based conglomeration,3375,4,SUV
+6,Alliance,1983,29763,39244,3 Year,Devolved,Multi-lateral dedicated function,684,8,SUV
+7,Continental Mark VII,1988,58869,63005,5 Year,Compatible,Reduced even-keeled forecast,3260,5,Sedan
+8,Equinox,2012,92020,89131,5 Year,neural-net,Implemented upward-trending productivity,2510,4,Sedan
+9,Sonata,1997,53952,59660,10 Year,reciprocal,Triple-buffered maximized focus group,2007,1,Sports
+10,Seville,1995,47133,15564,Yes,solution-oriented,Switchable bi-directional hardware,49,1,SUV
+11,Previa,1991,92670,94138,No,Devolved,Fully-configurable logistical standardization,2782,6,Family
+12,Impala,2011,76289,8113,Yes,Face to face,Future-proofed discrete hardware,3044,9,Sports
+13,Suburban 2500,1994,68659,22508,Yes,software,Exclusive encompassing solution,2059,4,Sports
+14,MKS,2010,33231,88069,No,exuding,Programmable even-keeled workforce,1060,10,Sports
+15,Tacoma,2010,25979,33819,10 Year,Open-architected,Team-oriented foreground Graphical User Interface,126,5,Family
+16,Vitara,2003,39870,13400,No,24 hour,Switchable discrete analyzer,3024,1,Luxury
+17,Savana,2008,45554,73545,Yes,Phased,Innovative human-resource architecture,4964,5,Family
+18,Camry,2011,63143,33528,5 Year,complexity,Adaptive background matrix,1191,8,Sports
+19,Club Wagon,1996,89991,68940,Yes,impactful,Digitized contextually-based policy,1281,2,Sports
+20,Sienna,1999,89257,88247,3 Year,incremental,Seamless 24/7 installation,2377,6,Family
+21,Electra,1987,79714,55082,No,Future-proofed,Enterprise-wide content-based budgetary management,4748,9,Sedan
+22,Corsica,1993,98168,55739,3 Year,support,Synergized dedicated info-mediaries,141,10,SUV
+23,C-Class,2002,43153,75822,10 Year,flexibility,Cross-platform actuating collaboration,2827,5,Family
+24,SL-Class,2009,78383,34618,10 Year,discrete,Cross-platform national paradigm,1988,7,Family
+25,Fifth Ave,1992,51043,41966,3 Year,structure,Multi-layered secondary hierarchy,3089,2,Sports
+26,Miata MX-5,1996,59438,91885,3 Year,high-level,Re-engineered systemic methodology,2101,1,Sedan
+27,S40,2007,16891,97589,3 Year,optimizing,Optional bifurcated groupware,3888,2,Family
+28,Z4,2003,77626,29414,No,Enterprise-wide,Reactive 5th generation neural-net,4496,1,SUV
+29,Endeavor,2011,19044,12646,5 Year,attitude-oriented,Open-architected cohesive secured line,3991,2,Family
+30,F-Series,2009,84425,82387,5 Year,Enhanced,Advanced even-keeled firmware,1481,7,Sports
+31,Continental,1985,66422,69155,3 Year,Cloned,Programmable homogeneous complexity,2943,1,Luxury
+32,Expedition,1998,96060,55278,5 Year,Organized,Reverse-engineered well-modulated strategy,530,9,Luxury
+33,Probe,1991,41712,23948,10 Year,foreground,Down-sized client-driven flexibility,4097,4,SUV
+34,Navigator L,2011,58235,95609,5 Year,matrix,Function-based global knowledge base,4259,9,Luxury
+35,C-Class,2003,13545,38537,Yes,Upgradable,Fundamental even-keeled success,2051,4,SUV
+36,XK Series,1997,69772,83460,3 Year,superstructure,Fundamental value-added migration,673,9,Family
+37,Viper RT/10,1995,82483,6785,3 Year,tangible,Triple-buffered global local area network,1164,9,Luxury
+38,L300,1987,77259,95903,10 Year,Organized,Multi-channelled even-keeled firmware,4952,7,Sports
+39,Dakota,2007,19688,46757,Yes,Total,Vision-oriented encompassing core,1985,9,Family
+40,M3,1999,43785,37713,3 Year,fault-tolerant,Front-line radical ability,4731,8,Sports
+41,Civic,1988,60319,71127,3 Year,projection,Profound national customer loyalty,2271,3,Sedan
+42,Compass,2011,46221,7118,10 Year,initiative,Triple-buffered holistic application,4434,8,Sports
+43,Neon,1995,77202,25172,5 Year,Advanced,Visionary exuding parallelism,1541,10,SUV
+44,Tribute,2006,33472,84500,10 Year,Reactive,Down-sized eco-centric architecture,977,4,Sports
+45,Jetta,1999,31415,93618,10 Year,User-friendly,Focused multimedia pricing structure,4952,5,Family
+46,Lancer,2004,77793,27866,10 Year,Virtual,Triple-buffered systematic core,484,4,Luxury
+47,Canyon,2009,52522,48210,3 Year,artificial intelligence,Programmable hybrid productivity,4789,2,Family
+48,M,2009,51840,64305,5 Year,time-frame,Progressive asymmetric orchestration,4102,8,SUV
+49,Range Rover,2012,58619,6600,5 Year,Proactive,Optional web-enabled strategy,4532,4,Luxury
+50,H1,1997,86993,95075,Yes,encryption,Customizable systematic focus group,4851,10,Sports
+51,Boxster,2000,37217,28524,No,model,Horizontal grid-enabled artificial intelligence,3839,2,SUV
+52,Sonata,2005,99166,53410,10 Year,parallelism,Realigned 6th generation system engine,2758,2,Family
+53,3500,1995,83589,47038,5 Year,Vision-oriented,Enterprise-wide zero administration flexibility,1464,3,Family
+54,Ram 2500,2006,35800,41634,10 Year,analyzer,Organic context-sensitive firmware,3458,10,Sports
+55,Mariner,2006,78316,10211,10 Year,service-desk,Future-proofed eco-centric matrix,95,5,Family
+56,Diablo,1997,79254,75212,No,task-force,Cloned non-volatile intranet,4268,2,SUV
+57,5000CS Quattro,1986,47542,41794,10 Year,Cloned,Synchronised value-added artificial intelligence,792,8,Luxury
+58,Dakota,2008,87645,82882,10 Year,Inverse,Visionary mission-critical moratorium,839,8,Family
+59,MKS,2010,44738,68526,No,explicit,User-centric non-volatile collaboration,1013,1,Sports
+60,Accord,2008,65427,32057,5 Year,system engine,Networked logistical workforce,3494,4,Sedan
+61,Sierra,2010,65356,86747,5 Year,zero defect,Decentralized radical paradigm,4486,10,SUV
+62,Grand Prix,1974,56938,50631,No,bi-directional,Proactive uniform structure,849,2,Sedan
+63,Vibe,2006,28765,96284,5 Year,Versatile,Visionary full-range attitude,4587,4,Family
+64,F250,1998,23133,69596,10 Year,24 hour,Synchronised tertiary protocol,3059,3,SUV
+65,riolet,1993,12357,11318,Yes,Multi-layered,Balanced national knowledge base,3718,10,SUV
+66,LX,2007,40579,92061,10 Year,methodology,Multi-layered 5th generation system engine,3130,10,Sedan
+67,911,1988,39547,67435,Yes,fault-tolerant,Horizontal uniform strategy,4639,9,Sedan
+68,Genesis,2011,43489,50142,10 Year,zero tolerance,Adaptive hybrid capability,1080,7,Sports
+69,Santa Fe,2005,39399,72687,Yes,Re-contextualized,Proactive grid-enabled application,421,6,Family
+70,Murciélago,2007,42088,20756,No,Future-proofed,Optional heuristic benchmark,558,1,Sedan
+71,Silverado 3500,2010,75462,54025,5 Year,Multi-layered,Decentralized human-resource projection,2238,4,SUV
+72,Town & Country,1995,91717,96775,10 Year,conglomeration,Up-sized holistic data-warehouse,1105,9,Family
+73,Mazda5,2008,10909,58789,3 Year,Customer-focused,Visionary local archive,1408,7,Family
+74,Durango,2003,37717,67707,10 Year,throughput,Grass-roots bandwidth-monitored process improvement,2293,1,Luxury
+75,Miata MX-5,2001,36683,14302,No,bandwidth-monitored,Cross-group intermediate infrastructure,4981,8,Sports
+76,S8,2002,25657,96543,10 Year,Centralized,De-engineered discrete productivity,1691,7,Luxury
+77,Bravada,1999,66287,65190,3 Year,Function-based,Persistent reciprocal orchestration,2807,5,SUV
+78,Equinox,2007,71025,28386,3 Year,methodology,Centralized 4th generation alliance,3961,4,Sedan
+79,Passport,2000,70466,48111,Yes,concept,Diverse full-range open architecture,213,4,Sedan
+80,Escape,2006,92179,46603,3 Year,national,Synchronised actuating benchmark,2594,6,Sedan
+81,Custom Cruiser,1992,74297,78901,5 Year,firmware,Innovative system-worthy throughput,1904,6,Luxury
+82,XL-7,2008,21751,45516,No,policy,Digitized grid-enabled model,2110,7,Sedan
+83,2500,2000,85269,52027,Yes,cohesive,Optimized analyzing standardization,4745,4,Family
+84,Quest,2005,67078,78576,10 Year,executive,Open-source 24/7 core,4206,4,SUV
+85,Cordia,1987,50565,86678,10 Year,database,Pre-emptive multi-state help-desk,53,1,SUV
+86,Celica,1992,81877,75858,10 Year,Robust,Centralized asynchronous attitude,282,1,Family
+87,C-Class,2008,99274,89811,10 Year,Compatible,User-friendly well-modulated firmware,109,1,Sports
+88,M5,2010,40619,90238,3 Year,monitoring,Public-key local definition,3524,10,Family
+89,Montana,2003,12291,66837,No,artificial intelligence,Digitized optimizing benchmark,4084,2,Family
+90,Armada,2010,56376,16671,3 Year,fault-tolerant,Devolved incremental projection,1102,3,Family
+91,C30,2008,51410,37497,No,exuding,Progressive zero defect support,4633,2,Luxury
+92,L300,1988,16481,14187,10 Year,attitude-oriented,Cloned demand-driven open system,3347,8,SUV
+93,LeSabre,1989,58226,16463,Yes,Self-enabling,Managed empowering parallelism,750,7,Sedan
+94,5000CS,1988,35943,49501,5 Year,Intuitive,Streamlined multi-state artificial intelligence,815,2,Family
+95,F350,1999,49723,29041,5 Year,Profit-focused,Distributed fault-tolerant intranet,3458,10,Luxury
+96,Sonata,2003,88793,51563,3 Year,throughput,Implemented solution-oriented strategy,2053,3,Family
+97,Aurora,1996,34834,93885,Yes,User-centric,Vision-oriented coherent middleware,4489,10,Sports
+98,F250,1992,63729,8427,No,Reduced,Customizable object-oriented complexity,3436,4,Luxury
+99,Rally Wagon 2500,1994,34319,64823,10 Year,moratorium,Innovative optimal secured line,4888,10,Family
+100,Murciélago,2009,67103,14812,Yes,24/7,Pre-emptive composite instruction set,2044,8,Sports
+101,Odyssey,2005,65084,22171,No,installation,Cross-platform 4th generation system engine,976,6,SUV
+102,Camry,1998,57247,36701,No,Implemented,Devolved foreground Graphical User Interface,3349,6,SUV
+103,Riviera,1995,31756,54823,No,challenge,Enterprise-wide holistic challenge,3864,3,Luxury
+104,V8,1991,12967,8519,10 Year,policy,Multi-layered intangible alliance,3137,7,Sedan
+105,Corrado,1991,81726,56096,5 Year,non-volatile,Profound demand-driven instruction set,3647,8,Sports
+106,Bravada,2002,56278,82015,3 Year,Secured,Persevering needs-based firmware,3300,8,Luxury
+107,MDX,2008,26808,18089,No,stable,Persevering coherent migration,1785,10,Sedan
+108,Trooper,1999,40364,81118,3 Year,transitional,Multi-layered mobile project,1373,7,Sports
+109,Truck,1987,59483,38626,No,24 hour,Implemented background alliance,2610,8,Sedan
+110,GS,1998,59168,14233,3 Year,Future-proofed,Optimized cohesive core,4064,5,SUV
+111,Supra,1996,69626,12697,3 Year,Streamlined,Universal multi-tasking application,3704,10,SUV
+112,Sentra,1999,81505,53166,No,flexibility,Inverse systematic productivity,3273,1,Sedan
+113,Focus,2000,63619,13388,3 Year,leverage,Grass-roots composite time-frame,3882,7,Sports
+114,Odyssey,2006,91764,68075,10 Year,impactful,Reactive mission-critical collaboration,158,5,SUV
+115,Discovery Series II,2000,64124,27903,No,Virtual,Implemented upward-trending productivity,807,7,Luxury
+116,Suburban 2500,1996,17966,56938,5 Year,Multi-lateral,Centralized neutral methodology,2765,9,Family
+117,Legacy,2010,76042,10990,10 Year,groupware,Synchronised asymmetric alliance,4259,4,Sports
+118,Firefly,1991,86359,91993,3 Year,collaboration,Front-line homogeneous frame,2083,5,SUV
+119,E250,2008,14731,22422,No,encryption,Horizontal client-server policy,4347,4,Luxury
+120,XJ,2011,45751,59583,No,model,Centralized regional projection,344,7,SUV
+121,430,1990,22762,68488,No,reciprocal,Re-contextualized non-volatile software,2145,9,Sedan
+122,Accord,1983,24594,68706,5 Year,modular,Fundamental global orchestration,3852,9,Luxury
+123,Voyager,2001,98927,27783,3 Year,Face to face,Secured discrete structure,4573,7,Sports
+124,SLK-Class,2002,46903,25680,3 Year,project,Upgradable modular internet solution,2469,3,Luxury
+125,CTS-V,2010,66639,56880,5 Year,hardware,Customer-focused upward-trending customer loyalty,1855,4,Sports
+126,LTD Crown Victoria,1991,40138,99635,10 Year,Triple-buffered,Polarised background strategy,1367,4,Sports
+127,Galant,2006,19107,51400,10 Year,Grass-roots,Robust uniform challenge,1845,5,SUV
+128,M5,2003,32421,7952,10 Year,budgetary management,Inverse background throughput,4399,9,Luxury
+129,Thunderbird,1987,79738,44844,3 Year,extranet,Open-architected zero tolerance toolset,2676,10,Sports
+130,Grand Marquis,1995,82901,49282,5 Year,analyzer,Pre-emptive content-based task-force,3207,5,Family
+131,Club Wagon,1998,57708,19274,No,matrices,Diverse impactful orchestration,4068,3,Sedan
+132,MKS,2011,48026,68077,5 Year,portal,Quality-focused non-volatile utilisation,2044,2,Luxury
+133,Endeavor,2005,30297,91338,5 Year,regional,Progressive client-server moratorium,2487,5,Luxury
+134,Tucson,2005,72538,88919,10 Year,De-engineered,Reverse-engineered systematic projection,957,8,Family
+135,Mountaineer,2001,81816,71780,10 Year,Optimized,Enhanced discrete monitoring,2030,5,Luxury
+136,Sunfire,2002,75553,55783,Yes,pricing structure,Horizontal local knowledge base,2894,10,SUV
+137,Econoline E250,1999,77004,84584,5 Year,fresh-thinking,Grass-roots 24 hour artificial intelligence,3341,1,Luxury
+138,QX,2009,21709,9780,10 Year,system-worthy,Enhanced intangible time-frame,485,9,Sedan
+139,Cavalier,2003,13834,93071,10 Year,maximized,Business-focused logistical migration,1756,8,Sedan
+140,Escape,2012,78633,63427,5 Year,fault-tolerant,Stand-alone radical toolset,3979,4,Luxury
+141,GX,2008,78544,93755,Yes,User-centric,Reactive explicit solution,2368,5,Sedan
+142,Ram Van 2500,1995,33873,44401,No,Reduced,Persistent neutral functionalities,331,2,SUV
+143,Regal,2012,84550,47961,3 Year,asynchronous,Optional contextually-based model,4596,3,Sedan
+144,Camry,1992,80727,23913,5 Year,hierarchy,Fundamental asymmetric model,4127,7,Family
+145,Pajero,2002,16926,11661,5 Year,Re-engineered,Quality-focused real-time collaboration,3830,7,Sports
+146,SL-Class,1990,70681,96118,5 Year,ability,Triple-buffered 24/7 extranet,2908,2,Luxury
+147,S4,2001,33131,26133,No,Cloned,Enterprise-wide regional circuit,962,1,SUV
+148,Golf,2000,19457,12302,5 Year,Future-proofed,Multi-layered fault-tolerant extranet,1214,4,SUV
+149,Continental Mark VII,1985,89257,43922,5 Year,Reduced,Intuitive holistic access,1522,9,SUV
+150,Venza,2011,70974,93553,3 Year,Public-key,Fully-configurable bifurcated utilisation,2277,10,Sedan
+151,SC,2007,95215,65042,No,Cross-platform,Ergonomic next generation system engine,213,8,Sedan
+152,C8 Spyder Wide Body,2004,49568,91601,Yes,executive,Re-contextualized empowering paradigm,2824,9,SUV
+153,Grand Voyager,1997,40973,45315,3 Year,contingency,Self-enabling real-time paradigm,166,5,Family
+154,Blazer,1994,95638,91538,No,help-desk,Multi-tiered tangible moratorium,4823,2,Sports
+155,Aurora,1995,95866,55204,Yes,human-resource,Advanced 5th generation conglomeration,3551,10,Sports
+156,V40,2004,51919,39814,No,flexibility,Digitized bandwidth-monitored benchmark,1468,6,Luxury
+157,Pajero,2004,27443,31855,3 Year,Reverse-engineered,Fundamental static encoding,2893,10,Family
+158,LS,2004,21250,56168,10 Year,frame,Visionary high-level workforce,4414,9,Luxury
+159,Nitro,2007,13963,25096,5 Year,parallelism,Progressive zero defect moratorium,4702,5,Luxury
+160,Grand Marquis,1993,23512,85919,Yes,composite,Focused 3rd generation synergy,2123,3,Sedan
+161,HS,2010,76403,55833,No,responsive,Organic secondary function,3051,1,Sports
+162,FX,2003,13710,99781,5 Year,Fundamental,Compatible responsive challenge,2069,8,SUV
+163,Sierra 3500,2001,42666,94190,5 Year,Innovative,Distributed intangible concept,937,9,Sports
+164,Caliber,2010,82425,50658,3 Year,policy,Cross-group foreground ability,1250,4,Sedan
+165,330,2005,43298,89051,Yes,data-warehouse,Customer-focused background policy,584,7,Sedan
+166,IS,2004,89315,51110,10 Year,definition,Reactive full-range initiative,14,2,Luxury
+167,1500 Club Coupe,1998,83450,43123,10 Year,motivating,Reverse-engineered asynchronous moderator,3164,3,Sedan
+168,Silhouette,1993,42681,22939,5 Year,global,Horizontal interactive hierarchy,3518,8,Luxury
+169,G-Class,2006,94023,55494,10 Year,website,Ergonomic holistic data-warehouse,897,3,Family
+170,Passport,2001,21389,53288,5 Year,regional,Monitored scalable time-frame,1996,1,Sedan
+171,C-Class,2000,37776,41588,3 Year,forecast,De-engineered 24 hour secured line,2221,2,Family
+172,Ram 1500,2001,72360,80689,10 Year,3rd generation,Stand-alone object-oriented matrices,643,8,Sedan
+173,GTO,2005,54581,52238,No,functionalities,Reactive upward-trending local area network,2343,6,Sports
+174,Z8,2000,38998,19721,3 Year,synergy,Centralized non-volatile adapter,20,7,Family
+175,Corvette,1969,48257,80207,3 Year,mission-critical,Stand-alone homogeneous portal,1102,8,Family
+176,Comanche,1992,10962,38129,10 Year,heuristic,Seamless leading edge customer loyalty,2067,8,Family
+177,Ghost,2010,47106,25164,10 Year,Switchable,Object-based didactic access,3909,7,Sedan
+178,CX,1989,51699,23228,5 Year,Graphic Interface,Cross-platform heuristic challenge,4385,7,Family
+179,C-Class,2011,27958,18372,5 Year,even-keeled,Ameliorated value-added approach,1985,7,Luxury
+180,5 Series,2006,79192,59788,Yes,grid-enabled,De-engineered responsive encoding,4892,3,Family
+181,LS,2004,82217,37728,10 Year,discrete,Synergistic bottom-line intranet,2781,1,Sports
+182,V70,1998,57194,86779,10 Year,data-warehouse,Advanced zero tolerance throughput,610,3,Sedan
+183,Navigator,2000,25851,31278,Yes,holistic,Multi-lateral 4th generation artificial intelligence,2644,5,Sports
+184,Ridgeline,2006,44390,36750,No,open architecture,Focused mobile access,1770,10,Sedan
+185,Cruze,2012,47211,31914,10 Year,Phased,Synergistic grid-enabled frame,3646,3,Sports
+186,S60,2003,42447,54837,5 Year,encoding,Switchable web-enabled approach,1026,10,Luxury
+187,Familia,1988,98506,79737,3 Year,clear-thinking,Innovative coherent artificial intelligence,3048,9,Luxury
+188,Ascender,2004,77911,63126,5 Year,emulation,Digitized maximized framework,3199,8,Sports
+189,RX,2008,84392,37745,No,help-desk,Open-source clear-thinking parallelism,3099,1,Luxury
+190,ES,1994,29432,92012,3 Year,strategy,Assimilated cohesive leverage,2833,3,Sedan
+191,LX,2008,61590,90722,5 Year,Horizontal,Grass-roots radical secured line,4594,2,SUV
+192,Silverado 3500,2010,45919,34685,No,bifurcated,Innovative radical monitoring,3209,7,Sports
+193,Corrado,1994,13583,27543,No,reciprocal,Self-enabling zero tolerance strategy,3738,6,Sports
+194,Sable,1991,19047,94573,5 Year,upward-trending,Sharable radical superstructure,761,3,Sedan
+195,S4,2006,55845,97969,3 Year,value-added,Assimilated 5th generation capability,395,5,SUV
+196,Roadmaster,1995,19355,72835,Yes,asymmetric,Total 4th generation info-mediaries,4151,5,SUV
+197,TT,2003,36030,41398,Yes,middleware,Compatible real-time orchestration,3199,1,SUV
+198,Element,2007,74856,9094,10 Year,analyzing,Configurable uniform time-frame,1980,9,Sedan
+199,90,1988,98010,96663,Yes,tangible,Digitized impactful task-force,4421,7,Family
+200,Regal,1996,69251,41740,No,Integrated,Down-sized composite info-mediaries,1701,4,Sedan
+201,Savana 3500,1999,88818,10827,5 Year,leading edge,Up-sized responsive analyzer,4296,5,SUV
+202,Highlander,2012,76207,57993,No,extranet,Down-sized regional architecture,4471,8,SUV
+203,Econoline E250,1996,68349,79410,Yes,scalable,Synergistic tangible application,4109,7,Sedan
+204,Versa,2007,33424,24810,10 Year,Synchronised,Down-sized upward-trending definition,3742,4,Family
+205,Savana 3500,2000,90507,92429,No,bifurcated,Diverse content-based emulation,3206,5,Family
+206,Grand Prix,1980,62010,73075,5 Year,Enhanced,Organized 3rd generation installation,1520,10,Sedan
+207,LeSabre,1998,43083,81573,3 Year,extranet,Visionary user-facing collaboration,4331,1,Sports
+208,Escape,2005,81464,49132,3 Year,24/7,Configurable incremental infrastructure,535,1,Family
+209,Titan,2011,89132,42464,10 Year,array,Re-engineered tertiary service-desk,4330,1,SUV
+210,Yukon,2005,24641,43794,10 Year,radical,Secured methodical protocol,1968,7,SUV
+211,Grand Marquis,2006,25351,77993,5 Year,upward-trending,Ergonomic static intranet,905,8,Family
+212,525,2004,18147,85367,No,dynamic,Automated 5th generation collaboration,3353,7,Sports
+213,STS-V,2006,33024,66917,10 Year,even-keeled,Profit-focused composite productivity,1048,7,SUV
+214,Jetta,1994,39785,16390,5 Year,implementation,Organized next generation methodology,837,3,Sedan
+215,LR2,2008,64149,93410,3 Year,Robust,Virtual bandwidth-monitored data-warehouse,4111,1,Sports
+216,G25,2011,88220,72895,Yes,Ameliorated,Streamlined neutral functionalities,2295,4,Sedan
+217,Galant,2000,24745,52838,10 Year,Reverse-engineered,Fully-configurable didactic customer loyalty,317,1,Sports
+218,Celica,1976,67239,89960,5 Year,function,Sharable executive initiative,1226,10,Sports
+219,SL-Class,2008,10404,86437,No,local,Multi-lateral didactic extranet,3017,9,Sedan
+220,Prelude,1993,90546,76520,3 Year,Networked,Progressive impactful portal,4895,3,Sedan
+221,57,2012,12578,36664,5 Year,Multi-channelled,Function-based user-facing contingency,403,7,Luxury
+222,Mustang,1987,37607,50761,No,Multi-tiered,Profit-focused grid-enabled algorithm,729,6,Luxury
+223,Breeze,1997,14669,24122,5 Year,Total,Adaptive executive emulation,3030,6,SUV
+224,Rally Wagon 2500,1993,92012,22924,3 Year,actuating,Managed object-oriented algorithm,2610,3,Family
+225,Ram,2009,26048,48999,No,dedicated,Customizable exuding synergy,3887,8,Sedan
+226,Special,1962,44623,5046,10 Year,analyzing,Networked interactive concept,802,9,Luxury
+227,DeVille,2000,53424,38324,Yes,6th generation,Robust fresh-thinking extranet,2314,6,Family
+228,Evora,2010,57724,67899,Yes,fresh-thinking,Decentralized empowering product,4609,4,Family
+229,Savana 1500,2002,97851,31687,10 Year,internet solution,Exclusive 4th generation migration,4230,9,Family
+230,Savana 3500,1996,39905,47667,Yes,fresh-thinking,Extended composite core,1383,6,Sedan
+231,350Z,2005,26220,58927,10 Year,firmware,Visionary 3rd generation application,3362,3,Sports
+232,Savana Cargo Van,2006,30513,55280,5 Year,Automated,Enterprise-wide empowering benchmark,1630,2,Luxury
+233,300,1999,76217,97548,Yes,local area network,Organized fresh-thinking neural-net,3086,9,Sports
+234,EXP,1986,32637,92441,No,Organic,Enhanced foreground capability,4343,4,Sports
+235,RX-7,1986,86420,81633,10 Year,help-desk,Profit-focused full-range customer loyalty,2828,3,SUV
+236,Quest,1994,87476,20822,3 Year,local,Innovative zero administration contingency,3842,4,Sedan
+237,Sequoia,2010,50945,83766,10 Year,attitude,Customer-focused upward-trending secured line,1115,9,SUV
+238,Legacy,1992,42211,44514,10 Year,alliance,User-friendly multimedia help-desk,4131,9,SUV
+239,Ridgeline,2010,70643,72162,5 Year,reciprocal,Monitored bandwidth-monitored algorithm,2147,6,SUV
+240,Sonoma,2001,11497,41386,3 Year,stable,Re-contextualized maximized application,1715,5,Sedan
+241,LS Hybrid,2010,78437,45395,No,Cross-group,Organic mobile system engine,1529,6,Sedan
+242,SLK-Class,1997,35645,5293,Yes,throughput,Networked non-volatile conglomeration,3786,8,Sedan
+243,Sierra 3500,2006,58993,79636,10 Year,Face to face,Balanced zero administration system engine,2920,7,Sports
+244,3000GT,1997,41898,42129,3 Year,leverage,Seamless dynamic function,1699,8,SUV
+245,NSX,2000,52855,54219,5 Year,context-sensitive,Intuitive next generation benchmark,2690,4,Sports
+246,Prizm,1993,94056,70821,5 Year,contingency,Distributed static synergy,1743,9,Family
+247,Spectra,2004,17640,63327,3 Year,next generation,Self-enabling upward-trending pricing structure,4984,3,Sedan
+248,Pathfinder,1992,93000,5059,10 Year,Enhanced,Open-architected national extranet,417,4,SUV
+249,TrailBlazer,2008,72398,84836,No,Profound,Optional content-based orchestration,3172,2,Sedan
+250,Yukon XL 2500,2012,75973,58903,5 Year,Re-engineered,Open-architected object-oriented infrastructure,160,6,SUV
+251,Villager,1997,27335,41271,5 Year,hardware,Reactive systematic Graphical User Interface,3006,10,Sedan
+252,Blazer,1996,35665,74226,Yes,Down-sized,Synergistic asymmetric definition,976,4,Luxury
+253,G-Series G30,1992,18133,68157,3 Year,Business-focused,Triple-buffered high-level portal,1496,2,Sports
+254,Econoline E150,1992,58748,8813,No,Intuitive,Self-enabling optimizing process improvement,280,6,Family
+255,330,2006,74405,85183,3 Year,intermediate,Stand-alone mission-critical flexibility,3966,5,Family
+256,Space,1993,32093,48719,Yes,Customizable,Automated multi-tasking Graphical User Interface,1694,8,Sedan
+257,C-Class,2006,43971,47528,Yes,service-desk,Compatible uniform portal,1234,6,SUV
+258,Grand Prix,1997,22123,32991,Yes,moratorium,Proactive well-modulated adapter,629,3,Luxury
+259,DeVille,1994,20687,83512,10 Year,regional,Object-based mobile info-mediaries,4163,9,Luxury
+260,Voyager,2000,65296,80138,10 Year,groupware,Enhanced 4th generation benchmark,4843,3,Luxury
+261,Mustang,1971,72781,89235,10 Year,circuit,Extended dedicated artificial intelligence,2020,2,SUV
+262,Dakota,2006,41093,89112,No,clear-thinking,Cloned client-server artificial intelligence,695,2,Sedan
+263,Trooper,2002,68889,16822,3 Year,holistic,Virtual regional parallelism,2425,4,Sedan
+264,SLK-Class,2011,37122,40233,Yes,Open-architected,Re-engineered motivating capacity,2489,1,Sedan
+265,9000,1991,85783,19458,3 Year,neutral,Down-sized stable core,402,7,Luxury
+266,C70,2004,30700,68109,10 Year,matrix,Secured stable approach,766,2,Family
+267,Scirocco,1984,81196,31423,10 Year,Innovative,Mandatory needs-based database,3023,1,Family
+268,Tacoma,2005,90440,97820,No,motivating,Progressive motivating benchmark,2232,7,SUV
+269,Elantra,2004,82436,74828,5 Year,Virtual,Business-focused context-sensitive migration,3843,3,Sports
+270,500SEL,1993,52148,48528,No,Profound,Pre-emptive explicit focus group,791,3,Sports
+271,Silhouette,1997,27136,11006,5 Year,Profound,Vision-oriented scalable support,905,3,Sports
+272,DTS,2008,82412,81378,10 Year,Adaptive,Horizontal attitude-oriented support,1222,8,Sports
+273,900,1998,49454,14153,3 Year,Enterprise-wide,Assimilated regional implementation,1021,5,Sedan
+274,Alpina B7,2007,70166,77833,Yes,Synchronised,Multi-layered interactive standardization,1037,3,Family
+275,Bonneville,1994,97819,41995,10 Year,empowering,Automated coherent framework,3638,6,Sports
+276,GLI,2009,31323,48071,No,model,Multi-tiered transitional paradigm,920,4,Luxury
+277,xB,2011,97466,29760,Yes,workforce,Progressive bifurcated support,1651,7,Luxury
+278,Sunbird,1986,52265,61403,10 Year,productivity,Multi-tiered global forecast,2590,10,Luxury
+279,Tundra,2011,16116,51711,10 Year,real-time,Cross-group web-enabled array,3076,1,SUV
+280,Monte Carlo,1999,52194,94625,3 Year,human-resource,Customer-focused zero defect migration,4069,9,Sports
+281,LS,2009,97482,34536,No,fresh-thinking,Down-sized web-enabled hierarchy,1855,2,Sports
+282,Firebird,1989,31715,64744,3 Year,24 hour,Networked optimizing algorithm,1370,3,Luxury
+283,3 Series,2011,41231,95136,Yes,object-oriented,Synergized transitional core,3364,4,SUV
+284,MX-5,1998,48225,7678,3 Year,customer loyalty,Organic multi-state methodology,1675,9,Sports
+285,TrailBlazer,2006,16151,32086,10 Year,function,Ameliorated motivating functionalities,4704,3,SUV
+286,Verona,2005,39900,21228,3 Year,mission-critical,Re-contextualized executive projection,4,3,Luxury
+287,NSX,2003,95804,32126,5 Year,frame,Total motivating firmware,128,4,Luxury
+288,Silverado 2500,2001,16608,84908,No,Object-based,Robust intermediate installation,942,6,Luxury
+289,GT350,1969,95273,78900,Yes,function,Balanced radical artificial intelligence,3819,5,Sports
+290,XL-7,2003,47425,53303,Yes,hardware,Organized zero tolerance moratorium,4516,1,Luxury
+291,S-Series,1997,23248,94464,No,multi-state,Profit-focused composite alliance,2778,9,Luxury
+292,MDX,2002,68658,21254,3 Year,real-time,Switchable foreground artificial intelligence,2118,8,SUV
+293,Econoline E350,1995,13664,52922,5 Year,task-force,Polarised scalable budgetary management,581,5,Sports
+294,3500,1998,32354,8167,No,hybrid,Cloned incremental hardware,877,3,Sports
+295,Familia,1988,24690,26211,10 Year,Upgradable,Diverse multimedia interface,4778,4,Sedan
+296,Civic,2004,97465,46623,10 Year,Cloned,Multi-lateral systematic approach,479,2,SUV
+297,Defender 90,1997,30240,45447,No,fault-tolerant,Operative systemic extranet,3461,4,Sedan
+298,Kizashi,2010,60493,91848,3 Year,Automated,Centralized regional access,101,2,Sedan
+299,7 Series,2001,77975,66544,10 Year,next generation,Team-oriented dedicated matrices,2797,8,Luxury
+300,Model T,1909,56433,48516,Yes,success,Quality-focused well-modulated structure,1794,1,Sports
+301,6000,1988,80605,45669,3 Year,scalable,Adaptive stable architecture,464,4,SUV
+302,GTI,1992,52754,72257,5 Year,initiative,Organized optimal matrices,3095,7,Family
+303,Canyon,2006,85818,38941,No,Open-source,Cross-platform asynchronous data-warehouse,4212,8,Sedan
+304,XK,2012,26348,72496,Yes,Object-based,Balanced attitude-oriented matrix,2428,4,Sports
+305,Ram 2500 Club,1996,53067,12782,Yes,Horizontal,Innovative user-facing website,3046,6,Sedan
+306,Titan,2011,20351,89742,No,Operative,Upgradable cohesive help-desk,1958,7,Family
+307,New Yorker,1995,98698,26610,No,local area network,Automated encompassing open architecture,2467,7,Sports
+308,Monterey,2005,38962,8730,No,motivating,Organic incremental local area network,4377,5,Sports
+309,Mountaineer,1999,88222,60651,No,circuit,Multi-lateral systematic challenge,2651,4,Family
+310,Explorer,2011,81213,58941,No,Ergonomic,Total impactful adapter,2907,4,Sports
+311,XL-7,2005,50891,94459,5 Year,bottom-line,Intuitive multi-tasking artificial intelligence,2699,2,SUV
+312,Nitro,2009,60988,8136,No,Open-architected,Customizable tangible hub,4048,1,SUV
+313,XJ,2011,66989,25724,Yes,Stand-alone,Business-focused modular strategy,2449,3,Family
+314,Bronco II,1988,74172,81090,10 Year,Self-enabling,Face to face client-driven model,2846,9,Sports
+315,Explorer Sport Trac,2000,95390,77020,Yes,encompassing,Digitized web-enabled artificial intelligence,626,4,Sports
+316,Murciélago,2007,98453,74656,Yes,software,Assimilated exuding productivity,2177,2,SUV
+317,Optima,2011,23895,17803,10 Year,context-sensitive,Advanced regional structure,79,2,Sedan
+318,Durango,2003,43666,57339,10 Year,Networked,Stand-alone bi-directional artificial intelligence,2482,4,Family
+319,Torrent,2009,27412,6370,3 Year,Versatile,Focused next generation extranet,3384,10,Sports
+320,Suburban 1500,2008,87845,86639,5 Year,Optimized,Ameliorated tertiary customer loyalty,4342,8,Luxury
+321,Yaris,2010,24899,29740,No,Persistent,Programmable bottom-line software,3564,8,Family
+322,Grand Cherokee,1998,79612,29946,Yes,help-desk,Centralized optimal service-desk,1996,9,SUV
+323,Golf,2001,10210,59339,No,modular,Realigned multi-tasking framework,994,6,Sports
+324,Rio,2008,98457,84461,3 Year,knowledge user,Business-focused asynchronous encryption,1689,9,SUV
+325,Lumina,1993,49623,24249,10 Year,zero tolerance,Devolved zero administration ability,555,3,Sedan
+326,Taurus,2011,60240,86338,Yes,coherent,Up-sized needs-based Graphical User Interface,2852,4,Sedan
+327,Corolla,2001,11967,98141,5 Year,Expanded,Face to face cohesive concept,2617,4,Sports
+328,Aerostar,1987,10843,18276,No,Monitored,Decentralized mobile Graphic Interface,1105,2,Sedan
+329,Taurus,1997,74672,87267,Yes,exuding,De-engineered tertiary encryption,952,1,Sedan
+330,SLR McLaren,2009,11486,22341,3 Year,policy,Robust 6th generation leverage,903,9,Sedan
+331,Cherokee,1995,81028,80795,10 Year,Optional,Synergized next generation process improvement,2075,6,SUV
+332,Dynasty,1992,58241,40502,10 Year,Centralized,Advanced regional open architecture,985,3,Luxury
+333,Suburban 2500,2004,52876,91030,Yes,Stand-alone,Synergistic non-volatile database,140,8,SUV
+334,Mazda6 Sport,2006,43022,89467,3 Year,stable,Up-sized upward-trending matrix,3441,7,SUV
+335,Jetta,1991,73015,41053,10 Year,Persistent,Configurable 5th generation implementation,4225,2,Sports
+336,Ram Van 3500,2003,41204,79385,No,Focused,Enhanced grid-enabled superstructure,537,2,Sports
+337,Neon,1997,36095,27506,Yes,customer loyalty,Cross-platform upward-trending knowledge user,1376,3,Luxury
+338,LX,2006,55319,8077,3 Year,internet solution,Public-key transitional workforce,1021,2,Sedan
+339,Caravan,1997,57113,13967,No,6th generation,Cross-platform national conglomeration,3696,6,Sedan
+340,Sportvan G20,1994,31697,71833,5 Year,Sharable,Open-source composite monitoring,2623,9,Sports
+341,Aerostar,1991,65314,79650,10 Year,dynamic,Object-based executive standardization,2,4,Sports
+342,Concorde,1993,34641,84587,Yes,moratorium,Cloned uniform software,3265,7,Luxury
+343,Grand Prix,1980,35427,75347,No,local,Seamless radical frame,2468,8,Sedan
+344,Cooper,2004,70679,74848,No,tertiary,Polarised directional projection,2459,7,Sports
+345,Sedona,2002,11803,27426,No,Ergonomic,Business-focused zero administration middleware,1569,6,SUV
+346,Sierra 2500,2011,86069,36305,10 Year,upward-trending,Face to face impactful time-frame,4649,3,Luxury
+347,Quattroporte,1985,64949,93317,3 Year,throughput,Digitized upward-trending implementation,3582,8,Sedan
+348,CL,2001,79327,37725,10 Year,solution,Diverse asynchronous adapter,1900,3,Sedan
+349,Lumina,1994,57750,9808,10 Year,client-driven,Visionary impactful instruction set,2019,9,Luxury
+350,M,2007,56473,24128,No,empowering,Profit-focused fresh-thinking firmware,1065,2,SUV
+351,88,1995,94636,40868,No,4th generation,Public-key object-oriented initiative,4627,3,Sedan
+352,TT,2010,53492,97663,Yes,upward-trending,Synchronised solution-oriented encryption,4082,2,SUV
+353,Allroad,2001,54440,25485,3 Year,attitude-oriented,Realigned 24 hour standardization,1866,8,Sports
+354,Gemini,1987,99254,59659,5 Year,Function-based,Integrated stable project,4069,2,Sedan
+355,X3,2009,30588,35095,3 Year,systemic,Upgradable interactive knowledge user,4852,3,Sedan
+356,SJ,1993,58507,94209,5 Year,mobile,Grass-roots actuating time-frame,2901,2,Sports
+357,Ram Wagon B250,1994,44420,63289,5 Year,disintermediate,Innovative 24 hour policy,3572,9,Luxury
+358,CX,1989,51410,90479,5 Year,content-based,Synergized bifurcated solution,2754,9,Family
+359,L-Series,2002,11776,79984,Yes,User-centric,Open-architected eco-centric architecture,82,1,Family
+360,Cavalier,1996,62213,25732,10 Year,encoding,Function-based well-modulated software,1109,7,Sports
+361,V8 Vantage,2008,34774,24361,3 Year,Organized,User-centric 4th generation software,1193,6,Sedan
+362,Sidekick,1991,76312,81648,10 Year,complexity,Realigned responsive capacity,979,2,SUV
+363,Sunfire,1999,62145,66609,5 Year,Universal,Multi-channelled systemic database,3537,4,Luxury
+364,Sentra,2006,76168,84292,Yes,Polarised,Realigned homogeneous matrix,3676,8,Sedan
+365,Firefly,1995,52265,73827,5 Year,Intuitive,Configurable encompassing adapter,3693,7,Luxury
+366,Bronco II,1989,67359,55716,Yes,infrastructure,Streamlined optimal forecast,3422,5,SUV
+367,B-Series,2002,98077,10315,Yes,Compatible,Realigned user-facing intranet,4020,8,Sports
+368,RX,2010,51053,41703,5 Year,maximized,Proactive systemic workforce,1039,1,Luxury
+369,Sunfire,2000,32708,81694,5 Year,composite,Diverse needs-based budgetary management,3137,7,SUV
+370,MKX,2008,32549,87297,Yes,matrices,Balanced intangible knowledge base,480,2,Sports
+371,57,2010,54377,40745,No,archive,Focused static groupware,2297,3,Luxury
+372,Silverado 3500,2007,66341,50755,No,national,Up-sized zero administration model,2006,2,Luxury
+373,Sunbird,1993,16719,16034,No,instruction set,Decentralized client-driven solution,4676,3,Luxury
+374,Ion,2004,78992,17197,No,Universal,Re-contextualized interactive internet solution,1914,3,Luxury
+375,Contour,2000,57922,54181,5 Year,functionalities,Compatible bi-directional data-warehouse,104,6,Luxury
+376,Blazer,2003,23105,7016,No,knowledge user,Function-based 3rd generation secured line,3698,6,Family
+377,Jetta III,1993,18828,48489,10 Year,secondary,Ameliorated multi-tasking challenge,3164,10,Family
+378,Corvette,1957,83855,48915,5 Year,structure,Monitored tangible leverage,129,7,Sedan
+379,Escort,2004,79037,87683,Yes,matrix,Balanced next generation architecture,4288,8,Sports
+380,200SX,1996,41184,83205,Yes,User-friendly,Cloned secondary matrix,1071,10,Luxury
+381,Alpina B7,2008,84494,56928,3 Year,policy,Persistent impactful website,3781,9,Sedan
+382,Outlander,2005,93669,56397,No,Right-sized,Phased content-based matrix,1005,9,SUV
+383,Mazda2,2012,31866,90030,10 Year,Multi-lateral,User-centric directional data-warehouse,4890,5,Sedan
+384,Sonata,2003,60627,38599,Yes,Programmable,Versatile directional Graphic Interface,3863,1,Family
+385,Galant,1987,67533,42572,No,Operative,Public-key object-oriented instruction set,3847,5,SUV
+386,Fox,1987,83353,6507,3 Year,Phased,Automated encompassing capacity,1008,3,Sedan
+387,E-Class,1984,21261,93143,5 Year,responsive,Synchronised mobile help-desk,3382,5,Sedan
+388,Matrix,2010,21224,60880,Yes,alliance,Open-architected logistical access,1672,7,Family
+389,SVX,1997,90003,98903,Yes,User-friendly,Multi-lateral 5th generation structure,2592,7,Sedan
+390,Outlander Sport,2012,51794,23899,10 Year,Up-sized,Front-line 4th generation interface,3203,7,Sedan
+391,Allroad,2001,58706,76374,3 Year,Exclusive,Organic multi-tasking protocol,2481,9,Luxury
+392,Suburban 2500,2007,59184,22066,No,well-modulated,Stand-alone 5th generation implementation,3772,3,Sedan
+393,Alcyone SVX,1996,44450,22226,3 Year,Re-contextualized,Polarised stable implementation,1012,7,Sedan
+394,Lumina,1998,62190,35224,3 Year,next generation,Robust contextually-based knowledge user,1180,2,Sedan
+395,MPV,1997,40721,74303,10 Year,adapter,Profound composite definition,225,7,Luxury
+396,Nitro,2009,85141,88030,5 Year,Sharable,Proactive context-sensitive monitoring,1914,3,SUV
+397,CR-V,2002,47979,89211,10 Year,circuit,User-friendly 4th generation toolset,985,1,Sedan
+398,LUV,1979,43025,72950,5 Year,user-facing,Cross-platform optimizing concept,3794,7,Luxury
+399,Dakota,2004,35146,85090,Yes,focus group,Vision-oriented national throughput,1948,9,SUV
+400,Echo,2001,21573,37602,5 Year,adapter,Monitored optimal contingency,2005,5,Luxury
+401,Grand Am,1999,47653,97663,No,heuristic,Configurable static neural-net,2399,9,Sports
+402,Camaro,1985,78243,92266,Yes,upward-trending,Profit-focused static workforce,2100,4,Family
+403,Sienna,2012,49736,54657,No,solution,Future-proofed contextually-based extranet,3192,4,SUV
+404,300SE,1993,89368,16693,10 Year,moderator,Optional global intranet,2926,6,Luxury
+405,Supra,1992,90605,72226,5 Year,homogeneous,Enhanced mission-critical secured line,3803,1,Family
+406,Escalade ESV,2009,11976,92197,Yes,Diverse,Sharable methodical capacity,648,9,Family
+407,Savana 2500,2010,64994,33238,Yes,Horizontal,User-centric executive hub,1655,9,Sports
+408,ES,1995,41083,78651,5 Year,structure,Innovative empowering workforce,3864,10,Sedan
+409,Sidekick,1995,93467,89262,No,attitude,Public-key radical process improvement,2823,10,Family
+410,350Z,2007,13753,64091,10 Year,encryption,Balanced zero administration service-desk,4367,4,Sedan
+411,Cayman,2011,49950,82903,10 Year,object-oriented,Devolved full-range archive,3817,9,Luxury
+412,MINI,2002,36768,54941,3 Year,analyzer,Automated interactive open system,2242,1,Sports
+413,Starion,1987,93234,46799,No,groupware,Centralized fault-tolerant toolset,1351,2,Sports
+414,Express 2500,1996,83807,88377,5 Year,capacity,Progressive eco-centric service-desk,3541,1,Family
+415,Econoline E350,1995,40603,41063,10 Year,grid-enabled,Cross-platform secondary throughput,2224,9,Luxury
+416,Firebird Trans Am,1986,87379,92939,5 Year,real-time,Mandatory discrete extranet,1184,5,Sports
+417,M-Class,2012,47279,12572,Yes,approach,Sharable high-level initiative,3973,10,Luxury
+418,XK,2010,39121,65371,Yes,knowledge user,Face to face incremental infrastructure,4382,6,Sports
+419,1500,1997,30796,70135,Yes,extranet,Adaptive bottom-line firmware,3652,3,Sedan
+420,Azera,2006,99132,54630,10 Year,scalable,Public-key demand-driven capacity,3380,1,Family
+421,Seville,2003,74738,57277,No,secured line,Front-line dynamic interface,3483,2,Luxury
+422,Econoline E350,2001,48076,45026,5 Year,secondary,Profound dynamic protocol,395,1,Family
+423,Raider,2009,89980,91288,5 Year,knowledge base,Multi-tiered contextually-based functionalities,4521,10,Luxury
+424,Defender,1993,36414,52249,5 Year,Vision-oriented,Enhanced web-enabled algorithm,3676,9,Sedan
+425,5 Series,2004,91899,92479,Yes,synergy,Cloned mobile matrices,2178,10,Luxury
+426,Cabriolet,1985,61692,34264,5 Year,user-facing,Synergized human-resource knowledge base,2520,9,Luxury
+427,ES,2010,56886,49768,No,Multi-layered,Front-line 24 hour forecast,2294,6,Family
+428,MPV,1990,69972,18695,No,Expanded,Enhanced radical installation,2252,6,Sports
+429,Jetta,2002,14115,55753,10 Year,intangible,Proactive maximized synergy,2814,7,Sedan
+430,Sedona,2012,77106,70712,No,monitoring,Right-sized systemic circuit,2223,7,Family
+431,Neon,1999,48037,27318,5 Year,tangible,Public-key stable hierarchy,1447,4,Sports
+432,Alcyone SVX,1995,81129,85371,No,matrix,Phased client-server toolset,2153,3,Sedan
+433,Century,1994,36717,5559,3 Year,Multi-lateral,Versatile demand-driven product,2971,5,Luxury
+434,XK,2012,84183,85566,10 Year,uniform,Persevering composite software,1915,5,Family
+435,Matrix,2009,87425,58980,No,algorithm,Multi-layered uniform orchestration,4779,8,Sedan
+436,Legend,1989,45589,49061,5 Year,exuding,Customer-focused optimal open system,1938,5,Sports
+437,Accent,2006,72003,44129,5 Year,task-force,Reverse-engineered actuating hierarchy,677,10,Sedan
+438,Space,1984,40090,90219,No,project,Upgradable foreground encoding,1601,7,SUV
+439,Range Rover,2001,68319,24078,5 Year,Virtual,Team-oriented non-volatile extranet,3904,6,SUV
+440,CTS,2003,94861,37863,3 Year,Fully-configurable,Streamlined object-oriented adapter,4074,9,Family
+441,Avenger,2011,69135,33397,No,Exclusive,Horizontal multi-tasking service-desk,3398,8,Sports
+442,Entourage,2009,15913,30617,Yes,toolset,Persistent intermediate support,3407,6,Luxury
+443,Chariot,1996,64225,97039,3 Year,core,Operative context-sensitive task-force,3545,6,Sports
+444,Civic Si,2006,62798,87164,10 Year,Persevering,Optional value-added complexity,1680,10,Family
+445,Mustang,1971,67164,77740,5 Year,function,Multi-tiered optimal firmware,2667,4,Sports
+446,5000S,1988,48318,82555,Yes,object-oriented,Innovative bandwidth-monitored access,3741,10,Family
+447,Camry,2005,32222,29979,Yes,database,Automated leading edge groupware,4726,1,Family
+448,Legacy,2004,38166,81171,3 Year,challenge,Distributed zero tolerance analyzer,3809,1,SUV
+449,Q7,2008,93350,49387,Yes,Fundamental,Devolved bottom-line support,2854,9,Sedan
+450,GT-R,2012,61582,78821,5 Year,interactive,Sharable secondary contingency,4716,9,Family
+451,Escalade ESV,2003,11836,72566,No,asymmetric,Enterprise-wide asynchronous implementation,285,10,Luxury
+452,Intrepid,1997,61844,83859,3 Year,Fully-configurable,Digitized multi-state complexity,4227,8,SUV
+453,944,1987,33952,54918,Yes,optimal,Digitized heuristic support,744,8,Family
+454,650,2006,40743,6763,3 Year,toolset,Implemented logistical synergy,2106,9,Sports
+455,6 Series,2004,29852,60335,No,Streamlined,Streamlined uniform array,828,7,SUV
+456,2500,1995,57202,24361,3 Year,Assimilated,Focused empowering throughput,4933,8,Sports
+457,E-Class,2001,60432,36515,10 Year,even-keeled,Proactive uniform budgetary management,3372,4,Family
+458,Silverado 1500,2009,10422,95049,No,Polarised,Sharable full-range forecast,3637,10,Sports
+459,Tracker,1992,51941,67782,3 Year,value-added,Integrated bifurcated concept,1132,1,Sports
+460,Outlander,2011,99237,93680,No,system-worthy,Pre-emptive local framework,2848,3,Family
+461,Dakota,2010,31759,14043,5 Year,Decentralized,Multi-lateral analyzing implementation,1295,3,Sports
+462,Quest,1996,16038,22011,Yes,Business-focused,Function-based user-facing knowledge base,4985,1,Sedan
+463,Touareg,2006,94523,87462,3 Year,Automated,Business-focused incremental focus group,4500,7,Sedan
+464,Skylark,1996,23651,98344,10 Year,extranet,Down-sized even-keeled collaboration,4492,8,Luxury
+465,Elantra,1997,10601,27388,3 Year,Optimized,Face to face empowering concept,3351,8,Family
+466,Tacoma,1998,50887,86350,3 Year,foreground,Profound clear-thinking definition,1998,2,Luxury
+467,Ram 1500,2006,32742,15112,No,Grass-roots,Mandatory high-level moderator,1118,7,Luxury
+468,Camaro,1977,85306,25779,3 Year,interactive,Implemented object-oriented archive,4139,1,Luxury
+469,Chariot,1993,34220,41317,3 Year,dynamic,Phased local hierarchy,3710,4,Family
+470,SC,1999,88350,17713,No,product,Assimilated client-server synergy,2407,2,Sports
+471,Voyager,1996,71966,18169,Yes,software,Streamlined fresh-thinking approach,3813,4,Luxury
+472,Daewoo Lacetti,2006,40625,49985,5 Year,Intuitive,Reactive context-sensitive adapter,2076,6,SUV
+473,GL-Class,2008,63923,13360,3 Year,solution-oriented,Synchronised empowering complexity,921,10,Luxury
+474,Acadia,2007,95236,89007,3 Year,secondary,Open-architected global approach,726,5,Family
+475,Taurus,2003,19231,14705,No,capability,Inverse web-enabled task-force,3008,8,Sedan
+476,SLK-Class,2007,92261,37959,Yes,bandwidth-monitored,User-friendly transitional attitude,1844,9,Sports
+477,1500,1995,90477,83926,5 Year,Proactive,Integrated even-keeled hub,1547,2,Sports
+478,Montero,1998,86884,74749,No,full-range,Switchable web-enabled workforce,1611,9,Family
+479,RX-7,1985,65032,64546,Yes,Horizontal,Phased uniform matrices,1812,7,SUV
+480,Celica,1978,90779,64906,10 Year,Ameliorated,Horizontal actuating collaboration,2863,5,Luxury
+481,Arnage,2008,53266,61633,No,secured line,Advanced impactful support,1182,2,SUV
+482,Canyon,2011,94285,47809,5 Year,Organized,Innovative bandwidth-monitored orchestration,4778,2,Luxury
+483,Camry,2001,99743,77446,10 Year,product,Extended eco-centric infrastructure,1502,3,Sports
+484,Aztek,2004,95350,44814,10 Year,Customizable,Synergistic upward-trending utilisation,1554,3,Sedan
+485,F-Series,1996,12132,95646,3 Year,Configurable,Future-proofed fresh-thinking model,715,2,Family
+486,4Runner,2010,13455,39176,Yes,coherent,Future-proofed explicit intranet,2816,8,Sports
+487,Taurus,2005,20812,25597,3 Year,national,Managed upward-trending array,3899,6,SUV
+488,V90,1998,67384,95118,10 Year,Realigned,Business-focused hybrid product,288,10,SUV
+489,Savana 3500,2000,40204,24092,3 Year,Distributed,Quality-focused demand-driven neural-net,1298,7,Luxury
+490,Discovery Series II,2000,20823,17485,No,groupware,Multi-layered contextually-based workforce,3528,7,Sports
+491,Achieva,1995,76082,58253,3 Year,systematic,Re-contextualized intangible Graphical User Interface,3030,2,Sedan
+492,Terraza,2006,25359,7937,5 Year,framework,Enterprise-wide interactive hub,1215,6,Family
+493,Legacy,2000,70642,85477,3 Year,paradigm,Virtual multi-state core,1889,10,Sports
+494,Sienna,2001,51512,86998,Yes,eco-centric,Right-sized 4th generation flexibility,3166,6,SUV
+495,600SEL,1992,30992,34446,Yes,Reactive,Persevering optimal encoding,2432,2,Luxury
+496,Cutlass,1999,19128,13601,5 Year,Decentralized,Re-engineered context-sensitive firmware,632,4,Luxury
+497,Savana 1500,2004,51614,92603,Yes,didactic,Intuitive asynchronous leverage,4166,3,Sedan
+498,Elantra,2009,34249,44219,10 Year,Automated,Managed methodical infrastructure,655,10,Sports
+499,88,1995,37861,54758,No,User-friendly,Cloned dedicated customer loyalty,3652,7,SUV
+500,rio,1996,21393,94141,3 Year,function,Customizable human-resource intranet,1426,10,Sedan
+501,5000S,1988,65535,66264,3 Year,Integrated,Advanced stable process improvement,3381,6,Family
+502,Sephia,1997,84845,89784,5 Year,modular,Monitored multimedia emulation,4325,10,Sports
+503,Passat,1991,49528,96430,10 Year,bottom-line,Enhanced multimedia conglomeration,2782,6,SUV
+504,Sentra,1993,23487,89426,3 Year,Team-oriented,Fundamental client-server system engine,4033,8,Sedan
+505,DeVille,1998,91254,41673,No,mission-critical,Innovative analyzing internet solution,3175,3,Luxury
+506,Thunderbird,1965,45339,72611,Yes,open system,Assimilated object-oriented database,1073,2,Sedan
+507,Villager,1994,32691,54452,3 Year,needs-based,Reverse-engineered tertiary matrix,2687,1,Family
+508,3 Series,2003,72801,65462,No,Fully-configurable,Automated attitude-oriented infrastructure,351,2,Sports
+509,Fiesta,2012,50950,39169,No,Operative,Devolved systematic adapter,3449,9,Sports
+510,Chariot,1996,14500,26487,5 Year,adapter,Visionary upward-trending access,113,7,Sports
+511,Land Cruiser,1997,61337,49178,No,User-centric,Profound multi-tasking workforce,1244,10,Family
+512,Elise,2007,87596,77879,3 Year,coherent,Open-architected dedicated product,3240,7,Family
+513,A8,2004,93463,94218,10 Year,content-based,Organic leading edge architecture,198,7,SUV
+514,Boxster,2011,34122,7109,5 Year,Managed,Realigned actuating forecast,4981,3,Luxury
+515,Pajero,1984,94747,32031,5 Year,Fully-configurable,Public-key full-range frame,2611,5,Sedan
+516,Trans Sport,1996,10105,49272,10 Year,Mandatory,Advanced radical model,2786,5,SUV
+517,VUE,2003,93234,94506,10 Year,dedicated,Re-contextualized transitional model,3428,10,Luxury
+518,Chariot,1991,10494,44867,Yes,holistic,Balanced methodical policy,305,4,Luxury
+519,L-Series,2002,33007,14580,5 Year,system engine,Managed bandwidth-monitored success,598,10,SUV
+520,Sable,1992,74271,80293,Yes,impactful,Optimized stable strategy,1309,1,SUV
+521,Dakota Club,1992,23251,9099,10 Year,Seamless,Vision-oriented multi-state framework,2317,7,Sedan
+522,Azera,2006,51649,66905,10 Year,homogeneous,Realigned demand-driven service-desk,3834,6,SUV
+523,F-Series,2007,26318,29164,Yes,bi-directional,Enterprise-wide explicit toolset,4828,7,Luxury
+524,MX-5,1991,81347,97004,3 Year,asymmetric,Adaptive transitional model,165,9,Family
+525,Cutlass Supreme,1993,69269,90693,3 Year,Optimized,Centralized optimal infrastructure,2120,7,Sedan
+526,2500,1996,46737,58019,No,function,Realigned global emulation,2900,8,Family
+527,Corvette,1961,18327,62495,3 Year,impactful,Triple-buffered stable pricing structure,4921,2,SUV
+528,Celica,2004,43603,31637,Yes,radical,Visionary eco-centric algorithm,268,7,Sports
+529,Armada,2008,37962,98553,10 Year,synergy,Fully-configurable user-facing application,4716,9,Luxury
+530,626,2001,24060,10840,10 Year,methodical,Secured object-oriented core,4129,3,Luxury
+531,Sunbird,1992,26727,86596,Yes,budgetary management,Optimized global alliance,2446,1,SUV
+532,Aerio,2004,23409,40411,5 Year,application,Down-sized transitional approach,4989,8,Family
+533,LTD Crown Victoria,1984,99963,75091,Yes,Object-based,Pre-emptive maximized model,4386,1,Luxury
+534,SLK-Class,2006,66999,36344,10 Year,contingency,Open-source client-server capability,1662,2,Luxury
+535,Mazda6,2007,90489,59947,No,process improvement,Synergized high-level knowledge base,3625,1,SUV
+536,Celica,1994,81057,42434,10 Year,system engine,Grass-roots incremental model,3141,8,Family
+537,Ram Van 1500,1996,58616,28795,3 Year,Balanced,Reverse-engineered multimedia definition,667,7,SUV
+538,Monte Carlo,1998,63631,14651,10 Year,Enhanced,Distributed maximized function,4799,10,Family
+539,Explorer,2003,55299,38359,10 Year,Right-sized,Object-based multimedia benchmark,3012,1,SUV
+540,57,2006,28427,74500,No,User-friendly,Reduced systematic intranet,4727,5,SUV
+541,Yukon,1993,89876,33816,3 Year,3rd generation,Stand-alone global moratorium,2615,1,Family
+542,E-Series,2012,27879,66185,10 Year,asymmetric,Multi-tiered demand-driven utilisation,3622,6,SUV
+543,Marquis,1985,42084,35377,Yes,optimizing,Digitized analyzing matrix,4610,5,Family
+544,Escape,2012,67564,56827,Yes,Cross-platform,Optional holistic capacity,3798,5,SUV
+545,SLK-Class,2006,73496,19873,5 Year,Fundamental,Inverse bifurcated toolset,3419,4,Family
+546,600SEL,1993,39204,7164,10 Year,Reactive,Organic secondary website,882,9,Luxury
+547,Mustang,2004,68323,9007,10 Year,Diverse,Multi-tiered responsive synergy,2581,4,Family
+548,Integra,2000,59704,54769,Yes,Assimilated,Pre-emptive analyzing frame,4889,1,Luxury
+549,Vitara,2000,76907,63300,10 Year,project,Cloned exuding ability,3021,8,Family
+550,Mustang,1987,26550,85386,3 Year,even-keeled,Virtual zero administration application,2366,4,Sedan
+551,Escort,1997,75146,64015,10 Year,Function-based,Cloned bottom-line secured line,823,8,SUV
+552,Continental GTC,2008,52941,68113,No,Organic,Expanded grid-enabled capacity,2484,1,Sedan
+553,Suburban 2500,2006,25769,12895,5 Year,Fully-configurable,Down-sized zero administration matrix,3526,4,Sports
+554,X6,2008,45495,15323,Yes,hardware,Decentralized zero administration methodology,345,7,Luxury
+555,TL,1999,18840,35712,10 Year,interactive,Optional object-oriented hardware,3230,7,Luxury
+556,Sierra 2500,2009,39615,41061,No,Versatile,Decentralized intermediate success,2040,4,Family
+557,Mustang,1973,30814,77428,3 Year,Customizable,Inverse actuating software,2217,6,Luxury
+558,Grand Marquis,1988,49011,43304,5 Year,5th generation,Exclusive coherent algorithm,509,5,Luxury
+559,2500,1995,59625,95577,No,Fundamental,Virtual client-server throughput,3428,5,Sedan
+560,Breeze,1997,85478,93400,3 Year,optimal,Robust user-facing functionalities,1756,5,Sedan
+561,5 Series,1999,71467,70181,Yes,Robust,Reverse-engineered zero administration circuit,4076,7,Family
+562,Montero Sport,1997,81611,20368,3 Year,next generation,Future-proofed neutral support,1553,8,Sedan
+563,SLK-Class,2000,93466,94460,10 Year,transitional,Customer-focused didactic policy,4395,3,Sedan
+564,Topaz,1984,91691,69686,No,definition,Re-contextualized even-keeled complexity,4639,1,Family
+565,Frontier,2010,13750,27121,No,Multi-lateral,Quality-focused transitional secured line,2385,1,Family
+566,Crossfire,2007,85633,87544,10 Year,incremental,Versatile system-worthy access,2559,10,Family
+567,LR2,2011,88183,55756,No,User-friendly,Fundamental zero defect workforce,205,9,Sedan
+568,Escalade EXT,2010,11119,87165,3 Year,discrete,Team-oriented dynamic leverage,3217,3,Family
+569,Avalon,2005,83354,59198,3 Year,capacity,Operative static workforce,587,1,Family
+570,S40,2006,38556,55425,Yes,Face to face,Multi-layered zero tolerance algorithm,1902,6,Sedan
+571,SLK-Class,1997,75882,67488,5 Year,synergy,Open-architected explicit concept,2236,6,Sports
+572,QX,2002,12840,19289,3 Year,Networked,Phased incremental help-desk,497,2,Sedan
+573,Bronco II,1984,16980,48373,10 Year,Mandatory,Decentralized eco-centric application,1170,4,Sports
+574,Sierra 3500,2012,99627,55629,3 Year,Future-proofed,User-centric fault-tolerant knowledge base,4903,1,Family
+575,Tucson,2005,85529,78262,10 Year,grid-enabled,Mandatory well-modulated infrastructure,2210,5,Luxury
+576,SJ,1995,49943,86146,Yes,stable,Self-enabling global neural-net,2122,4,Luxury
+577,SL-Class,2009,49371,12588,5 Year,asynchronous,De-engineered 24 hour policy,3042,3,Sedan
+578,Range Rover,1993,22141,24773,3 Year,bifurcated,Organized static toolset,3939,8,Family
+579,Caravan,1996,68556,16029,5 Year,contextually-based,Fully-configurable stable time-frame,2506,8,Family
+580,SL-Class,1990,67285,12870,10 Year,contextually-based,Robust empowering adapter,3736,9,Sedan
+581,Esteem,1997,74622,33630,5 Year,exuding,Adaptive attitude-oriented adapter,4592,4,Sedan
+582,Ghost,2012,53684,33293,Yes,artificial intelligence,Re-engineered cohesive encoding,4677,10,Family
+583,California,2010,18770,54742,5 Year,client-server,Multi-channelled non-volatile portal,3125,1,SUV
+584,Cordia,1988,31629,28757,5 Year,Synergistic,Total transitional focus group,3869,7,SUV
+585,Grand Prix,1977,97483,17908,Yes,Graphic Interface,Synergized dynamic system engine,1921,10,Luxury
+586,Town Car,2011,31018,25504,Yes,frame,Persistent value-added frame,3942,8,Family
+587,Sebring,1998,94589,23639,3 Year,content-based,Compatible high-level knowledge base,2140,7,Sports
+588,Xterra,2005,49310,51802,3 Year,Quality-focused,Distributed systematic focus group,2839,6,Sports
+589,Tempo,1994,96701,22738,5 Year,definition,Organic user-facing info-mediaries,1281,3,Sedan
+590,Century,1991,62637,16474,Yes,asynchronous,Profit-focused 24 hour time-frame,2674,1,Sedan
+591,928,1993,35202,70632,No,matrices,Multi-tiered attitude-oriented policy,4904,7,Sports
+592,XT,1990,73527,55977,No,Down-sized,Centralized actuating monitoring,3145,1,Luxury
+593,Passat,1994,68502,44537,5 Year,Graphical User Interface,Profound directional frame,2445,4,Luxury
+594,Century,1996,49278,35433,5 Year,open architecture,Monitored responsive software,3401,7,SUV
+595,Eclipse,1997,63216,38972,Yes,Inverse,Organic multi-tasking functionalities,4524,5,Luxury
+596,Express 2500,2008,42042,11296,10 Year,tertiary,Fundamental 24/7 help-desk,3868,6,SUV
+597,A8,2008,20386,82461,5 Year,grid-enabled,Enhanced didactic help-desk,2350,7,Luxury
+598,Defender 90,1994,57550,98366,3 Year,Configurable,Function-based system-worthy support,1309,9,Sedan
+599,Q,1997,85146,95686,5 Year,infrastructure,Synchronised zero defect portal,819,3,Sports
+600,Canyon,2012,93048,30724,Yes,secondary,Synergized executive project,2493,1,SUV
+601,Cabriolet,1994,30118,71302,10 Year,ability,Synchronised object-oriented portal,3381,8,Family
+602,Metro,1992,19110,72734,Yes,secondary,Re-contextualized systematic internet solution,2087,9,SUV
+603,Grand Prix,2006,53409,71885,5 Year,Secured,Seamless intermediate toolset,159,10,SUV
+604,2500,1993,68705,53784,5 Year,background,Cross-platform next generation service-desk,3808,7,SUV
+605,Mark VII,1984,47443,47775,No,non-volatile,Reactive attitude-oriented encryption,164,8,Sports
+606,SL-Class,2006,32566,72507,Yes,Managed,Phased transitional hierarchy,1278,6,Sports
+607,Grand Prix,1968,51149,35040,No,bi-directional,Virtual logistical alliance,3915,6,SUV
+608,Pilot,2007,17208,27769,Yes,contextually-based,Advanced actuating model,2503,4,Luxury
+609,Vibe,2004,84275,89886,10 Year,emulation,Multi-layered mobile core,1969,7,Sports
+610,Diablo,1991,15304,68515,No,Phased,Virtual national circuit,4058,5,Sports
+611,LSS,1998,99969,28250,No,Persistent,Team-oriented static groupware,1723,4,Sedan
+612,Loyale,1992,14131,93592,5 Year,project,Optimized motivating conglomeration,3736,5,Family
+613,G6,2008,48352,54960,Yes,Balanced,Multi-lateral value-added website,3283,2,Sports
+614,Escape,2000,90357,42833,3 Year,superstructure,Up-sized leading edge local area network,2978,1,SUV
+615,E250,2008,31344,77208,No,interactive,Customizable secondary pricing structure,2929,4,SUV
+616,Mazda3,2006,17947,54206,10 Year,5th generation,Business-focused holistic budgetary management,3299,7,Luxury
+617,Town Car,1994,94837,66867,Yes,high-level,Balanced impactful policy,2619,2,SUV
+618,Grand Marquis,1994,89993,9682,3 Year,value-added,Enterprise-wide analyzing pricing structure,3347,10,Sports
+619,Stratus,2002,43720,42762,Yes,Robust,User-friendly systematic function,3801,7,Luxury
+620,Montana,2004,54583,42728,3 Year,Ergonomic,Future-proofed web-enabled policy,4599,4,Sedan
+621,SC,2010,25805,14932,No,homogeneous,Programmable web-enabled budgetary management,3877,2,Sports
+622,Land Cruiser,2006,18963,55494,Yes,structure,Multi-tiered next generation circuit,4295,4,Sports
+623,MX-5,2009,30383,49501,10 Year,Exclusive,Vision-oriented intangible solution,4757,4,Luxury
+624,Cooper Countryman,2011,63564,15509,No,bandwidth-monitored,Secured systemic infrastructure,1916,4,Sedan
+625,E350,2007,10342,95555,5 Year,service-desk,Business-focused incremental artificial intelligence,755,3,Sedan
+626,Grand Marquis,1988,68735,52063,5 Year,info-mediaries,Robust content-based throughput,1152,8,Family
+627,Skyhawk,1984,83799,33170,10 Year,Face to face,Reduced analyzing core,684,6,SUV
+628,Taurus,2013,98522,28036,5 Year,database,Synergistic bandwidth-monitored architecture,3863,3,Luxury
+629,Tucson,2007,42910,8540,No,Visionary,Persistent full-range moratorium,283,9,Sports
+630,Passat,1992,25652,78993,No,Organized,Advanced non-volatile forecast,4721,1,Sports
+631,4Runner,1996,59710,32698,Yes,maximized,Optional tangible application,3077,8,Sports
+632,SL-Class,2001,30048,52972,No,utilisation,Reactive discrete artificial intelligence,486,7,Luxury
+633,Corolla,2009,34144,65516,No,Cross-platform,Cross-group stable algorithm,4828,9,SUV
+634,Econoline E150,1999,77158,47199,5 Year,leading edge,Vision-oriented maximized ability,2510,9,Sedan
+635,Mighty Max,1993,11098,9659,10 Year,Switchable,Robust systematic focus group,1987,10,SUV
+636,Cooper Countryman,2011,17582,30167,Yes,impactful,Streamlined modular flexibility,424,8,Family
+637,Vitara,2003,66393,33995,No,Centralized,Horizontal leading edge model,3123,4,Sedan
+638,S5,2008,19047,34743,No,info-mediaries,Cloned object-oriented orchestration,1302,8,Luxury
+639,Taurus,1997,11109,58399,Yes,open system,Diverse analyzing definition,3528,2,SUV
+640,F350,1996,77148,39065,10 Year,bottom-line,Stand-alone clear-thinking solution,4416,1,Sedan
+641,Caravan,1999,55214,82821,5 Year,Triple-buffered,Organic stable monitoring,4633,3,Sports
+642,F250,1995,15078,87362,5 Year,pricing structure,De-engineered cohesive info-mediaries,4849,8,SUV
+643,Galant,1987,34048,40461,5 Year,content-based,Advanced mission-critical internet solution,4417,6,Luxury
+644,Passat,1998,16159,49485,10 Year,foreground,Compatible executive complexity,1084,6,Luxury
+645,Protege,1993,39342,38316,3 Year,object-oriented,Programmable impactful frame,964,4,Luxury
+646,Ram,1994,40205,37496,No,installation,Networked mission-critical model,4544,6,SUV
+647,Esprit,1993,97265,42044,5 Year,hub,Enhanced well-modulated solution,3229,7,Family
+648,Continental GT,2007,72430,13075,Yes,access,Versatile 24/7 system engine,914,7,Family
+649,Avalon,1995,94509,15074,Yes,national,Realigned 4th generation architecture,2497,2,SUV
+650,Ghost,2012,13757,8282,10 Year,artificial intelligence,Monitored didactic hierarchy,3529,3,Family
+651,Legacy,2012,78020,84307,5 Year,logistical,Decentralized multi-state internet solution,2383,3,Sports
+652,Omni,1978,86437,11831,5 Year,Sharable,Ergonomic 3rd generation software,4323,9,SUV
+653,RDX,2008,60760,13525,10 Year,non-volatile,Extended homogeneous project,2523,1,Family
+654,Bonneville,2005,67800,73764,10 Year,Synergistic,Polarised zero defect solution,3509,8,Sports
+655,Crown Victoria,2008,19464,86702,No,neutral,Team-oriented grid-enabled productivity,227,7,Family
+656,Justy,1990,25398,90857,10 Year,projection,Virtual 24/7 superstructure,2209,7,Family
+657,TT,2002,40673,11609,3 Year,standardization,Profit-focused motivating application,4554,1,SUV
+658,M3,2009,77742,98390,10 Year,encoding,Profound 4th generation monitoring,1175,8,Sedan
+659,Golf,1985,75191,37272,3 Year,installation,Synergistic bottom-line budgetary management,2680,9,Family
+660,Tracker,2001,31637,27276,5 Year,strategy,Object-based upward-trending benchmark,1713,3,Luxury
+661,Navigator,1998,85885,93045,10 Year,mobile,Digitized discrete hierarchy,774,7,Sedan
+662,Dakota,2004,65208,82601,3 Year,asymmetric,Seamless fault-tolerant capability,4985,6,Sedan
+663,M,2006,61508,73909,3 Year,incremental,Face to face stable frame,1746,8,Sedan
+664,Sedona,2007,51193,43457,10 Year,Innovative,User-friendly eco-centric challenge,2744,8,Sedan
+665,Lumina,2000,88024,85857,No,Triple-buffered,Proactive fault-tolerant functionalities,4645,5,SUV
+666,98,1994,33173,83893,5 Year,methodology,Down-sized bi-directional adapter,1030,9,Sports
+667,Avenger,2000,51040,29613,10 Year,Implemented,Ameliorated reciprocal task-force,4624,2,Sedan
+668,Contour,1999,22965,15132,5 Year,Universal,Customizable client-driven architecture,805,6,Sports
+669,Aspire,1995,57462,24621,No,tertiary,Compatible coherent algorithm,2084,4,Sports
+670,1500 Club Coupe,1994,64853,30153,10 Year,Networked,Customizable multi-tasking monitoring,764,3,SUV
+671,Sunfire,2005,76429,5654,No,neutral,Monitored dynamic knowledge base,1661,10,Sedan
+672,Achieva,1993,61111,16892,10 Year,Balanced,Reactive 24 hour hardware,260,8,Luxury
+673,CL-Class,2004,66761,35122,10 Year,Total,Automated demand-driven success,2379,5,Family
+674,LR3,2008,34268,44551,10 Year,budgetary management,Quality-focused stable archive,3861,4,SUV
+675,9-7X,2007,26750,62300,10 Year,optimizing,Focused discrete flexibility,4486,2,Sedan
+676,Ram 3500,1995,28366,16758,3 Year,bottom-line,Multi-lateral scalable hub,467,9,Sports
+677,FR-S,2013,80057,62845,5 Year,open system,Ergonomic responsive artificial intelligence,2816,6,Sedan
+678,SLK-Class,2009,60648,15487,3 Year,coherent,Programmable attitude-oriented application,2398,1,Luxury
+679,Cabriolet,1995,71313,84065,5 Year,neutral,Devolved logistical adapter,1677,3,Sedan
+680,Sorento,2005,13406,22082,3 Year,product,Fully-configurable asymmetric matrix,3140,3,SUV
+681,Escalade ESV,2003,29843,17890,3 Year,Open-architected,Front-line holistic help-desk,2367,5,Sedan
+682,LeMans,1968,73003,52130,5 Year,conglomeration,Enhanced national monitoring,688,2,Sedan
+683,Outback Sport,2002,95422,74277,No,Enhanced,Function-based bi-directional instruction set,273,1,Sports
+684,MX-5,2005,19021,94455,5 Year,even-keeled,Automated heuristic success,4181,2,Luxury
+685,Range Rover Sport,2006,44804,92949,5 Year,next generation,Open-source client-driven internet solution,2132,8,SUV
+686,CX-7,2009,83083,40533,3 Year,service-desk,Managed secondary collaboration,334,5,Luxury
+687,del Sol,1997,81372,35934,Yes,bandwidth-monitored,Managed homogeneous matrix,2248,1,Luxury
+688,240,1992,60222,11353,10 Year,Stand-alone,Team-oriented foreground definition,4397,3,Luxury
+689,DB9,2005,79044,22644,3 Year,architecture,Open-source coherent structure,295,2,Sedan
+690,MPV,1997,66032,20653,10 Year,open system,Multi-lateral value-added utilisation,2497,8,Family
+691,XJ,2011,61534,67857,No,knowledge user,Business-focused client-server help-desk,4515,5,SUV
+692,Cooper,2006,68804,95765,5 Year,Centralized,Programmable holistic contingency,379,7,Sedan
+693,Baja,2004,74010,53771,3 Year,process improvement,Function-based web-enabled synergy,4208,3,Sports
+694,Altima,1997,41483,65430,5 Year,methodical,Total system-worthy migration,1912,2,Sports
+695,Intrepid,1998,33191,52154,3 Year,multi-tasking,Reactive explicit projection,4580,8,Luxury
+696,S5,2008,33860,84591,5 Year,Decentralized,Business-focused value-added help-desk,2371,3,Family
+697,CL-Class,2008,71301,49497,Yes,protocol,Assimilated logistical collaboration,522,7,Sports
+698,Silhouette,2003,71096,24211,3 Year,Persevering,Fundamental context-sensitive project,664,7,SUV
+699,Tracker,1994,93508,55839,3 Year,Multi-tiered,Multi-lateral holistic leverage,660,5,Luxury
+700,LS,2008,48998,95474,No,Secured,Balanced multi-tasking database,2015,8,Family
+701,Brat,1985,46881,56796,No,secondary,Robust intermediate analyzer,576,1,Family
+702,S4,2011,34541,34622,3 Year,tertiary,Optimized bandwidth-monitored analyzer,1144,7,Family
+703,S-Type,2003,91560,47166,10 Year,Customizable,Sharable next generation emulation,4572,4,Sedan
+704,Matrix,2011,85075,60712,No,background,Universal fault-tolerant help-desk,41,7,Family
+705,GX,2011,47669,93412,3 Year,implementation,Total impactful website,2250,1,Family
+706,Corvette,1958,68205,79648,5 Year,conglomeration,Devolved didactic array,3419,8,Luxury
+707,Yukon Denali,2006,76556,28396,3 Year,open architecture,Multi-channelled motivating initiative,4616,6,Sports
+708,XK Series,2005,27615,27099,3 Year,actuating,Virtual 6th generation model,4790,2,Family
+709,LeSabre,1993,51474,40752,No,Pre-emptive,Triple-buffered reciprocal Graphic Interface,2764,1,Sedan
+710,LS Hybrid,2012,93191,92702,Yes,Future-proofed,Open-architected bi-directional website,2099,9,Family
+711,Corolla,1995,28708,13956,No,Visionary,Cross-group well-modulated firmware,3027,6,SUV
+712,CL,2002,21787,15059,5 Year,application,Operative responsive projection,3420,9,SUV
+713,Villager,1998,24495,45101,No,parallelism,De-engineered user-facing initiative,2788,9,Sports
+714,Insight,2003,39932,41179,Yes,Function-based,Multi-tiered contextually-based parallelism,1032,2,SUV
+715,Tahoe,2012,86573,94274,10 Year,capacity,Universal multi-state structure,2620,1,Luxury
+716,Camaro,1978,91958,33820,3 Year,asymmetric,Virtual intangible leverage,1015,5,Family
+717,Escalade,2012,25503,81901,10 Year,local area network,Extended grid-enabled capacity,2693,10,Luxury
+718,MKT,2012,13579,41186,No,Profound,Managed bi-directional model,482,8,Luxury
+719,LeSabre,2000,14046,58925,No,firmware,Exclusive context-sensitive alliance,3864,5,Sedan
+720,Outlander,2003,87589,90697,Yes,Monitored,Configurable 6th generation matrices,10,5,Family
+721,Talon,1998,85809,60758,5 Year,Self-enabling,Customizable didactic focus group,1613,10,Luxury
+722,Express 2500,2005,54970,53313,10 Year,foreground,Polarised multi-state implementation,2111,3,Sports
+723,A3,2006,94474,46919,5 Year,Fundamental,Enterprise-wide foreground attitude,3318,7,SUV
+724,Corolla,2006,66453,32502,3 Year,national,Synergistic systematic customer loyalty,211,6,Luxury
+725,Challenger,2000,74198,31029,No,Phased,Virtual well-modulated extranet,3385,8,Sedan
+726,LX,2000,51860,71308,3 Year,firmware,Ameliorated client-driven instruction set,735,3,Family
+727,Sebring,1996,36451,57974,No,bottom-line,Future-proofed modular circuit,3486,5,Family
+728,Town & Country,1993,74981,57373,10 Year,Optimized,Multi-channelled responsive internet solution,2762,9,Sedan
+729,Grand Prix,2005,70314,96363,3 Year,function,Persistent directional adapter,536,6,Sedan
+730,CLK-Class,2003,78268,72710,5 Year,Profit-focused,Team-oriented bandwidth-monitored interface,3016,5,Family
+731,Yukon,2001,47809,92333,Yes,client-server,Organized secondary data-warehouse,2279,4,Luxury
+732,FX,2005,50672,35836,3 Year,Networked,Compatible systematic support,426,2,Sports
+733,Forenza,2008,61597,23662,3 Year,static,Ameliorated analyzing encryption,3267,2,SUV
+734,V70,2002,97531,16862,Yes,system engine,Customer-focused demand-driven process improvement,908,6,Family
+735,Elan,1993,47149,68365,Yes,Secured,Proactive systematic access,311,10,Luxury
+736,Seville,1998,67725,46339,3 Year,Open-architected,Horizontal 6th generation knowledge base,420,7,Sports
+737,Grand Marquis,1988,71903,49659,No,Reduced,Switchable foreground Graphic Interface,2694,8,Luxury
+738,Chariot,1987,85859,31447,5 Year,complexity,Quality-focused 3rd generation intranet,3196,5,Family
+739,Nubira,1999,97622,30909,Yes,Polarised,Customizable analyzing support,3644,1,Luxury
+740,5 Series,2008,86115,82029,3 Year,contingency,Adaptive optimal complexity,1066,3,Sports
+741,Express 2500,2005,96676,72942,5 Year,Programmable,Advanced secondary circuit,4857,4,Sedan
+742,3-Sep,2009,56342,12635,No,framework,Multi-lateral well-modulated help-desk,3765,10,SUV
+743,Pathfinder,1997,30219,82067,No,implementation,Networked attitude-oriented time-frame,4662,2,SUV
+744,Spider,1993,83013,15598,10 Year,Advanced,User-friendly grid-enabled success,2364,6,Family
+745,SLR McLaren,2007,40362,68042,Yes,Business-focused,Pre-emptive national frame,3105,4,Luxury
+746,Corvette,1960,55482,30148,10 Year,local area network,Advanced even-keeled hardware,2408,7,Luxury
+747,Expedition,1998,15767,25194,Yes,Operative,Open-architected stable service-desk,2717,2,Family
+748,Stealth,1994,83784,77814,5 Year,bottom-line,Upgradable 5th generation policy,1566,9,Sports
+749,NSX,2004,23419,9078,Yes,array,Customizable grid-enabled local area network,3080,3,SUV
+750,xB,2008,30465,70172,10 Year,Ergonomic,Front-line intermediate encryption,2458,8,Luxury
+751,200SX,1998,14558,20132,No,customer loyalty,Self-enabling analyzing framework,3369,10,Luxury
+752,E-Class,1984,53319,81099,Yes,artificial intelligence,Customer-focused well-modulated system engine,699,4,Sedan
+753,Corolla,2008,48008,43712,3 Year,Switchable,Re-engineered executive intranet,4189,5,Sports
+754,LR2,2008,20676,83292,3 Year,Fully-configurable,Vision-oriented maximized workforce,271,10,Family
+755,9000,1989,80194,80130,No,non-volatile,Phased eco-centric encryption,431,2,Sports
+756,Accord,2003,22369,21160,Yes,archive,User-centric national intranet,2459,9,SUV
+757,LeSabre,1987,22797,76243,10 Year,demand-driven,Down-sized scalable policy,1639,5,Luxury
+758,Grand Prix,1996,14165,22796,5 Year,Organic,Robust disintermediate project,4386,2,Sports
+759,Z8,2002,71811,28511,3 Year,zero administration,Switchable directional system engine,2217,1,SUV
+760,Ram 1500 Club,2001,13860,92969,10 Year,systemic,Robust 6th generation moderator,4801,6,Family
+761,M3,2008,98387,78727,3 Year,collaboration,Virtual scalable productivity,3213,10,Luxury
+762,Carens,2009,30721,23047,Yes,website,User-centric even-keeled extranet,124,3,Sedan
+763,TL,2005,15697,22110,5 Year,Total,Face to face global collaboration,4837,6,Sports
+764,IS,2011,73678,99089,3 Year,Versatile,Multi-tiered local internet solution,1686,8,SUV
+765,Celica,2001,86688,54761,No,multi-state,Universal non-volatile encryption,500,7,SUV
+766,VS Commodore,1997,23786,76846,No,Open-architected,Advanced uniform instruction set,1548,5,Luxury
+767,Monte Carlo,2004,24287,90609,3 Year,system-worthy,Grass-roots eco-centric moderator,953,4,Sedan
+768,Cavalier,1994,84593,16586,3 Year,user-facing,Reverse-engineered mobile throughput,4739,6,SUV
+769,SL-Class,1990,90197,11971,5 Year,hierarchy,Enhanced uniform internet solution,689,3,Sedan
+770,Century,1993,66482,93150,10 Year,info-mediaries,Synchronised logistical open system,1084,8,SUV
+771,Daewoo Kalos,2005,96108,40721,3 Year,Diverse,Organic zero defect policy,2744,10,Sedan
+772,Econoline E150,2002,51810,15767,5 Year,demand-driven,Devolved zero tolerance circuit,3121,4,Sedan
+773,Toronado,1992,18582,7759,3 Year,open architecture,Realigned next generation software,3011,3,Sports
+774,Rodeo Sport,2003,48306,23964,Yes,intangible,Multi-channelled methodical orchestration,4126,7,Sedan
+775,LeMans,1965,55208,60737,10 Year,Total,Mandatory national task-force,3516,6,Sports
+776,Truck Xtracab SR5,1989,77484,22079,3 Year,interface,Multi-lateral composite info-mediaries,3223,1,Luxury
+777,3000GT,1993,11161,37469,10 Year,neutral,Advanced demand-driven strategy,1223,10,Sports
+778,Legend,1989,18279,44540,5 Year,even-keeled,Customer-focused dedicated conglomeration,716,10,Family
+779,LTD Crown Victoria,1993,78757,81753,10 Year,multi-tasking,Pre-emptive upward-trending moderator,1024,7,Luxury
+780,F-Series,1994,69320,88287,10 Year,fault-tolerant,Balanced hybrid alliance,1562,10,Luxury
+781,Diablo,2001,20630,27147,10 Year,explicit,Horizontal local superstructure,4569,1,Family
+782,Aurora,1995,87370,15013,No,4th generation,Cross-platform content-based secured line,2589,7,Sports
+783,Town Car,1985,75848,62231,5 Year,superstructure,Multi-channelled value-added intranet,4913,7,Luxury
+784,CLK-Class,2003,40851,46189,3 Year,Phased,Operative value-added database,2495,5,Sports
+785,XC60,2011,65069,50240,10 Year,ability,Multi-tiered multimedia local area network,2248,7,Family
+786,G25,2011,27337,7463,3 Year,Expanded,Organic interactive emulation,203,9,Luxury
+787,911,2008,64695,33334,5 Year,Face to face,Cross-group incremental throughput,3631,6,Sports
+788,Caravan,1995,82566,53533,Yes,installation,Diverse holistic archive,1264,6,Family
+789,Century,1990,54107,19517,No,bi-directional,Realigned optimal workforce,4099,10,Luxury
+790,Sidekick,1995,41762,35475,5 Year,systematic,Fully-configurable multi-state artificial intelligence,2951,5,Sedan
+791,riolet,1996,70799,39212,Yes,firmware,Seamless asymmetric contingency,1476,6,Family
+792,Ghost,2012,60900,37937,3 Year,Persistent,Implemented radical flexibility,2670,7,SUV
+793,Previa,1994,73876,19963,No,installation,Secured even-keeled archive,480,4,Sedan
+794,911,2008,31136,27735,Yes,standardization,Digitized foreground success,2813,1,Luxury
+795,XF,2011,51571,41521,Yes,implementation,Synchronised composite project,3380,7,Luxury
+796,1500,1994,85013,55715,5 Year,Re-engineered,Networked multi-tasking firmware,1640,5,Sedan
+797,SLK-Class,1999,76548,44068,10 Year,Pre-emptive,Devolved solution-oriented ability,719,5,Luxury
+798,Exige,2004,37547,31117,5 Year,Future-proofed,Integrated regional implementation,662,9,Sedan
+799,STS-V,2006,85124,22892,Yes,disintermediate,Extended regional circuit,3576,7,Sports
+800,R-Class,2011,82090,20345,No,product,Face to face attitude-oriented software,3844,3,Sedan
+801,Century,1992,99461,59765,No,4th generation,Total asynchronous standardization,276,1,Sports
+802,Boxster,1999,38328,34551,5 Year,systemic,Advanced well-modulated initiative,2769,8,Luxury
+803,F350,2000,33345,59123,10 Year,fault-tolerant,Robust even-keeled hierarchy,2978,3,Sports
+804,H2,2007,31630,14030,No,methodology,Organic real-time circuit,1228,6,Sedan
+805,Explorer Sport Trac,2001,51621,47646,5 Year,global,Versatile optimizing functionalities,3116,3,SUV
+806,Elantra,2008,39549,61554,No,24/7,Digitized fault-tolerant framework,392,8,SUV
+807,Aerostar,1987,63219,75232,No,contextually-based,Innovative mission-critical firmware,262,1,Luxury
+808,Crown Victoria,1996,13536,81350,No,Automated,De-engineered bi-directional attitude,2537,6,Luxury
+809,RX-7,1993,86926,71156,No,framework,Multi-tiered modular benchmark,3493,9,Family
+810,Type 2,1986,61486,28830,10 Year,Graphical User Interface,Switchable radical knowledge user,383,7,Luxury
+811,Quattro,1994,72006,14677,Yes,forecast,User-friendly actuating orchestration,4890,2,SUV
+812,E-Class,1996,61883,24073,3 Year,project,Secured incremental challenge,2037,4,Sedan
+813,Mazda6,2004,58410,88591,10 Year,Advanced,Pre-emptive heuristic concept,2363,1,Sports
+814,3500 Club Coupe,1992,53070,35745,10 Year,client-driven,Virtual client-server hardware,4341,6,Sedan
+815,Prius,2009,53018,74519,10 Year,benchmark,Progressive directional Graphical User Interface,1613,3,Sedan
+816,Silverado 2500,2007,16213,84294,5 Year,Multi-tiered,Integrated executive support,1903,9,Family
+817,Land Cruiser,2011,27740,14529,Yes,Synergized,Centralized actuating knowledge base,2020,10,Family
+818,SLK-Class,2001,95950,66627,5 Year,knowledge base,Face to face logistical ability,1787,8,Sports
+819,FX,2004,47401,33152,10 Year,Pre-emptive,Compatible high-level open system,3554,9,Luxury
+820,S60,2008,26896,51193,5 Year,directional,Public-key bifurcated conglomeration,1661,7,SUV
+821,Grand Am,2004,82469,53242,Yes,forecast,Synchronised mobile flexibility,2556,2,SUV
+822,FJ Cruiser,2011,21733,79284,10 Year,Distributed,Object-based dedicated flexibility,3422,1,Family
+823,Alpina B7,2007,34856,88731,5 Year,Multi-tiered,Multi-layered analyzing toolset,4764,1,Sedan
+824,Grand Cherokee,2008,35243,58555,10 Year,secured line,Up-sized 3rd generation framework,1867,6,Sedan
+825,Eldorado,1998,15580,51829,3 Year,Optional,Cross-group intermediate leverage,3948,8,Sedan
+826,3500,1995,66809,54252,Yes,Intuitive,Multi-layered 6th generation open architecture,3967,7,Family
+827,Camaro,2001,29689,38883,No,methodical,De-engineered 4th generation definition,2865,7,Family
+828,Lancer,2002,22324,95240,3 Year,directional,Cross-group incremental monitoring,3907,8,Family
+829,RL,2007,54611,99268,No,Decentralized,Focused needs-based extranet,3570,10,Sports
+830,Wrangler,2009,69633,83618,Yes,monitoring,Balanced actuating definition,2462,5,SUV
+831,DeVille,2000,16683,73288,Yes,transitional,Self-enabling interactive neural-net,3802,3,Sedan
+832,S10,1994,21448,5921,10 Year,object-oriented,Function-based cohesive core,766,7,Sports
+833,Sunbird,1984,44106,33640,Yes,Digitized,Multi-lateral empowering info-mediaries,1874,4,Sports
+834,Fiero,1987,41895,68686,Yes,optimal,Visionary demand-driven orchestration,1011,3,Luxury
+835,Commander,2009,10476,90057,3 Year,Enhanced,Networked client-server approach,2693,9,SUV
+836,Eurovan,1994,55351,40926,5 Year,Vision-oriented,Object-based fresh-thinking system engine,538,8,Sedan
+837,V70,1999,98153,18766,10 Year,definition,Quality-focused intermediate internet solution,2805,6,Sports
+838,Grand Prix,2005,59583,46693,3 Year,migration,Triple-buffered hybrid contingency,1271,6,Sedan
+839,Coupe GT,1987,93048,73155,Yes,synergy,Ergonomic empowering productivity,3807,9,Sedan
+840,LR3,2005,76289,56357,5 Year,core,Front-line 5th generation help-desk,2738,1,Luxury
+841,Verona,2004,15035,43731,3 Year,Operative,Switchable tertiary parallelism,947,10,Luxury
+842,Tribute,2011,19815,91161,10 Year,archive,Devolved multi-state core,2097,8,Luxury
+843,Corrado,1994,76784,80318,No,support,Polarised object-oriented frame,3868,6,Sports
+844,Corvette,1972,39853,83608,No,budgetary management,Function-based dynamic open system,3185,10,Sedan
+845,Chariot,1995,73343,77291,3 Year,Customer-focused,User-friendly zero tolerance open system,2045,3,Luxury
+846,Prius,2009,34644,17515,5 Year,holistic,Expanded systemic software,1510,9,SUV
+847,Cooper Clubman,2010,31299,89379,No,flexibility,Centralized needs-based matrices,1654,9,Sedan
+848,Element,2007,92225,64338,Yes,client-driven,Persevering transitional encryption,326,2,Luxury
+849,Diablo,1995,97146,72535,No,well-modulated,Polarised mobile Graphical User Interface,1561,9,Luxury
+850,CLS-Class,2010,25553,82545,No,groupware,Business-focused optimal workforce,3938,9,Luxury
+851,Savana 3500,2006,54824,66861,No,holistic,Streamlined clear-thinking matrices,3716,6,Sports
+852,SLK-Class,1998,12960,15965,3 Year,capability,Polarised next generation application,1164,2,Sedan
+853,Tercel,1998,91933,59393,Yes,systemic,Profound 3rd generation moratorium,2107,10,Sedan
+854,Accord,1984,72161,74864,5 Year,Secured,Polarised 24/7 internet solution,1233,3,Family
+855,W201,1986,12633,72463,Yes,zero tolerance,Stand-alone bifurcated implementation,3199,3,SUV
+856,Continental,1999,48517,66274,3 Year,collaboration,Optional optimal application,4918,3,Sedan
+857,Impreza WRX,2011,84955,36081,3 Year,process improvement,Multi-lateral background model,210,4,Family
+858,TL,1995,34430,53873,Yes,functionalities,User-friendly real-time collaboration,4531,5,Luxury
+859,Ranger,1994,90813,56024,10 Year,Exclusive,Upgradable 6th generation function,2522,10,SUV
+860,Suburban 2500,2004,83105,28965,No,Right-sized,Up-sized needs-based interface,1788,1,SUV
+861,Passat,1999,74201,44091,10 Year,neural-net,Sharable multimedia software,364,4,Sedan
+862,5000CS,1988,89933,18517,No,interactive,Re-engineered uniform budgetary management,1433,9,Sedan
+863,Boxster,2000,62202,80770,10 Year,initiative,Pre-emptive transitional productivity,544,4,Family
+864,3-Sep,2001,85486,90683,10 Year,dedicated,Managed uniform project,4247,7,Luxury
+865,FX,2006,17588,51629,No,reciprocal,Seamless neutral focus group,4459,3,Family
+866,Commander,2009,47198,30278,3 Year,logistical,Triple-buffered upward-trending superstructure,1444,4,Sports
+867,900,1993,45081,34380,10 Year,Automated,Managed 24/7 model,2969,6,Luxury
+868,Quest,2007,64015,37185,No,Diverse,Enhanced web-enabled contingency,1768,9,Luxury
+869,525,2001,64303,48801,10 Year,Synergistic,Inverse methodical adapter,2760,6,Sedan
+870,Touareg 2,2008,10304,18176,Yes,Up-sized,Cross-group transitional groupware,1365,4,Sedan
+871,Firefly,1992,33487,51689,No,cohesive,Proactive coherent interface,4719,1,Family
+872,Phantom,2012,84264,31439,5 Year,Customer-focused,Universal uniform open architecture,4776,5,SUV
+873,Amanti,2006,14482,44800,Yes,Customizable,Inverse radical artificial intelligence,4451,5,Sports
+874,Savana 1500,2009,20797,38085,3 Year,Cross-group,Up-sized bandwidth-monitored algorithm,1940,6,Sedan
+875,Savana 1500,2009,96935,30081,10 Year,infrastructure,Synergized cohesive benchmark,1386,2,Sports
+876,STS-V,2006,32324,97797,3 Year,knowledge base,Business-focused tangible policy,4991,4,Sedan
+877,C8 Double 12 S,2006,33963,56740,Yes,real-time,Re-engineered cohesive hierarchy,3130,1,Family
+878,Trooper,2002,92692,56161,Yes,Cloned,Grass-roots static matrix,513,9,Sports
+879,Grand Prix,1992,91657,10610,5 Year,mission-critical,Quality-focused dynamic application,2471,9,Luxury
+880,Continental Super,2012,64877,97341,5 Year,disintermediate,Cross-group exuding moratorium,1914,10,Family
+881,tC,2009,96257,97649,10 Year,Pre-emptive,Persistent system-worthy projection,1199,6,Sports
+882,Elantra,2013,47531,28001,5 Year,incremental,User-friendly real-time emulation,1518,3,SUV
+883,VehiCROSS,2000,43784,94370,10 Year,Managed,Versatile needs-based data-warehouse,3583,4,Luxury
+884,Tribeca,2007,19976,62773,3 Year,circuit,Organic leading edge focus group,4283,5,Sedan
+885,1500 Club Coupe,1992,61457,60590,3 Year,Open-source,Multi-tiered tangible core,4782,1,SUV
+886,S90,1998,94565,77685,10 Year,encryption,Visionary high-level conglomeration,3634,6,Luxury
+887,Summit,1993,67703,92128,Yes,client-server,Seamless solution-oriented structure,2218,3,Luxury
+888,3 Series,1998,35939,98389,3 Year,local,Synchronised analyzing application,1922,10,Luxury
+889,XC90,2010,26187,71745,10 Year,coherent,Networked executive instruction set,3802,1,SUV
+890,7 Series,1992,36419,77719,Yes,user-facing,Team-oriented zero defect parallelism,1279,6,Sports
+891,626,1999,48879,77225,Yes,Object-based,Diverse upward-trending middleware,1121,6,Family
+892,Stratus,2003,48578,96166,10 Year,Object-based,Switchable local paradigm,957,10,SUV
+893,Sentra,2000,32262,14727,No,Robust,Multi-layered fault-tolerant hub,414,8,Luxury
+894,900,1999,88587,69080,10 Year,next generation,Focused next generation artificial intelligence,4750,3,Luxury
+895,Pajero,2003,42842,99984,5 Year,application,Reduced discrete info-mediaries,4838,7,Sedan
+896,Avalon,2010,61705,97586,5 Year,Virtual,Fully-configurable optimizing knowledge base,3899,2,Family
+897,XJ Series,2003,45364,78087,3 Year,tangible,Integrated client-driven pricing structure,1857,10,Family
+898,Galant,2005,22975,80483,Yes,Secured,Multi-layered needs-based toolset,982,10,Family
+899,Camry Solara,2006,31327,19741,No,implementation,Monitored high-level collaboration,396,2,Luxury
+900,Quest,2008,57518,39040,10 Year,tertiary,Reverse-engineered directional contingency,2721,8,Sedan
+901,1 Series,2008,43343,76069,10 Year,implementation,Re-contextualized client-driven customer loyalty,756,1,SUV
+902,Continental GT,2008,94172,90243,No,functionalities,Up-sized demand-driven secured line,2141,7,Sports
+903,XJ,2008,94212,77792,3 Year,flexibility,Programmable well-modulated workforce,4697,5,SUV
+904,Expedition EL,2007,80648,90823,3 Year,regional,Multi-layered dynamic methodology,2905,3,Luxury
+905,929,1988,83308,25412,3 Year,Profit-focused,Balanced regional system engine,4020,4,Sports
+906,Protege,2003,62289,23134,10 Year,Public-key,Implemented bifurcated toolset,4332,6,Sedan
+907,Legacy,1996,46012,57226,No,bi-directional,Front-line mission-critical toolset,343,3,Sports
+908,Skylark,1987,92111,35959,5 Year,Persistent,Seamless 4th generation extranet,71,4,Family
+909,Montana,2004,85345,67721,Yes,complexity,Persistent upward-trending open architecture,606,7,SUV
+910,Explorer,1994,35088,73678,3 Year,Synchronised,Fully-configurable fault-tolerant superstructure,4111,8,Sedan
+911,924,1988,86950,16615,No,systemic,Virtual system-worthy matrix,4521,4,Sports
+912,Discovery,2000,28136,16567,10 Year,Customer-focused,Horizontal homogeneous concept,753,3,SUV
+913,Explorer Sport,2003,33667,45372,10 Year,maximized,Stand-alone value-added toolset,2843,10,Luxury
+914,626,1998,97844,46884,5 Year,bottom-line,Self-enabling secondary complexity,170,6,Family
+915,7 Series,1992,16890,87732,5 Year,array,De-engineered homogeneous synergy,4579,6,Sedan
+916,Breeze,1999,62760,69592,3 Year,4th generation,Polarised demand-driven firmware,1894,4,Family
+917,Cavalier,1993,85302,7005,5 Year,Multi-layered,Profit-focused logistical emulation,1277,7,Sports
+918,Aerostar,1990,70681,70173,No,strategy,Automated attitude-oriented help-desk,2899,8,Luxury
+919,G35,2004,93371,36772,No,Stand-alone,Cloned optimal customer loyalty,3029,7,Sedan
+920,Outlander,2005,73734,51296,Yes,value-added,Multi-channelled explicit projection,2455,4,Sedan
+921,Express 2500,2011,30067,93980,No,Decentralized,Front-line zero administration data-warehouse,1605,9,Luxury
+922,E150,2005,59260,9858,5 Year,Up-sized,Progressive contextually-based software,1479,2,Sports
+923,Grand Voyager,2000,45637,25106,Yes,Operative,Front-line multimedia frame,1431,9,Luxury
+924,Five Hundred,2007,99446,98331,Yes,Upgradable,Customizable explicit frame,1080,1,Luxury
+925,Veracruz,2009,42740,20515,5 Year,middleware,Self-enabling transitional flexibility,3596,6,Family
+926,Liberty,2009,46068,61149,No,matrix,Integrated demand-driven standardization,3383,8,Luxury
+927,H2,2006,38617,56399,10 Year,infrastructure,Synergistic intangible migration,422,4,Luxury
+928,RAV4,1996,26415,70625,Yes,encompassing,User-centric responsive project,788,1,Family
+929,Grand Am,1988,86073,92913,10 Year,Cross-platform,Horizontal responsive analyzer,1216,4,Sports
+930,G,2001,58759,10080,No,Up-sized,Synergistic next generation installation,1197,3,Family
+931,GL-Class,2009,63141,10626,3 Year,dedicated,Total discrete capacity,2630,3,Family
+932,Legacy,1998,11076,84400,5 Year,Synergized,Stand-alone zero tolerance service-desk,3072,2,Sedan
+933,Colt Vista,1993,17088,94506,No,discrete,Inverse background alliance,2255,3,Luxury
+934,Contour,1997,40530,29388,3 Year,content-based,Ergonomic systemic conglomeration,2440,3,Sports
+935,Rabbit,2006,37027,27504,10 Year,contingency,Cloned 5th generation policy,620,1,Family
+936,Pathfinder,1994,18247,40984,3 Year,Face to face,Multi-channelled bandwidth-monitored architecture,4857,6,Luxury
+937,Explorer,1995,99070,84234,3 Year,directional,Centralized solution-oriented migration,440,8,Sports
+938,Supra,1994,27420,77034,10 Year,Assimilated,Realigned homogeneous complexity,4840,5,Sports
+939,Range Rover Sport,2010,69608,30812,No,optimizing,Organized homogeneous extranet,1590,4,Family
+940,A6,2003,88968,74909,No,Pre-emptive,Quality-focused contextually-based encoding,2746,5,Family
+941,Jetta III,1995,47765,77193,Yes,Self-enabling,Networked even-keeled definition,2231,2,Sports
+942,Firefly,1989,32745,95863,Yes,secured line,Configurable system-worthy matrix,4062,7,SUV
+943,Alpina B7,2007,48128,63622,3 Year,Optimized,Switchable scalable middleware,3351,1,Sedan
+944,Volt,2011,77323,95732,10 Year,tangible,User-friendly fresh-thinking utilisation,2463,5,Family
+945,Insight,2005,23079,6721,5 Year,open system,Operative interactive service-desk,2307,10,Luxury
+946,Boxster,1997,75580,55092,5 Year,encompassing,Reduced client-server local area network,82,9,Sports
+947,Mazda3,2006,51578,6000,Yes,user-facing,Public-key eco-centric definition,3281,5,Luxury
+948,Prius,2003,63389,76094,3 Year,interactive,Grass-roots demand-driven conglomeration,2452,5,SUV
+949,Grand Cherokee,2002,44572,20661,3 Year,groupware,Optional tertiary website,2806,10,Luxury
+950,Lynx,1984,75089,44444,10 Year,hub,De-engineered homogeneous hub,3623,4,Sedan
+951,C-Class,2006,31242,62873,No,Implemented,Adaptive multi-state instruction set,4450,6,Sedan
+952,Thunderbird,1995,81320,67100,5 Year,Function-based,Diverse 24 hour moderator,2246,7,Sports
+953,Camaro,1979,76069,38069,10 Year,monitoring,Up-sized methodical superstructure,4221,6,SUV
+954,Equator,2010,12490,65611,Yes,Adaptive,Grass-roots demand-driven array,380,9,Family
+955,Samurai,1993,44434,11087,No,attitude-oriented,Seamless upward-trending complexity,2665,9,SUV
+956,Corsica,1996,72890,99602,10 Year,Centralized,Mandatory bandwidth-monitored conglomeration,3722,2,Family
+957,Accord,2007,24854,58624,Yes,contingency,Networked 5th generation help-desk,4722,7,Luxury
+958,Windstar,2000,15501,33287,5 Year,productivity,Synergized local open architecture,2154,3,Sports
+959,Town Car,1990,32340,51593,5 Year,knowledge user,Focused asynchronous infrastructure,1302,2,SUV
+960,Escape,2008,38126,12183,No,24/7,Mandatory clear-thinking data-warehouse,4835,9,Sedan
+961,XK,2006,64976,63658,5 Year,Cloned,Innovative contextually-based moderator,4313,2,Family
+962,HED-5,2012,72654,5054,3 Year,attitude,Function-based context-sensitive knowledge user,1417,4,Family
+963,57,2007,41280,54586,5 Year,extranet,Profound secondary internet solution,2169,6,Luxury
+964,Colt,1994,94747,63207,Yes,optimizing,Re-contextualized client-driven moratorium,1875,5,Luxury
+965,Chariot,1991,56668,33433,5 Year,secured line,Multi-channelled heuristic complexity,4323,10,Luxury
+966,Trans Sport,1999,45332,33046,No,software,Streamlined optimal flexibility,4959,3,SUV
+967,Galant,2000,42471,69578,10 Year,Quality-focused,Sharable real-time process improvement,317,2,SUV
+968,Pajero,1985,12548,35205,Yes,Re-engineered,Open-architected human-resource methodology,1250,8,Sports
+969,Gallardo,2003,50272,82055,3 Year,policy,Fundamental background focus group,1720,4,Sports
+970,Scoupe,1994,26241,88058,No,asynchronous,Stand-alone next generation time-frame,537,8,Sports
+971,Alcyone SVX,1996,54302,82810,3 Year,application,Cross-platform full-range matrices,4931,1,Sports
+972,Sienna,1999,17537,55607,10 Year,Enhanced,Organized high-level internet solution,3876,4,Sports
+973,Forester,2010,20892,80040,3 Year,Horizontal,Down-sized optimizing budgetary management,3032,5,Luxury
+974,CL,2001,27936,71347,No,zero administration,Grass-roots bifurcated framework,2463,10,Luxury
+975,IS,2005,96294,92280,10 Year,Networked,Upgradable composite collaboration,4164,8,Sedan
+976,Sonata,2009,40778,53930,Yes,utilisation,Compatible coherent customer loyalty,1626,4,Luxury
+977,Soul,2010,18631,40671,10 Year,maximized,Monitored 24 hour contingency,2369,3,Sports
+978,ES,1998,63102,67955,Yes,structure,Fundamental encompassing intranet,1796,5,Sedan
+979,RAV4,1996,58628,61660,No,Enhanced,Synergized 6th generation knowledge user,683,3,Luxury
+980,Regal,2012,86349,97113,No,Reduced,Proactive clear-thinking function,4254,5,Luxury
+981,Cougar,1996,43410,39111,Yes,reciprocal,Exclusive multi-state contingency,3792,10,Family
+982,Somerset,1987,64229,45429,5 Year,scalable,Inverse next generation intranet,397,1,Sedan
+983,B-Series Plus,2001,14994,23576,3 Year,Re-contextualized,Inverse multi-tasking data-warehouse,2183,1,Sports
+984,Tacoma,2010,72993,12259,5 Year,leading edge,Devolved system-worthy open architecture,4809,8,Sports
+985,Laser,1990,71626,16192,No,Open-source,Optimized methodical extranet,1835,2,Sedan
+986,Golf,2005,26462,99653,5 Year,well-modulated,Fully-configurable motivating software,1572,2,Luxury
+987,B9 Tribeca,2007,78592,93650,No,uniform,Function-based transitional budgetary management,381,8,Family
+988,Equator,2012,79414,8736,3 Year,Vision-oriented,Managed context-sensitive analyzer,2374,4,Sedan
+989,Impala,2003,72911,57156,3 Year,Pre-emptive,Streamlined system-worthy structure,4827,1,Family
+990,Montero,1995,14857,32723,10 Year,homogeneous,Configurable value-added open system,2842,9,Family
+991,Windstar,1999,81457,32387,Yes,software,Open-architected optimizing extranet,2298,10,Family
+992,Cobalt,2010,52799,12596,Yes,middleware,Expanded systemic Graphic Interface,2855,2,SUV
+993,F-Series,1993,10360,34344,3 Year,data-warehouse,Diverse optimizing core,4726,1,Family
+994,GTO,1997,80317,96211,Yes,Proactive,Focused directional matrix,894,2,Family
+995,Tempest,1965,45788,80469,No,attitude,Polarised 4th generation intranet,3326,1,Luxury
+996,Clubman,2008,91202,49412,Yes,optimal,Reduced zero tolerance artificial intelligence,983,7,Sports
+997,Mariner,2008,15748,19122,10 Year,national,Triple-buffered didactic circuit,4565,6,Family
+998,Stratus,2005,17080,20063,10 Year,Function-based,Multi-lateral client-driven flexibility,1687,2,Sports
+999,Town Car,2005,59982,14165,5 Year,radical,Down-sized neutral knowledge user,3433,10,SUV
+1000,S-Class,1988,62231,41138,3 Year,6th generation,Streamlined responsive contingency,535,2,Luxury

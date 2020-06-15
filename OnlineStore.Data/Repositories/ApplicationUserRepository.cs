@@ -7,13 +7,13 @@ using System.Text;
 
 namespace OnlineStore.Data.Repositories
 {
-    public class ApplicationUserRepository : Repository<ApplicationUser>, IApplicationUserRespository
+    public class ApplicationUserRepository : Repository<ApplicationUser>, IApplicationUserRepository
     {
-        private readonly ApplicationDbContext _context;
+        private ApplicationDbContext _Context { get; }
 
         public ApplicationUserRepository(ApplicationDbContext context) : base(context)
         {
-            _context = context;
+            _Context = context;
         }
     }
 }

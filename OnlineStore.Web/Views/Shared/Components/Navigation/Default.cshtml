@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model OnlineStore.Web.Models.DTOs.NavigationDTO
+@model OnlineStore.Web.Models.DTOs.NavigationDto
 
 <header class="header">
     <div class="header_container">
@@ -15,11 +15,11 @@
                                 <li class="hassubs active">
                                     <a href="index.html">Home</a>
                                     <ul>
-                                        <li><a href="categories.html">Categories</a></li>
-                                        <li><a href="product.html">Product</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Check out</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="categories">Categories</a></li>
+                                        <li><a href="product/">Product</a></li>
+                                        <li><a href="cart">Cart</a></li>
+                                        <li><a href="checkout">Check out</a></li>
+                                        <li><a href="contact">Contact</a></li>
                                     </ul>
                                 </li>
                                 <li class="hassubs">
@@ -27,18 +27,18 @@
                                     <ul>
                                         @foreach (var category in Model.Categories)
                                         {
-                                            <li><a asp-page="@category.CategoryLink">@category.CategoryName</a></li>
+                                            <li><a href="@category.CategoryLink">@category.CategoryName</a></li>
                                         }
                                     </ul>
                                 </li>
                                 <li><a href="#">Accessories</a></li>
-                                <li><a href="#">Offers</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="contact">Contact</a></li>
+                                <li><a href="/Identity/Account/login">Login</a></li>
                             </ul>
                         </nav>
                         <div class="header_extra ml-auto">
                             <div class="shopping_cart">
-                                <a href="cart.html">
+                                <a href="cart">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                          viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
                                     <g>
@@ -48,15 +48,9 @@
 													H122.2c-25.4,0-46-16.8-46.4-37.5l26.8-302.3h45.2v41c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h139.3v41
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z" />
 
-
-
-
-
-
-
-											</g>
+                                    </g>
 										</svg>
-                                    <div>Cart <span>(0)</span></div>
+                                    <div>Cart <span id="cart">(@(Model.NumberOfItemsInCart))</span></div>
                                 </a>
                             </div>
                             <div class="search">
@@ -131,7 +125,7 @@
                     <a href="index.html">Home<i class="fa fa-angle-down"></i></a>
                     <ul class="page_menu_selection menu_mm">
                         <li class="page_menu_item menu_mm"><a href="categories.html">Categories<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="product.html">Product<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="product/">Product<i class="fa fa-angle-down"></i></a></li>
                         <li class="page_menu_item menu_mm"><a href="cart.html">Cart<i class="fa fa-angle-down"></i></a></li>
                         <li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i class="fa fa-angle-down"></i></a></li>
                         <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>

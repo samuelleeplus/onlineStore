@@ -13,10 +13,15 @@ namespace OnlineStore.Data.Context
             : base(options)
         {
         }
-        public DbSet<Address> Customers { get; set; }
+        public DbSet<Address> Addresses { get; set; }
         public DbSet<Order> Orders { get; set; }
-
+        public DbSet<OrderedProduct> OrderedProducts { get; set; }
+        public DbSet<ImageUri> ImageUris { get; set; }
+        public DbSet<Distributor> Distributors { get; set; }
         public DbSet<Product> Products { get; set; }
      
     }
+
 }
+
+

@@ -1,0 +1,12 @@
+﻿BULK
+INSERT PRODUCTS
+FROM 'C:\Users\SL\source\repos\mainFINAL\OnlineStore.Web\MOCK_DATA.csv'
+WITH
+(
+FIRSTROW = 2,
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n',
+TABLOCK
+)
+GO
+
