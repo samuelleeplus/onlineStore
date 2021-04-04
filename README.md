@@ -15,7 +15,7 @@ at Sabanci University. Members (in alphabetical order):
 
 ### Project Details 
 
-The main framework used for the development of this project is **.NET Core**, with **C#**. For front-end, **javascript** was used.
+The main framework used for the development of this project is **.NET Core**, with **C#**. 
 
 
 ### Sample Run - Purchase/Cart/Login/Address/Payment 
