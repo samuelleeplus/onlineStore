@@ -11,3 +11,12 @@ at Sabanci University. Members (in alphabetical order):
     <li> Roy Basmacier </li>
     <li> Samuel Lee </li>
 </ul>
+
+
+### Project Details 
+
+The main framework used for the development of this project is .NET Core, with C#. For front-end, javascript was used.
+
+
+### Sample Run 
+
